@@ -6,7 +6,25 @@
         "primary": "cerebras/moonshotai-kimi-k3.1-pro-trial"
       },
       "thinkingDefault": "low",
-      "maxConcurrent": 16
+      "maxConcurrent": 16,
+      "models": {
+        "openrouter/moonshotai/kimi-k3.1-pro": {
+          "params": {
+            "provider": {
+              "only": [
+                "moonshotai/mxfp4"
+              ],
+              "allow_fallbacks": false
+            },
+            "maxTokens": 16000
+          }
+        },
+        "cerebras/moonshotai-kimi-k3.1-pro-trial": {
+          "params": {
+            "maxTokens": 16000
+          }
+        }
+      }
     },
     "entries": {
       "livelab-finder": {
@@ -21,6 +39,32 @@
       },
       "livelab-builder": {
         "workspace": "~/livelab/agents/builder",
+        "tools": {
+          "profile": "minimal",
+          "deny": [
+            "session_status",
+            "gateway"
+          ]
+        }
+      },
+      "livelab-finder-gpu": {
+        "workspace": "~/livelab/agents/finder",
+        "model": {
+          "primary": "openrouter/moonshotai/kimi-k3.1-pro"
+        },
+        "tools": {
+          "profile": "minimal",
+          "deny": [
+            "session_status",
+            "gateway"
+          ]
+        }
+      },
+      "livelab-builder-gpu": {
+        "workspace": "~/livelab/agents/builder",
+        "model": {
+          "primary": "openrouter/moonshotai/kimi-k3.1-pro"
+        },
         "tools": {
           "profile": "minimal",
           "deny": [
@@ -86,6 +130,9 @@
             }
           }
         ]
+      },
+      "openrouter": {
+        "apiKey": "${OPENROUTER_API_KEY}"
       }
     }
   }
