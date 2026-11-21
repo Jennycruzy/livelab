@@ -5,7 +5,7 @@
   "framework": null,
   "cleanUrls": true,
   "rewrites": [
-    { "source": "/w/:id", "destination": "/wall.html" },
+    { "source": "/w/:id", "destination": "/wall" },
     { "source": "/api/walls/:id", "destination": "/walls/:id.json" },
     { "source": "/api/library", "destination": "/library.json" }
   ],

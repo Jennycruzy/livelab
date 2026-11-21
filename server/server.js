@@ -124,7 +124,7 @@ const server = createServer(async (req, res) => {
     }
     if (req.method === 'GET' && PAGES[path]) return serveFile(res, join(ROOT, 'web', PAGES[path]));
     if (req.method === 'GET' && /^\/w\/[A-Za-z0-9-]+$/.test(path)) return serveFile(res, join(ROOT, 'web', 'wall.html'));
-    if (req.method === 'GET' && path === '/frame.html') return serveFile(res, join(ROOT, 'web', 'frame.html'));
+    if (req.method === 'GET' && (path === '/frame' || path === '/frame.html')) return serveFile(res, join(ROOT, 'web', 'frame.html'));
     if (req.method === 'GET' && path.startsWith('/static/')) return serveFile(res, join(ROOT, 'web', path), 'public, max-age=300');
     if (req.method === 'GET' && path.startsWith('/lib/') && path.endsWith('.js')) return serveFile(res, join(ROOT, path), 'public, max-age=300');
     if (req.method === 'GET' && path === '/api/library') return json(res, 200, library(ROOT));

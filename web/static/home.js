@@ -41,7 +41,7 @@ if (hero) {
   const byTime = [...wall.tiles].sort((a, b) => a.at - b.at).slice(0, 4);
   for (const t of byTime) {
     const c = wall.cards.find((x) => x.id === t.card);
-    const el = h('iframe', { src: '/frame.html', sandbox: 'allow-scripts', title: 'lab animation', tabindex: '-1' });
+    const el = h('iframe', { src: '/frame', sandbox: 'allow-scripts', title: 'lab animation', tabindex: '-1' });
     frames.add({ el, sim: t.lab.sim, params: { ...c.fixed, [t.check.param]: t.predict.p0 } });
     const [cls, text] = pillOf(t.check);
     $('#preview').append(h('a', { class: 'tile', href: `/w/${hero.wall}` },

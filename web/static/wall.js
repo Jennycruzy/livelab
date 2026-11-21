@@ -52,7 +52,7 @@ addEventListener('message', (e) => {
   if (e.data.type === 'error' && f.el) f.el.closest('.screen')?.setAttribute('data-error', e.data.error);
 });
 function labFrame(sim, params) {
-  const el = h('iframe', { src: '/frame.html', sandbox: 'allow-scripts', title: 'lab animation', tabindex: '-1' });
+  const el = h('iframe', { src: '/frame', sandbox: 'allow-scripts', title: 'lab animation', tabindex: '-1' });
   frames.add({ el, sim, params });
   return el;
 }
