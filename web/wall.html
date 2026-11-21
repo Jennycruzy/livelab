@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Wall · LIVE LAB</title>
+<meta name="description" content="A lecture's rules as working labs, each checked by maths.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="/static/app.css">
+<link rel="icon" href="/static/icon.svg" type="image/svg+xml">
+<script type="module" src="/static/wall.js"></script>
+</head>
+<body>
+<div class="wrap">
+  <div class="bar">
+    <a class="brand" href="/">LIVE <b>LAB</b></a>
+    <nav><a href="/new">Drop a lecture</a><a href="/how">How the check works</a><a href="/evidence">Evidence</a></nav>
+  </div>
+
+  <section class="lecture">
+    <h1 id="title">Loading…</h1>
+    <div class="credit" id="credit"></div>
+  </section>
+
+  <section class="panel">
+    <div class="row spread">
+      <div class="stats" id="stats"></div>
+      <div class="row">
+        <span class="mono" id="clock" hidden></span>
+        <button id="replay" hidden>Watch it build again</button>
+        <button id="share">Share</button>
+        <input id="sharelink" type="text" readonly hidden aria-label="Link to this wall">
+      </div>
+    </div>
+    <div class="timeline" id="timeline"><div class="scan" id="scan"></div></div>
+    <div class="ticks" id="ticks"></div>
+    <div class="muted" id="phase"></div>
+  </section>
+
+  <section class="panel" id="review" hidden></section>
+  <section class="panel" id="bench" hidden></section>
+
+  <section class="wall" id="wall" aria-label="Labs"></section>
+  <section id="skipped"></section>
+
+  <footer>
+    <span>Every “holds” and “breaks at” comes from a plain-code physics library, never from the model. Every quote is matched word for word against the transcript.</span>
+    <span>Built with Kimi K3.1 Pro on Cerebras through OpenClaw. Lecture content keeps its own licence, shown above.</span>
+  </footer>
+</div>
+</body>
+</html>

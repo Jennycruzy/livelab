@@ -1,0 +1,44 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>lab</title>
+<style>html,body{margin:0;height:100%;background:transparent;overflow:hidden}canvas{width:100%;height:100%;display:block}</style>
+<canvas id="c"></canvas>
+<script>
+// Runs one model-written lab. Loaded only inside <iframe sandbox="allow-scripts">: an opaque origin with no access
+// to the page, its storage or the network (this page's own policy blocks every connection). The page sends
+// {type:"load", sim, params, dark}, then {type:"params"} as sliders move. The frame reports ready or error.
+(function () {
+  var draw = null, params = {}, dark = false, t0 = performance.now(), running = true, slow = 0;
+  var c = document.getElementById('c'), ctx = c.getContext('2d');
+  function tell(m) { parent.postMessage(m, '*'); }
+  addEventListener('message', function (e) {
+    var m = e.data || {};
+    if (e.source !== parent) return;
+    if (m.type === 'load' && typeof m.sim === 'string') {
+      try {
+        var made = new Function(m.sim + '\n;return { draw: typeof draw === "function" ? draw : null };')();
+        draw = made.draw; params = m.params || {}; dark = !!m.dark; t0 = performance.now();
+        tell(draw ? { type: 'ready' } : { type: 'error', error: 'no draw()' });
+      } catch (err) { tell({ type: 'error', error: String(err).slice(0, 200) }); }
+    } else if (m.type === 'params') { params = m.params || {}; if (m.restart) t0 = performance.now(); }
+    else if (m.type === 'run') { running = !!m.on; }
+    else if (m.type === 'dark') { dark = !!m.dark; }
+  });
+  function frame() {
+    if (draw && running) {
+      var r = c.getBoundingClientRect(), dpr = Math.min(2, window.devicePixelRatio || 1);
+      var w = Math.max(1, r.width), h = Math.max(1, r.height);
+      if (c.width !== Math.round(w * dpr) || c.height !== Math.round(h * dpr)) { c.width = Math.round(w * dpr); c.height = Math.round(h * dpr); }
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0); ctx.clearRect(0, 0, w, h);
+      var s = performance.now();
+      try { draw(ctx, { params: params, t: (s - t0) / 1000, w: w, h: h, dark: dark }); }
+      catch (err) { draw = null; tell({ type: 'error', error: String(err).slice(0, 200) }); }
+      slow = performance.now() - s > 40 ? slow + 1 : 0;
+      if (slow > 30) { draw = null; tell({ type: 'error', error: 'drawing too slowly' }); }
+    }
+    requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+  tell({ type: 'hello' });
+})();
+</script>

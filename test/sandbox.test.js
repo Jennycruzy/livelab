@@ -3,7 +3,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { runProbe } from '../lib/sandbox.js';
 
-const good = `function probe(p){ return 2*Math.PI*Math.sqrt(p.L_m/9.81); } function draw(){}`;
+const good = `function probe(p){ return 2*Math.PI*Math.sqrt(p.L_m/9.81); } function draw(ctx, s){ ctx.beginPath(); ctx.arc(s.w/2, s.h/2, 10, 0, 7); ctx.fill(); }`;
 
 test('a normal sim runs and returns numbers', async () => {
   const r = await runProbe(good, [{ L_m: 1 }, { L_m: 4 }]);
@@ -22,8 +22,10 @@ const escapes = {
 };
 for (const [name, src] of Object.entries(escapes)) {
   test(`blocked: ${name}`, async () => {
-    const r = await runProbe(src, [{ L_m: 1 }]);
-    assert.ok(r.error || Number.isNaN(r.values[0]), `${name} returned ${JSON.stringify(r)}`);
+    // With a valid draw(), the only thing that can fail is the escape itself.
+    const r = await runProbe(src + ' function draw(){}', [{ L_m: 1 }]);
+    assert.ok(/did not load/.test(r.error ?? '') || Number.isNaN(r.values?.[0]), `${name} returned ${JSON.stringify(r)}`);
+    assert.doesNotMatch(r.error ?? '', /draw/, 'draw() was valid, so a draw error would hide the result');
   });
 }
 
@@ -47,4 +49,10 @@ test('missing probe, syntax errors and oversize code are refused', async () => {
   assert.match((await runProbe(`function draw(){}`, [{}])).error, /no probe/);
   assert.match((await runProbe(`function probe( {`, [{}])).error, /did not load/);
   assert.match((await runProbe('x'.repeat(12001), [{}])).error, /12,000/);
+});
+
+test('draw() must exist and must not hang', async () => {
+  assert.match((await runProbe(`function probe(){ return 1; }`, [{}])).error, /no draw/);
+  assert.match((await runProbe(`function probe(){ return 1; } function draw(){ for(;;){} }`, [{}], { perCallMs: 100 })).error, /draw\(\) failed/);
+  assert.equal((await runProbe(`function probe(){ return 1; } function draw(c){ c.fillStyle = "#000"; c.fillRect(0,0,1,1); c.createLinearGradient(0,0,1,1).addColorStop(0,"#fff"); }`, [{}])).error, undefined);
 });
