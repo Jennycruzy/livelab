@@ -7,3 +7,4 @@ santa/**/*.jsonl
 *.log
 .private/
 public/
+__pycache__/
