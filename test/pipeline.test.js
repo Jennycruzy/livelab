@@ -104,3 +104,10 @@ test('predict-first answers come from the library', () => {
   assert.equal(prediction(resolve({ model: 'pendulum', rule: 'amplitude_independence' })).answer, 2); // period grows
   assert.equal(prediction(resolve({ model: 'gravity_height', rule: 'g_constant', range: [100, 1000] })).answer, 0); // g drops
 });
+
+test('cards for one statement spread over nearby sentences merge into one tile; a restatement much later does not', async () => {
+  const { mergeCards } = await import('../lib/pipeline.js');
+  const c = (id, t, rule = 'amplitude_independence') => ({ card: { id, t, sentence: t, model: 'pendulum', rule, range: [1, 90], fixed: { L_m: 1 }, quote: id } });
+  const m = mergeCards([c('a', 4200), c('b', 4215), c('c', 4230), c('d', 4300, 'period_formula'), c('e', 9000)]);
+  assert.deepEqual(m.map((j) => [j.card.id, j.card.also.map((x) => x.id)]), [['a', ['b', 'c']], ['d', []], ['e', []]]);
+});

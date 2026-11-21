@@ -5,7 +5,8 @@
       "model": {
         "primary": "cerebras/moonshotai-kimi-k3.1-pro-trial"
       },
-      "thinkingDefault": "low"
+      "thinkingDefault": "low",
+      "maxConcurrent": 16
     },
     "entries": {
       "livelab-finder": {
