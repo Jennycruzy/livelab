@@ -1,0 +1,7 @@
+node_modules/
+.env
+.env.*
+*.patch
+*.jsonl
+*.log
+.private/
