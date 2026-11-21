@@ -1,0 +1,12 @@
+{
+  "name": "livelab",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Turns the rules stated in a physics lecture into working labs, each checked by maths.",
+  "license": "MIT",
+  "engines": { "node": ">=24" },
+  "scripts": {
+    "test": "node --test \"test/**/*.test.js\""
+  }
+}
