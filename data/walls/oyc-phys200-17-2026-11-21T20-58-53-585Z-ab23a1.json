@@ -1,0 +1,917 @@
+{
+ "title": "PHYS 200 - Lecture 17 - Simple Harmonic Motion",
+ "source": {
+  "url": "https://oyc.yale.edu/physics/phys-200/lecture-17",
+  "licence": "CC BY-NC-SA 3.0",
+  "licenceUrl": "https://creativecommons.org/licenses/by-nc-sa/3.0/",
+  "credit": "Lecture: Prof. Ramamurti Shankar, Fundamentals of Physics I (PHYS 200), Open Yale Courses, CC BY-NC-SA 3.0",
+  "fetched": "2026-11-21"
+ },
+ "transcriptHash": "cd48518872258f563024300bfc1f0ba98ee355bd44e79c7950a380c1f9d54650",
+ "provider": "cerebras/moonshotai-kimi-k3.1-pro-trial via OpenClaw",
+ "startedAt": "2026-11-21T20:58:53.586Z",
+ "cards": [
+  {
+   "id": "r1",
+   "sentence": 4,
+   "t": 16,
+   "chapter": 0,
+   "quote": "But if you pull it so the mass comes here, you move it from x = 0 to a new location x; then, there is a restoring force F, which is -kx, and that force will be equal to mass times acceleration by Newton's law, and so you're trying to solve the equation d2x/dt2 = -k/m times x, and we use the symbol, ω2 = k/m, or ω square root of k/m.",
+   "plain": "For an ideal spring, T = 2π√(m/k).",
+   "model": "spring",
+   "rule": "period_formula",
+   "range": [
+    0.1,
+    10
+   ],
+   "fixed": {
+    "k_Nm": 10,
+    "amplitude_m": 0.1,
+    "k3_Nm3": 0
+   },
+   "notes": [],
+   "modelSentence": 4,
+   "ambiguous": false
+  },
+  {
+   "id": "r2",
+   "sentence": 41,
+   "t": 241,
+   "chapter": 0,
+   "quote": "If you do, then the force is like this, the separation vector r from the pivot point is this, and r cross F will be non-zero because the angle between them is not 0, and you remember that torque is equal to rF sin θ, and I told you for small angles, this can be rF θ, and r happens to be, in this problem, the length of the pendulum, so it's really -mgl θ.",
+   "plain": "For small angles, sin θ ≈ θ.",
+   "model": "series",
+   "rule": "sin_x",
+   "range": [
+    0.1,
+    89
+   ],
+   "fixed": {},
+   "notes": [],
+   "modelSentence": 41,
+   "ambiguous": false
+  },
+  {
+   "id": "r3",
+   "sentence": 52,
+   "t": 331,
+   "chapter": 0,
+   "quote": "So, you can cancel the l, you can cancel the m, and you get ω is root of g over l. Let me remind you guys that ω is connected to what you and I would call the frequency by this 2π, or what you and I would call the time period by 2π over T.",
+   "plain": "For a pendulum, T = 2π√(L/g).",
+   "model": "pendulum",
+   "rule": "period_formula",
+   "range": [
+    0.1,
+    10
+   ],
+   "fixed": {
+    "m_kg": 1,
+    "amplitude_deg": 5
+   },
+   "notes": [],
+   "modelSentence": 52,
+   "ambiguous": false
+  },
+  {
+   "id": "r4",
+   "sentence": 72,
+   "t": 444,
+   "chapter": 0,
+   "quote": "It'll be the same thing minus mgl sin θ, which I'm going to replace by θ. l is now the distance between the pivot point and the center of mass.",
+   "plain": "For small angles, sin θ ≈ θ.",
+   "model": "series",
+   "rule": "sin_x",
+   "range": [
+    0.1,
+    89
+   ],
+   "fixed": {},
+   "notes": [],
+   "modelSentence": 72,
+   "ambiguous": false
+  },
+  {
+   "id": "r5",
+   "sentence": 329,
+   "t": 1827,
+   "chapter": 2,
+   "quote": "A and B are whatever you like, but ω0 is the original root of k/m.",
+   "plain": "For an ideal spring, T = 2π√(m/k).",
+   "model": "spring",
+   "rule": "period_formula",
+   "range": [
+    0.1,
+    10
+   ],
+   "fixed": {
+    "k_Nm": 10,
+    "amplitude_m": 0.1,
+    "k3_Nm3": 0
+   },
+   "notes": [],
+   "modelSentence": 329,
+   "ambiguous": false
+  }
+ ],
+ "tiles": [
+  {
+   "card": "r1",
+   "also": [],
+   "check": {
+    "model": "spring",
+    "rule": "period_formula",
+    "claim": "equals_formula",
+    "param": "m_kg",
+    "unit": "kg",
+    "quantity": "period",
+    "quantityUnit": "s",
+    "range": [
+     0.1,
+     10
+    ],
+    "fixed": {
+     "k_Nm": 10,
+     "amplitude_m": 0.1,
+     "k3_Nm3": 0
+    },
+    "tol": 0.01,
+    "method": "RK4 integration of the spring motion",
+    "verdict": "holds",
+    "maxError": 1.2579141756728813e-13,
+    "maxErrorAt": 4.6375,
+    "notes": [],
+    "samples": [
+     {
+      "p": 0.1,
+      "rule": 0.6283185307179586,
+      "exact": 0.6283185307179905
+     },
+     {
+      "p": 0.5125000000000001,
+      "rule": 1.4224165712699353,
+      "exact": 1.4224165712698795
+     },
+     {
+      "p": 0.925,
+      "rule": 1.9109562078716147,
+      "exact": 1.9109562078714593
+     },
+     {
+      "p": 1.3375000000000001,
+      "rule": 2.2978769232887144,
+      "exact": 2.2978769232887486
+     },
+     {
+      "p": 1.7500000000000002,
+      "rule": 2.6284449929116933,
+      "exact": 2.628444992911533
+     },
+     {
+      "p": 2.1625,
+      "rule": 2.9218500657874786,
+      "exact": 2.921850065787405
+     },
+     {
+      "p": 2.575,
+      "rule": 3.1883683182973135,
+      "exact": 3.188368318297062
+     },
+     {
+      "p": 2.9875,
+      "rule": 3.4342651702077083,
+      "exact": 3.4342651702079197
+     },
+     {
+      "p": 3.4000000000000004,
+      "rule": 3.6636951272562963,
+      "exact": 3.6636951272561773
+     },
+     {
+      "p": 3.8125000000000004,
+      "rule": 3.8795807391600023,
+      "exact": 3.879580739159522
+     },
+     {
+      "p": 4.225,
+      "rule": 4.084070449666731,
+      "exact": 4.084070449666415
+     },
+     {
+      "p": 4.6375,
+      "rule": 4.278798448632601,
+      "exact": 4.27879844863314
+     },
+     {
+      "p": 5.05,
+      "rule": 4.465042092769171,
+      "exact": 4.465042092769173
+     },
+     {
+      "p": 5.4625,
+      "rule": 4.6438223067189215,
+      "exact": 4.643822306718767
+     },
+     {
+      "p": 5.874999999999999,
+      "rule": 4.815970342782437,
+      "exact": 4.815970342782035
+     },
+     {
+      "p": 6.2875,
+      "rule": 4.982173729281199,
+      "exact": 4.982173729281261
+     },
+     {
+      "p": 6.7,
+      "rule": 5.1430088270310685,
+      "exact": 5.143008827031007
+     },
+     {
+      "p": 7.1125,
+      "rule": 5.298964476300933,
+      "exact": 5.29896447630121
+     },
+     {
+      "p": 7.525,
+      "rule": 5.450459544596122,
+      "exact": 5.4504595445959145
+     },
+     {
+      "p": 7.937499999999999,
+      "rule": 5.597856194424676,
+      "exact": 5.5978561944240495
+     },
+     {
+      "p": 8.35,
+      "rule": 5.741470081750706,
+      "exact": 5.741470081751158
+     },
+     {
+      "p": 8.7625,
+      "rule": 5.881578310778341,
+      "exact": 5.881578310778743
+     },
+     {
+      "p": 9.175,
+      "rule": 6.018425720402134,
+      "exact": 6.01842572040212
+     },
+     {
+      "p": 9.5875,
+      "rule": 6.152229911030446,
+      "exact": 6.152229911030609
+     },
+     {
+      "p": 10,
+      "rule": 6.283185307179586,
+      "exact": 6.283185307179887
+     }
+    ]
+   },
+   "lab": {
+    "title": "Mass and the spring period",
+    "slider": "Mass",
+    "question": "Make the mass twice as large. The period will:",
+    "sim": "function probe(p){var m=p.m_kg,k=p.k_Nm,k3=p.k3_Nm3||0,A=p.amplitude_m,x=A,v=0,t=0,dt=0.0005,last=x,cross=-1;function a(q){return -(k*q+k3*q*q*q)/m;}for(var n=0;n<2000000;n++){var k1x=v,k1v=a(x),k2x=v+k1v*dt/2,k2v=a(x+k1x*dt/2),k3x=v+k2v*dt/2,k3v=a(x+k2x*dt/2),k4x=v+k3v*dt,k4v=a(x+k3x*dt);var nx=x+dt*(k1x+2*k2x+2*k3x+k4x)/6,nv=v+dt*(k1v+2*k2v+2*k3v+k4v)/6;t+=dt;if(last<0&&nx>=0&&nv>0){var f=last/(last-nx),ct=t-dt+f*dt;if(cross>=0)return ct-cross;cross=ct;}last=nx;x=nx;v=nv;}return 2*Math.PI*Math.sqrt(m/k);}function draw(c,s){var p=s.params,w=s.w,h=s.h,d=s.dark,t=s.t,m=p.m_kg,k=p.k_Nm,A=p.amplitude_m,k3=p.k3_Nm3||0,bg=d?'#171b22':'#ffffff',fg=d?'#dce3ec':'#273444',grid=d?'#3b4654':'#d5dce4';c.clearRect(0,0,w,h);c.fillStyle=bg;c.fillRect(0,0,w,h);var cy=h*.55,wall=w*.12,L=w*.61,scale=L/(A*2.7),om=Math.sqrt(k/m);function pos(time){if(!k3)return A*Math.cos(om*time);var x=A,v=0,N=180,dt=time/N;function acc(q){return -(k*q+k3*q*q*q)/m;}for(var i=0;i<N;i++){var a1=v,b1=acc(x),a2=v+b1*dt/2,b2=acc(x+a1*dt/2),a3=v+b2*dt/2,b3=acc(x+a2*dt/2),a4=v+b3*dt,b4=acc(x+a3*dt);x+=dt*(a1+2*a2+2*a3+a4)/6;v+=dt*(b1+2*b2+2*b3+b4)/6;}return x;}var x=pos(t),xp=A*Math.cos(om*t),size=28+8*Math.sqrt(m),cx=wall+L+x*scale,px=wall+L+xp*scale;c.strokeStyle=grid;c.lineWidth=1;c.beginPath();c.moveTo(wall,cy+size/2+16);c.lineTo(w*.9,cy+size/2+16);c.stroke();c.strokeStyle=fg;c.lineWidth=4;c.beginPath();c.moveTo(wall,cy-70);c.lineTo(wall,cy+70);c.stroke();function spring(end,color,width){c.strokeStyle=color;c.lineWidth=width;c.beginPath();c.moveTo(wall,cy);var start=wall+8,finish=end-size/2,n=18;for(var i=0;i<=n;i++){var xx=start+(finish-start)*i/n,yy=cy+(i===0||i===n?0:(i%2?13:-13));c.lineTo(xx,yy);}c.lineTo(end-size/2,cy);c.stroke();}spring(px,'#9aa4b2',1.5);c.fillStyle='#9aa4b2';c.globalAlpha=.45;c.fillRect(px-size/2,cy-size/2,size,size);c.globalAlpha=1;spring(cx,'#2f6fe4',2.5);c.fillStyle='#2f6fe4';c.fillRect(cx-size/2,cy-size/2,size,size);c.strokeStyle=d?'#e8edf3':'#ffffff';c.lineWidth=1;c.strokeRect(cx-size/2,cy-size/2,size,size);c.fillStyle=fg;c.font='14px sans-serif';c.textAlign='center';c.fillText('real motion',wall+L,cy-76);c.fillStyle='#9aa4b2';c.fillText('formula prediction',wall+L,cy-54);c.fillStyle=fg;c.font='13px sans-serif';c.fillText('equilibrium',wall+L,cy+85);c.strokeStyle=grid;c.beginPath();c.moveTo(wall+L,cy-38);c.lineTo(wall+L,cy+55);c.stroke();}"
+   },
+   "predict": {
+    "p0": 2.575,
+    "p1": 5.15,
+    "q0": 3.188368318297062,
+    "q1": 4.509033717576825,
+    "options": [
+     "get smaller",
+     "stay the same",
+     "get larger"
+    ],
+    "answer": 2
+   },
+   "attempts": 1,
+   "at": 107.803
+  },
+  {
+   "card": "r2",
+   "also": [
+    {
+     "id": "r4",
+     "sentence": 72,
+     "t": 444,
+     "quote": "It'll be the same thing minus mgl sin θ, which I'm going to replace by θ. l is now the distance between the pivot point and the center of mass."
+    }
+   ],
+   "check": {
+    "model": "series",
+    "rule": "sin_x",
+    "claim": "approximately",
+    "param": "x",
+    "unit": "deg",
+    "quantity": "value",
+    "quantityUnit": "",
+    "range": [
+     0.1,
+     89
+    ],
+    "fixed": {},
+    "tol": 0.01,
+    "method": "exact function compared with the approximation",
+    "verdict": "breaks",
+    "limit": 13.98571045633723,
+    "notes": [],
+    "samples": [
+     {
+      "p": 0.1,
+      "rule": 0.0017453292519943296,
+      "exact": 0.0017453283658983088
+     },
+     {
+      "p": 2.3225000000000002,
+      "rule": 0.04053527187756831,
+      "exact": 0.04052417214946127
+     },
+     {
+      "p": 4.545,
+      "rule": 0.07932521450314228,
+      "exact": 0.07924204849156528
+     },
+     {
+      "p": 6.7675,
+      "rule": 0.11811515712871626,
+      "exact": 0.11784070747039592
+     },
+     {
+      "p": 8.99,
+      "rule": 0.15690509975429023,
+      "exact": 0.15626207852320348
+     },
+     {
+      "p": 11.2125,
+      "rule": 0.1956950423798642,
+      "exact": 0.1944483578117801
+     },
+     {
+      "p": 13.435,
+      "rule": 0.23448498500543818,
+      "exact": 0.2323420951866576
+     },
+     {
+      "p": 15.657499999999999,
+      "rule": 0.27327492763101213,
+      "exact": 0.2698862806191908
+     },
+     {
+      "p": 17.880000000000003,
+      "rule": 0.3120648702565862,
+      "exact": 0.307024429971492
+     },
+     {
+      "p": 20.102500000000003,
+      "rule": 0.35085481288216014,
+      "exact": 0.34370066997517734
+     },
+     {
+      "p": 22.325000000000003,
+      "rule": 0.38964475550773414,
+      "exact": 0.3798598222910792
+     },
+     {
+      "p": 24.547500000000003,
+      "rule": 0.4284346981333081,
+      "exact": 0.415447486523456
+     },
+     {
+      "p": 26.770000000000003,
+      "rule": 0.4672246407588821,
+      "exact": 0.45041012206381015
+     },
+     {
+      "p": 28.9925,
+      "rule": 0.506014583384456,
+      "exact": 0.48469512864118
+     },
+     {
+      "p": 31.215,
+      "rule": 0.5448045260100299,
+      "exact": 0.5182509254577218
+     },
+     {
+      "p": 33.4375,
+      "rule": 0.5835944686356039,
+      "exact": 0.551027028790524
+     },
+     {
+      "p": 35.660000000000004,
+      "rule": 0.6223844112611779,
+      "exact": 0.5829741279429034
+     },
+     {
+      "p": 37.88250000000001,
+      "rule": 0.661174353886752,
+      "exact": 0.6140441594309184
+     },
+     {
+      "p": 40.105000000000004,
+      "rule": 0.699964296512326,
+      "exact": 0.6441903792934859
+     },
+     {
+      "p": 42.3275,
+      "rule": 0.7387542391378998,
+      "exact": 0.6733674334173152
+     },
+     {
+      "p": 44.550000000000004,
+      "rule": 0.7775441817634738,
+      "exact": 0.7015314257708557
+     },
+     {
+      "p": 46.7725,
+      "rule": 0.8163341243890478,
+      "exact": 0.728639984444603
+     },
+     {
+      "p": 48.995000000000005,
+      "rule": 0.8551240670146218,
+      "exact": 0.7546523253984071
+     },
+     {
+      "p": 51.2175,
+      "rule": 0.8939140096401957,
+      "exact": 0.7795293138198784
+     },
+     {
+      "p": 53.440000000000005,
+      "rule": 0.9327039522657697,
+      "exact": 0.8032335230015779
+     },
+     {
+      "p": 55.6625,
+      "rule": 0.9714938948913437,
+      "exact": 0.8257292906484117
+     },
+     {
+      "p": 57.885,
+      "rule": 1.0102838375169176,
+      "exact": 0.8469827725305208
+     },
+     {
+      "p": 60.1075,
+      "rule": 1.0490737801424916,
+      "exact": 0.8669619934009422
+     },
+     {
+      "p": 62.33,
+      "rule": 1.0878637227680656,
+      "exact": 0.8856368951014407
+     },
+     {
+      "p": 64.5525,
+      "rule": 1.1266536653936394,
+      "exact": 0.9029793817841364
+     },
+     {
+      "p": 66.77499999999999,
+      "rule": 1.1654436080192134,
+      "exact": 0.9189633621808925
+     },
+     {
+      "p": 68.99749999999999,
+      "rule": 1.2042335506447874,
+      "exact": 0.933564788856871
+     },
+     {
+      "p": 71.22,
+      "rule": 1.2430234932703614,
+      "exact": 0.9467616943892014
+     },
+     {
+      "p": 73.44250000000001,
+      "rule": 1.2818134358959357,
+      "exact": 0.9585342244163312
+     },
+     {
+      "p": 75.665,
+      "rule": 1.3206033785215097,
+      "exact": 0.968864667508336
+     },
+     {
+      "p": 77.8875,
+      "rule": 1.3593933211470834,
+      "exact": 0.9777374818132533
+     },
+     {
+      "p": 80.11,
+      "rule": 1.3981832637726574,
+      "exact": 0.9851393184393472
+     },
+     {
+      "p": 82.3325,
+      "rule": 1.4369732063982312,
+      "exact": 0.991059041538129
+     },
+     {
+      "p": 84.55499999999999,
+      "rule": 1.4757631490238052,
+      "exact": 0.9954877450579179
+     },
+     {
+      "p": 86.77749999999999,
+      "rule": 1.5145530916493792,
+      "exact": 0.9984187661427381
+     },
+     {
+      "p": 89,
+      "rule": 1.5533430342749532,
+      "exact": 0.9998476951563913
+     }
+    ]
+   },
+   "lab": {
+    "title": "Small angles and sine",
+    "slider": "Angle",
+    "question": "Double the angle. Its sine will:",
+    "sim": "function probe(params) {\n  return Math.sin(params.x * Math.PI / 180);\n}\n\nfunction draw(ctx, state) {\n  const x = state.params.x;\n  const a = x * Math.PI / 180;\n  const w = state.w, h = state.h;\n  const ink = state.dark ? '#dbe3ee' : '#263242';\n  const faint = state.dark ? '#526071' : '#d5dbe3';\n  const blue = '#2f6fe4', gray = '#9aa4b2';\n  ctx.clearRect(0, 0, w, h);\n  ctx.lineCap = 'round';\n  ctx.lineJoin = 'round';\n\n  // A pendulum swings through the selected maximum angle.\n  const px = w * 0.23, py = h * 0.19;\n  const len = Math.min(w * 0.27, h * 0.60);\n  const swing = a * Math.cos(state.t * 1.7);\n  const bx = px + len * Math.sin(swing);\n  const by = py + len * Math.cos(swing);\n  ctx.strokeStyle = faint;\n  ctx.lineWidth = 1.5;\n  ctx.beginPath();\n  ctx.moveTo(px - len * 0.58, py);\n  ctx.lineTo(px + len * 0.58, py);\n  ctx.moveTo(px, py);\n  ctx.lineTo(px, py + len);\n  ctx.stroke();\n  ctx.beginPath();\n  ctx.arc(px, py, len, Math.PI / 2 - a, Math.PI / 2 + a);\n  ctx.stroke();\n  ctx.strokeStyle = gray;\n  ctx.beginPath();\n  ctx.moveTo(px, py);\n  ctx.lineTo(px, py + len);\n  ctx.stroke();\n  ctx.strokeStyle = blue;\n  ctx.lineWidth = 2.5;\n  ctx.beginPath();\n  ctx.moveTo(px, py);\n  ctx.lineTo(bx, by);\n  ctx.stroke();\n  ctx.fillStyle = blue;\n  ctx.beginPath();\n  ctx.arc(bx, by, 10, 0, Math.PI * 2);\n  ctx.fill();\n  ctx.fillStyle = ink;\n  ctx.beginPath();\n  ctx.arc(px, py, 4, 0, Math.PI * 2);\n  ctx.fill();\n\n  // Compare the exact sine curve with the small-angle straight line.\n  const left = w * 0.52, right = w * 0.94;\n  const top = h * 0.16, bottom = h * 0.80;\n  const gw = right - left, gh = bottom - top;\n  const ymax = Math.PI / 2;\n  const sx = function(v) { return left + gw * v / (Math.PI / 2); };\n  const sy = function(v) { return bottom - gh * v / ymax; };\n  ctx.strokeStyle = faint;\n  ctx.lineWidth = 1.5;\n  ctx.beginPath();\n  ctx.moveTo(left, top);\n  ctx.lineTo(left, bottom);\n  ctx.lineTo(right, bottom);\n  ctx.stroke();\n  ctx.strokeStyle = gray;\n  ctx.lineWidth = 2;\n  ctx.beginPath();\n  ctx.moveTo(sx(0), sy(0));\n  ctx.lineTo(sx(Math.PI / 2), sy(Math.PI / 2));\n  ctx.stroke();\n  ctx.strokeStyle = blue;\n  ctx.lineWidth = 3;\n  ctx.beginPath();\n  for (let i = 0; i <= 120; i++) {\n    const u = (Math.PI / 2) * i / 120;\n    const xx = sx(u), yy = sy(Math.sin(u));\n    if (i === 0) ctx.moveTo(xx, yy); else ctx.lineTo(xx, yy);\n  }\n  ctx.stroke();\n\n  const cx = sx(a), exactY = sy(Math.sin(a)), approxY = sy(a);\n  ctx.setLineDash([4, 5]);\n  ctx.lineWidth = 1.5;\n  ctx.strokeStyle = faint;\n  ctx.beginPath();\n  ctx.moveTo(cx, bottom);\n  ctx.lineTo(cx, approxY);\n  ctx.stroke();\n  ctx.strokeStyle = gray;\n  ctx.beginPath();\n  ctx.moveTo(left, approxY);\n  ctx.lineTo(cx, approxY);\n  ctx.stroke();\n  ctx.strokeStyle = blue;\n  ctx.beginPath();\n  ctx.moveTo(left, exactY);\n  ctx.lineTo(cx, exactY);\n  ctx.stroke();\n  ctx.setLineDash([]);\n  ctx.fillStyle = gray;\n  ctx.beginPath();\n  ctx.arc(cx, approxY, 5, 0, Math.PI * 2);\n  ctx.fill();\n  ctx.fillStyle = blue;\n  ctx.beginPath();\n  ctx.arc(cx, exactY, 6, 0, Math.PI * 2);\n  ctx.fill();\n\n  ctx.font = '14px sans-serif';\n  ctx.fillStyle = blue;\n  ctx.fillText('sin x', left + 8, top + 20);\n  ctx.fillStyle = gray;\n  ctx.fillText('x', right - 18, top + 20);\n  ctx.fillStyle = ink;\n  ctx.fillText('angle', (left + right) / 2 - 18, Math.min(h - 10, bottom + 30));\n}"
+   },
+   "predict": {
+    "p0": 22.325000000000003,
+    "p1": 44.650000000000006,
+    "q0": 0.3798598222910792,
+    "q1": 0.7027741454993749,
+    "options": [
+     "get smaller",
+     "stay the same",
+     "get larger"
+    ],
+    "answer": 2
+   },
+   "attempts": 1,
+   "at": 108.818
+  },
+  {
+   "card": "r3",
+   "also": [],
+   "check": {
+    "model": "pendulum",
+    "rule": "period_formula",
+    "claim": "equals_formula",
+    "param": "L_m",
+    "unit": "m",
+    "quantity": "period",
+    "quantityUnit": "s",
+    "range": [
+     0.1,
+     10
+    ],
+    "fixed": {
+     "m_kg": 1,
+     "amplitude_deg": 5
+    },
+    "tol": 0.01,
+    "method": "RK4 integration of the swing at the given amplitude",
+    "verdict": "holds",
+    "maxError": 0.00047594585397410885,
+    "maxErrorAt": 6.7,
+    "notes": [],
+    "samples": [
+     {
+      "p": 0.1,
+      "rule": 0.6343739849219413,
+      "exact": 0.6346760563594469
+     },
+     {
+      "p": 0.5125000000000001,
+      "rule": 1.4361251887707893,
+      "exact": 1.4368090320722902
+     },
+     {
+      "p": 0.925,
+      "rule": 1.9293731528395763,
+      "exact": 1.9302918672503542
+     },
+     {
+      "p": 1.3375000000000001,
+      "rule": 2.3200228378130934,
+      "exact": 2.3211275688557174
+     },
+     {
+      "p": 1.7500000000000002,
+      "rule": 2.6537767752865933,
+      "exact": 2.655040430771666
+     },
+     {
+      "p": 2.1625,
+      "rule": 2.950009555599219,
+      "exact": 2.9514142689837124
+     },
+     {
+      "p": 2.575,
+      "rule": 3.2190963923441145,
+      "exact": 3.2206292374763734
+     },
+     {
+      "p": 2.9875,
+      "rule": 3.4673630886134617,
+      "exact": 3.469014151516163
+     },
+     {
+      "p": 3.4000000000000004,
+      "rule": 3.6990041894211583,
+      "exact": 3.700765553442574
+     },
+     {
+      "p": 3.8125000000000004,
+      "rule": 3.9169704107168686,
+      "exact": 3.918835564256014
+     },
+     {
+      "p": 4.225,
+      "rule": 4.123430901992618,
+      "exact": 4.125394366336473
+     },
+     {
+      "p": 4.6375,
+      "rule": 4.3200356026986455,
+      "exact": 4.322092684791768
+     },
+     {
+      "p": 5.05,
+      "rule": 4.5080741801416755,
+      "exact": 4.5102208010313465
+     },
+     {
+      "p": 5.4625,
+      "rule": 4.688577398181269,
+      "exact": 4.690809969737573
+     },
+     {
+      "p": 5.874999999999999,
+      "rule": 4.8623845203575184,
+      "exact": 4.8646998540832
+     },
+     {
+      "p": 6.2875,
+      "rule": 5.030189701083709,
+      "exact": 5.032584939019174
+     },
+     {
+      "p": 6.7,
+      "rule": 5.192574855884584,
+      "exact": 5.195047417163982
+     },
+     {
+      "p": 7.1125,
+      "rule": 5.350033536253862,
+      "exact": 5.3525810750242355
+     },
+     {
+      "p": 7.525,
+      "rule": 5.50298864655536,
+      "exact": 5.5056090183410165
+     },
+     {
+      "p": 7.937499999999999,
+      "rule": 5.651805839658098,
+      "exact": 5.654497074096141
+     },
+     {
+      "p": 8.35,
+      "rule": 5.7968038136778075,
+      "exact": 5.7995640921617655
+     },
+     {
+      "p": 8.7625,
+      "rule": 5.938262343425539,
+      "exact": 5.94108998056926
+     },
+     {
+      "p": 9.175,
+      "rule": 6.0764286274440815,
+      "exact": 6.079322055570532
+     },
+     {
+      "p": 9.5875,
+      "rule": 6.211522363277633,
+      "exact": 6.214480119324145
+     },
+     {
+      "p": 10,
+      "rule": 6.343739849219413,
+      "exact": 6.346760563595067
+     }
+    ]
+   },
+   "lab": {
+    "title": "Length and the pendulum period",
+    "slider": "Pendulum length",
+    "question": "Make the pendulum twice as long. The period will:",
+    "sim": "const G=9.81;\nfunction ellipticK(k){\n  let a=1,b=Math.sqrt(1-k*k);\n  for(let i=0;i<12&&Math.abs(a-b)>1e-14;i++){\n    const n=(a+b)/2;b=Math.sqrt(a*b);a=n;\n  }\n  return Math.PI/(2*a);\n}\nfunction realPeriod(L,a){\n  return 4*Math.sqrt(L/G)*ellipticK(Math.sin(a/2));\n}\nfunction probe(params){\n  return realPeriod(params.L_m,params.amplitude_deg*Math.PI/180);\n}\nfunction draw(ctx,state){\n  const p=state.params,w=state.w,h=state.h,dark=state.dark;\n  const fg=dark?'#dce4ef':'#263445',faint=dark?'#536174':'#c6ccd4';\n  const blue='#2f6fe4',gray='#9aa4b2',a=p.amplitude_deg*Math.PI/180;\n  const T=realPeriod(p.L_m,a),omega=Math.sqrt(G/p.L_m);\n  const time=state.t%(2*T),steps=720,dt=time/steps;\n  let th=a,om=0;\n  for(let i=0;i<steps;i++){\n    const k1t=om,k1o=-G/p.L_m*Math.sin(th);\n    const k2t=om+k1o*dt/2,k2o=-G/p.L_m*Math.sin(th+k1t*dt/2);\n    const k3t=om+k2o*dt/2,k3o=-G/p.L_m*Math.sin(th+k2t*dt/2);\n    const k4t=om+k3o*dt,k4o=-G/p.L_m*Math.sin(th+k3t*dt);\n    th+=dt*(k1t+2*k2t+2*k3t+k4t)/6;\n    om+=dt*(k1o+2*k2o+2*k3o+k4o)/6;\n  }\n  const predicted=a*Math.cos(omega*time),cx=w/2,top=h*0.14;\n  const len=Math.min(h*0.52,w*0.65);\n  ctx.clearRect(0,0,w,h);\n  ctx.lineCap='round';\n  ctx.strokeStyle=faint;ctx.lineWidth=1;\n  ctx.beginPath();ctx.moveTo(cx-len*Math.sin(a),top);ctx.lineTo(cx+len*Math.sin(a),top);ctx.stroke();\n  ctx.beginPath();ctx.arc(cx,top,4,0,Math.PI*2);ctx.fillStyle=fg;ctx.fill();\n  ctx.setLineDash([5,5]);ctx.strokeStyle=gray;ctx.lineWidth=1.5;\n  ctx.beginPath();ctx.moveTo(cx,top);ctx.lineTo(cx+len*Math.sin(predicted),top+len*Math.cos(predicted));ctx.stroke();\n  ctx.setLineDash([]);\n  ctx.fillStyle=gray;ctx.beginPath();ctx.arc(cx+len*Math.sin(predicted),top+len*Math.cos(predicted),9,0,Math.PI*2);ctx.fill();\n  ctx.strokeStyle=blue;ctx.lineWidth=3;\n  ctx.beginPath();ctx.moveTo(cx,top);ctx.lineTo(cx+len*Math.sin(th),top+len*Math.cos(th));ctx.stroke();\n  ctx.fillStyle=blue;ctx.beginPath();ctx.arc(cx+len*Math.sin(th),top+len*Math.cos(th),12,0,Math.PI*2);ctx.fill();\n  const x0=w*0.12,x1=w*0.88,y0=h*0.82,mid=h*0.91;\n  ctx.strokeStyle=faint;ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(x0,mid);ctx.lineTo(x1,mid);ctx.stroke();\n  function curve(rule,color,dash){\n    ctx.strokeStyle=color;ctx.lineWidth=2;ctx.setLineDash(dash);ctx.beginPath();\n    for(let i=0;i<=180;i++){\n      const u=i/180,ang=rule?a*Math.cos(omega*u*T):a*Math.cos(2*Math.PI*u);\n      const x=x0+(x1-x0)*u,y=mid-ang/a*(mid-y0);\n      if(i===0)ctx.moveTo(x,y);else ctx.lineTo(x,y);\n    }\n    ctx.stroke();ctx.setLineDash([]);\n  }\n  curve(true,gray,[4,4]);curve(false,blue,[]);\n}"
+   },
+   "predict": {
+    "p0": 2.575,
+    "p1": 5.15,
+    "q0": 3.2206292374763734,
+    "q1": 4.554657547014384,
+    "options": [
+     "get smaller",
+     "stay the same",
+     "get larger"
+    ],
+    "answer": 2
+   },
+   "attempts": 1,
+   "at": 107.969
+  },
+  {
+   "card": "r5",
+   "also": [],
+   "check": {
+    "model": "spring",
+    "rule": "period_formula",
+    "claim": "equals_formula",
+    "param": "m_kg",
+    "unit": "kg",
+    "quantity": "period",
+    "quantityUnit": "s",
+    "range": [
+     0.1,
+     10
+    ],
+    "fixed": {
+     "k_Nm": 10,
+     "amplitude_m": 0.1,
+     "k3_Nm3": 0
+    },
+    "tol": 0.01,
+    "method": "RK4 integration of the spring motion",
+    "verdict": "holds",
+    "maxError": 1.2579141756728813e-13,
+    "maxErrorAt": 4.6375,
+    "notes": [],
+    "samples": [
+     {
+      "p": 0.1,
+      "rule": 0.6283185307179586,
+      "exact": 0.6283185307179905
+     },
+     {
+      "p": 0.5125000000000001,
+      "rule": 1.4224165712699353,
+      "exact": 1.4224165712698795
+     },
+     {
+      "p": 0.925,
+      "rule": 1.9109562078716147,
+      "exact": 1.9109562078714593
+     },
+     {
+      "p": 1.3375000000000001,
+      "rule": 2.2978769232887144,
+      "exact": 2.2978769232887486
+     },
+     {
+      "p": 1.7500000000000002,
+      "rule": 2.6284449929116933,
+      "exact": 2.628444992911533
+     },
+     {
+      "p": 2.1625,
+      "rule": 2.9218500657874786,
+      "exact": 2.921850065787405
+     },
+     {
+      "p": 2.575,
+      "rule": 3.1883683182973135,
+      "exact": 3.188368318297062
+     },
+     {
+      "p": 2.9875,
+      "rule": 3.4342651702077083,
+      "exact": 3.4342651702079197
+     },
+     {
+      "p": 3.4000000000000004,
+      "rule": 3.6636951272562963,
+      "exact": 3.6636951272561773
+     },
+     {
+      "p": 3.8125000000000004,
+      "rule": 3.8795807391600023,
+      "exact": 3.879580739159522
+     },
+     {
+      "p": 4.225,
+      "rule": 4.084070449666731,
+      "exact": 4.084070449666415
+     },
+     {
+      "p": 4.6375,
+      "rule": 4.278798448632601,
+      "exact": 4.27879844863314
+     },
+     {
+      "p": 5.05,
+      "rule": 4.465042092769171,
+      "exact": 4.465042092769173
+     },
+     {
+      "p": 5.4625,
+      "rule": 4.6438223067189215,
+      "exact": 4.643822306718767
+     },
+     {
+      "p": 5.874999999999999,
+      "rule": 4.815970342782437,
+      "exact": 4.815970342782035
+     },
+     {
+      "p": 6.2875,
+      "rule": 4.982173729281199,
+      "exact": 4.982173729281261
+     },
+     {
+      "p": 6.7,
+      "rule": 5.1430088270310685,
+      "exact": 5.143008827031007
+     },
+     {
+      "p": 7.1125,
+      "rule": 5.298964476300933,
+      "exact": 5.29896447630121
+     },
+     {
+      "p": 7.525,
+      "rule": 5.450459544596122,
+      "exact": 5.4504595445959145
+     },
+     {
+      "p": 7.937499999999999,
+      "rule": 5.597856194424676,
+      "exact": 5.5978561944240495
+     },
+     {
+      "p": 8.35,
+      "rule": 5.741470081750706,
+      "exact": 5.741470081751158
+     },
+     {
+      "p": 8.7625,
+      "rule": 5.881578310778341,
+      "exact": 5.881578310778743
+     },
+     {
+      "p": 9.175,
+      "rule": 6.018425720402134,
+      "exact": 6.01842572040212
+     },
+     {
+      "p": 9.5875,
+      "rule": 6.152229911030446,
+      "exact": 6.152229911030609
+     },
+     {
+      "p": 10,
+      "rule": 6.283185307179586,
+      "exact": 6.283185307179887
+     }
+    ]
+   },
+   "lab": {
+    "title": "Mass and the spring period",
+    "slider": "Mass",
+    "question": "Double the mass. The period will:",
+    "sim": "function probe(params) {\n  const m = params.m_kg, k = params.k_Nm, k3 = params.k3_Nm3;\n  let x = params.amplitude_m, v = 0;\n  const omega0 = Math.sqrt(k / m);\n  const dt = 0.005 / omega0;\n  let t = 0;\n  function acceleration(x) { return -(k * x + k3 * x * x * x) / m; }\n  for (let i = 0; i < 1000000; i++) {\n    const oldX = x;\n    const a1 = v, b1 = acceleration(x);\n    const a2 = v + 0.5 * dt * b1, b2 = acceleration(x + 0.5 * dt * a1);\n    const a3 = v + 0.5 * dt * b2, b3 = acceleration(x + 0.5 * dt * a2);\n    const a4 = v + dt * b3, b4 = acceleration(x + dt * a3);\n    x += dt * (a1 + 2 * a2 + 2 * a3 + a4) / 6;\n    v += dt * (b1 + 2 * b2 + 2 * b3 + b4) / 6;\n    t += dt;\n    if (oldX < 0 && x >= 0 && v > 0) {\n      const crossing = t - dt + dt * (-oldX) / (x - oldX);\n      return 4 * crossing / 3;\n    }\n  }\n  return NaN;\n}\n\nfunction draw(ctx, state) {\n  const p = state.params, w = state.w, h = state.h, dark = state.dark;\n  const bg = dark ? '#11161d' : '#f7f9fc';\n  const line = dark ? '#738096' : '#667085';\n  const faint = dark ? '#2c3542' : '#dce2ea';\n  ctx.fillStyle = bg;\n  ctx.fillRect(0, 0, w, h);\n  const m = p.m_kg, k = p.k_Nm, A = p.amplitude_m;\n  const omega = Math.sqrt(k / m);\n  const phase = omega * state.t;\n  const x = A * Math.cos(phase);\n  const cy = h * 0.38;\n  const wallX = w * 0.13;\n  const restX = w * 0.61;\n  const scale = w * 0.25 / Math.max(A, 0.001);\n  const massSize = 28 + 10 * Math.cbrt(m);\n  const massX = restX + x * scale;\n\n  ctx.strokeStyle = line;\n  ctx.lineWidth = 3;\n  ctx.beginPath();\n  ctx.moveTo(wallX, cy - 65);\n  ctx.lineTo(wallX, cy + 65);\n  ctx.stroke();\n  ctx.lineWidth = 1;\n  for (let y = cy - 60; y < cy + 65; y += 10) {\n    ctx.beginPath();\n    ctx.moveTo(wallX - 9, y + 8);\n    ctx.lineTo(wallX, y);\n    ctx.stroke();\n  }\n\n  ctx.strokeStyle = '#9aa4b2';\n  ctx.setLineDash([5, 5]);\n  ctx.strokeRect(massX - massSize / 2, cy - massSize / 2, massSize, massSize);\n  ctx.setLineDash([]);\n\n  const springEnd = massX - massSize / 2;\n  const coils = 12;\n  ctx.strokeStyle = line;\n  ctx.lineWidth = 2;\n  ctx.beginPath();\n  ctx.moveTo(wallX + 4, cy);\n  for (let i = 0; i <= coils * 2; i++) {\n    const sx = wallX + 4 + (springEnd - wallX - 4) * i / (coils * 2);\n    const sy = cy + (i === 0 || i === coils * 2 ? 0 : (i % 2 ? -13 : 13));\n    ctx.lineTo(sx, sy);\n  }\n  ctx.stroke();\n\n  ctx.fillStyle = '#2f6fe4';\n  ctx.fillRect(massX - massSize / 2, cy - massSize / 2, massSize, massSize);\n  ctx.strokeStyle = dark ? '#a9c4f5' : '#174fae';\n  ctx.lineWidth = 1.5;\n  ctx.strokeRect(massX - massSize / 2, cy - massSize / 2, massSize, massSize);\n\n  ctx.strokeStyle = faint;\n  ctx.lineWidth = 1;\n  ctx.setLineDash([3, 5]);\n  ctx.beginPath();\n  ctx.moveTo(restX, cy - 80);\n  ctx.lineTo(restX, cy + 80);\n  ctx.stroke();\n  ctx.setLineDash([]);\n\n  const gx = w * 0.1, gw = w * 0.8, gy = h * 0.72, gh = h * 0.17;\n  ctx.strokeStyle = faint;\n  ctx.beginPath();\n  ctx.moveTo(gx, gy);\n  ctx.lineTo(gx + gw, gy);\n  ctx.stroke();\n\n  function graph(color, dash) {\n    ctx.strokeStyle = color;\n    ctx.lineWidth = 2;\n    ctx.setLineDash(dash);\n    ctx.beginPath();\n    for (let i = 0; i <= 140; i++) {\n      const u = i / 140;\n      const xx = gx + u * gw;\n      const yy = gy - gh * Math.cos(phase - 2 * Math.PI * (1 - u));\n      if (i === 0) ctx.moveTo(xx, yy); else ctx.lineTo(xx, yy);\n    }\n    ctx.stroke();\n    ctx.setLineDash([]);\n  }\n  graph('#9aa4b2', [6, 5]);\n  graph('#2f6fe4', []);\n  ctx.fillStyle = '#2f6fe4';\n  ctx.beginPath();\n  ctx.arc(gx + gw, gy - gh * Math.cos(phase), 4, 0, 2 * Math.PI);\n  ctx.fill();\n}"
+   },
+   "predict": {
+    "p0": 2.575,
+    "p1": 5.15,
+    "q0": 3.188368318297062,
+    "q1": 4.509033717576825,
+    "options": [
+     "get smaller",
+     "stay the same",
+     "get larger"
+    ],
+    "answer": 2
+   },
+   "attempts": 1,
+   "at": 110.349
+  }
+ ],
+ "skipped": [],
+ "timings": {
+  "cards": 60.319,
+  "firstTile": 107.803,
+  "wallSeconds": 110.349
+ },
+ "merged": 1,
+ "tokens": {
+  "in": 34468,
+  "out": 9850
+ },
+ "id": "oyc-phys200-17-2026-11-21T20-58-53-585Z-ab23a1",
+ "lecture": "oyc-phys200-17",
+ "duration": 4338,
+ "runLog": {
+  "file": "data/runs/oyc-phys200-17-2026-11-21T20-58-53-585Z-ab23a1.jsonl",
+  "sha256": "9cfab1665dc50019f8a6e7e3a7992ad05612934f5dda26b51d8a1d4d89511fc2"
+ }
+}
