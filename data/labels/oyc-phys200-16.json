@@ -1,0 +1,225 @@
+{
+ "lecture": "oyc-phys200-16",
+ "transcriptHash": "2867fc9af1b1391173257497e2ef7f05b85a67ac16fcb91e8c969c9a98bcb0fb",
+ "labelledBy": "hand, from a full reading of the transcript",
+ "labelledAt": "2026-11-21T20:18:26.380Z",
+ "labels": [
+  {
+   "id": "oyc-phys200-16#1",
+   "sentences": [
+    143,
+    144
+   ],
+   "t": 885,
+   "minute": 14,
+   "quotes": [
+    "That's why we get this famous result we've been using all the time.",
+    "If x is small enough you stop there, because the next time it's going to involve an x2 and an x3, then if x is tiny, we have no respect for x2 and x3, we just cut it off."
+   ],
+   "model": "series",
+   "rule": "binomial_x",
+   "inLibrary": true,
+   "note": "(1 + x)^n ≈ 1 + nx for small x"
+  },
+  {
+   "id": "oyc-phys200-16#2",
+   "sentences": [
+    154,
+    155
+   ],
+   "t": 961,
+   "minute": 16,
+   "quotes": [
+    "If you expand this in a power series, you're going to get mc2 + ½ mv2, plus stuff involving v to the 4th over c to the 4th times c2.",
+    "We dropped all this, and for 300 years we did mechanics keeping just this term."
+   ],
+   "model": "relativity",
+   "rule": "ke_classical",
+   "inLibrary": true,
+   "note": "relativistic energy expands to mc² + ½mv²"
+  },
+  {
+   "id": "oyc-phys200-16#3",
+   "sentences": [
+    211,
+    213
+   ],
+   "t": 1277,
+   "minute": 21,
+   "quotes": [
+    "In the beginning, 1 minus x2 looks very good.",
+    "But eventually, this approximation will go bad on you, because x to the 4th is just x to the 4th."
+   ],
+   "model": "series",
+   "rule": "cos_x",
+   "inLibrary": true,
+   "note": "1 − x²/2 approximates cos x near 0, then goes bad"
+  },
+  {
+   "id": "oyc-phys200-16#4",
+   "sentences": [
+    481
+   ],
+   "t": 2971,
+   "minute": 49,
+   "quotes": [
+    "Kinetic energy is ½ mv2."
+   ],
+   "model": "relativity",
+   "rule": "ke_classical",
+   "inLibrary": true,
+   "note": "kinetic energy is ½mv² (Newtonian)"
+  },
+  {
+   "id": "oyc-phys200-16#5",
+   "sentences": [
+    515,
+    543,
+    544
+   ],
+   "t": 3155,
+   "minute": 52,
+   "quotes": [
+    "And we would like to write it as follows: d2x over dt2 is equal to minus ω2 x, where ω is the shorthand for squared root of k over m.",
+    "So, if you pull a mass and you let it go, it oscillates with a frequency which is connected to the force constant and the mass.",
+    "If the spring is very stiff and k is very large, frequency is very high."
+   ],
+   "model": "spring",
+   "rule": "period_formula",
+   "inLibrary": true,
+   "note": "ω = √(k/m): frequency set by k and m"
+  },
+  {
+   "id": "oyc-phys200-16#6",
+   "sentences": [
+    551,
+    552,
+    560
+   ],
+   "t": 3351,
+   "minute": 55,
+   "quotes": [
+    "You are told whether you pull the spring by one inch or by ten inches, the time it takes to finish a full back and forth motion is independent of A.",
+    "This frequency here is independent of A.",
+    "So, the remarkable property of simple harmonic motion is that the amplitude does not determine the time period."
+   ],
+   "model": "spring",
+   "rule": "amplitude_independence",
+   "inLibrary": true,
+   "note": "period independent of amplitude; an x³ term breaks it (564)"
+  },
+  {
+   "id": "oyc-phys200-16#7",
+   "sentences": [
+    635,
+    637
+   ],
+   "t": 3814,
+   "minute": 63,
+   "quotes": [
+    "And by magic, sin2 and cos2 will have the same coefficient, so you can use the identity to set them equal to 1, and get an answer that does not depend on time.",
+    "Even though position and velocity are constantly changing, this combination, if you crank it out, will not depend on time."
+   ],
+   "model": "spring",
+   "rule": "energy_conservation",
+   "inLibrary": true,
+   "note": "½mv² + ½kx² does not depend on time"
+  },
+  {
+   "id": "oyc-phys200-16#8",
+   "sentences": [
+    687
+   ],
+   "t": 4106,
+   "minute": 68,
+   "quotes": [
+    "So, for small angles, sin θ is θ, and the restoring torque, in fact, is linear in the angle of the coordinate."
+   ],
+   "model": "series",
+   "rule": "sin_x",
+   "inLibrary": true,
+   "note": "for small angles sin θ is θ"
+  },
+  {
+   "id": "oyc-phys200-16#9",
+   "sentences": [
+    700
+   ],
+   "t": 4171,
+   "minute": 69,
+   "quotes": [
+    "So, you get back the famous formula you learned, T is 2π square root of l over g."
+   ],
+   "model": "pendulum",
+   "rule": "period_formula",
+   "inLibrary": true,
+   "note": "T = 2π√(l/g)"
+  },
+  {
+   "id": "oyc-phys200-16#10",
+   "sentences": [
+    705,
+    706,
+    708,
+    709
+   ],
+   "t": 4204,
+   "minute": 70,
+   "quotes": [
+    "What that means is, if you took a real pendulum with a massless rod and a bob at the end, the time it takes to finish an oscillation, in fact, will depend on the amplitude.",
+    "But only for small oscillations, when sin θ can be approximated by θ, you will find whether you do that the time is the same.",
+    "The period of a pendulum, in fact, is not just a function of l and g, but also a function of the amplitude.",
+    "Only for small amplitudes, you get this marvelous result."
+   ],
+   "model": "pendulum",
+   "rule": "amplitude_independence",
+   "inLibrary": true,
+   "note": "period depends on amplitude; same only for small swings"
+  },
+  {
+   "id": "oyc-phys200-16#11",
+   "sentences": [
+    137
+   ],
+   "t": 846,
+   "minute": 14,
+   "quotes": [
+    "One guy can use 1over 1 minus x; the other one can use the infinite series, and they're morally and mathematically in every sense equal, as long as they don't stray outside the region of validity of the infinite series."
+   ],
+   "model": null,
+   "rule": null,
+   "inLibrary": false,
+   "note": "1/(1 − x) equals its series inside |x| < 1 (not in library)"
+  },
+  {
+   "id": "oyc-phys200-16#12",
+   "sentences": [
+    196
+   ],
+   "t": 1201,
+   "minute": 20,
+   "quotes": [
+    "That's something I'm not proving, but the series for ex, no limits on validity."
+   ],
+   "model": null,
+   "rule": null,
+   "inLibrary": false,
+   "note": "the series for eˣ has no limits on validity (exact, not an approximation)"
+  },
+  {
+   "id": "oyc-phys200-16#13",
+   "sentences": [
+    227
+   ],
+   "t": 1366,
+   "minute": 22,
+   "quotes": [
+    "So, these are series for ex, cos x, and sin x, good for all x."
+   ],
+   "model": null,
+   "rule": null,
+   "inLibrary": false,
+   "note": "series for eˣ, cos x, sin x good for all x (exact)"
+  }
+ ]
+}

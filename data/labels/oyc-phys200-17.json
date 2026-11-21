@@ -1,0 +1,83 @@
+{
+ "lecture": "oyc-phys200-17",
+ "transcriptHash": "cd48518872258f563024300bfc1f0ba98ee355bd44e79c7950a380c1f9d54650",
+ "labelledBy": "hand, from a full reading of the transcript",
+ "labelledAt": "2026-11-21T20:18:26.387Z",
+ "labels": [
+  {
+   "id": "oyc-phys200-17#1",
+   "sentences": [
+    72
+   ],
+   "t": 444,
+   "minute": 7,
+   "quotes": [
+    "It'll be the same thing minus mgl sin θ, which I'm going to replace by θ. l is now the distance between the pivot point and the center of mass."
+   ],
+   "model": "series",
+   "rule": "sin_x",
+   "inLibrary": true,
+   "note": "replace sin θ by θ for the swinging body"
+  },
+  {
+   "id": "oyc-phys200-17#2",
+   "sentences": [
+    329
+   ],
+   "t": 1827,
+   "minute": 30,
+   "quotes": [
+    "A and B are whatever you like, but ω0 is the original root of k/m."
+   ],
+   "model": "spring",
+   "rule": "period_formula",
+   "inLibrary": true,
+   "note": "ω0 is √(k/m)"
+  },
+  {
+   "id": "oyc-phys200-17#3",
+   "sentences": [
+    577
+   ],
+   "t": 3295,
+   "minute": 54,
+   "quotes": [
+    "But if you wait long enough this exponential will start coming into play and the way to think about it is, it's an oscillation whose amplitude itself falls with time."
+   ],
+   "model": null,
+   "rule": null,
+   "inLibrary": false,
+   "note": "damped oscillation: amplitude falls with time (not in library)"
+  },
+  {
+   "id": "oyc-phys200-17#4",
+   "sentences": [
+    594
+   ],
+   "t": 3389,
+   "minute": 56,
+   "quotes": [
+    "Nothing oscillates, everything falls exponentially with time."
+   ],
+   "model": null,
+   "rule": null,
+   "inLibrary": false,
+   "note": "over-damped: nothing oscillates (not in library)"
+  },
+  {
+   "id": "oyc-phys200-17#5",
+   "sentences": [
+    613
+   ],
+   "t": 3488,
+   "minute": 58,
+   "quotes": [
+    "It's a new function, not an exponential but t times an exponential will solve the equation."
+   ],
+   "model": null,
+   "rule": null,
+   "inLibrary": false,
+   "note": "critical damping: t·e^(−γt/2) solves the equation (not in library)"
+  }
+ ]
+}

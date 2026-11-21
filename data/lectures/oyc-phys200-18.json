@@ -1,0 +1,4675 @@
+{
+ "id": "oyc-phys200-18",
+ "source": {
+  "url": "https://oyc.yale.edu/physics/phys-200/lecture-18",
+  "licence": "CC BY-NC-SA 3.0",
+  "licenceUrl": "https://creativecommons.org/licenses/by-nc-sa/3.0/",
+  "credit": "Lecture: Prof. Ramamurti Shankar, Fundamentals of Physics I (PHYS 200), Open Yale Courses, CC BY-NC-SA 3.0",
+  "fetched": "2026-11-21"
+ },
+ "title": "PHYS 200 - Lecture 18 - Simple Harmonic Motion (cont.) and Introduction to Waves",
+ "course": "Fundamentals of Physics I",
+ "speaker": "Professor Ramamurti Shankar",
+ "chapters": [
+  {
+   "title": "Chapter 1. Free Vibration: Oscillation Under F=0",
+   "t": 0,
+   "text": "Okay, so what problem were we trying to solve? We were trying to solve the problem of masses, coupled to springs, and acted upon by various forces. And the equation that we need is the following [writes equation on the board]. So, this is the most general problem we looked at. This is F0. I might have just called it F last time. It doesn't matter; it's a matter of this symbols, okay? Alright. Let us first divide everything by m. Divide everything by m, then it becomes x double dot, plus γx dot, plus ω02x, equals F0 over m, cos ωt. I'm using the fact that ω0 was defined as the root of k over n. We used to call it ω, but now I'm calling it ω0, and you should understand why I'm doing that, because there are now two ωs in the problem. There is, the ω of the driving force, so you should imagine an oscillatory force grabbing this mass and moving it back and forth. ω0 is the natural frequency of the mass. If you pull the spring and let it go, that's the frequency that it will vibrate. There are really the natural frequency that is fixed by k and m and ω is for you to decide. You can decide to apply to it any force you like of any frequency. So first, take the easy case in which the right-hand side is 0. No driving force. So, I'm saying let's consider a simple case, F0, or F, the applied force vanishes. That's the problem I spent a considerable amount of time on yesterday. You can say, \"Well, if there's no driving force, why does anything move?\" That's actually correct. If you took a mass in a spring and didn't do anything to it, the solution of this equation is x = 0, and that is fine. But it also has interesting non-trivial solutions because you can pull the mass and then let it go. After you let it go, there are no forces on the system except the force of friction and the force of the spring, and that is this problem. Now, how do you solve this problem? I told you the way you solve this problem is you make a guess: x of t is some number, A times e to the αt. See if it'll work. And you find it will work and you can do this in your head. I certainly don't want to repeat all of that. The reason it's going to work is that every time you take derivative of x, you bring down an α, and still keep e to the αt. So, when you put that guess into this equation, you're going to get α2 plus γα, plus ω0 square times A, e to the αt equal to 0. And if this is going to vanish, it's not because of A and it's not because of the αt, it's because this guy in brackets is going to vanish. So, when that's 0, you all recognize this to be a quadratic equation. You go back to your days in the sand box [earlier in the course or your life] when you all knew what the answer to this is; the answer to this is minus γ over two, plus or minus γ over two square, minus ω0 square. These are the roots. Now here, you have to look at--So anyway, what does this mean? This means that yes, you can find a solution to this equation that looks like A to the αt; A can be any number you like. No restriction is placed on A. But α cannot be any number you like. α has to be the solution to this quadratic equation and there are two solutions. So, you can call them α plus and α minus. That's when I branched off into two different cases. Case one, you can see look, many of the quadratic equations, you know the way it's going to fall out is depending on whether the stuff inside the bracket is positive or negative. So, let's take the easier case when it's positive, that means γ over two is bigger than ω0n. γ, you remember, is the force of friction so we want it to be not only non-zero, but bigger than this amount controlled by the natural frequency. In that case, let's not go into details, but you can all see you put whatever value you have for γ, the square root of this is some number. The whole thing is going to be two real choices you get. One will be minus γ over 2, plus whatever is inside the square root. The other will be minus γ over 2, minus what you have in the square root. The only thing I want you to notice is that both these roots are negative. This guy's obviously negative because it's a minus γ over 2 minus something else, that's definitely negative. You have a little [inaudible] worried [inaudible] here, that this is minus γ over two and this is plus something. But the plus something is smaller than the minus something, because what's inside the square root is γ over 2 square. If you took the square root of that you'll get exactly γ over 2. But you're taking away from it, this number; therefore, this square root is smaller than this number, so the overall thing will still come out negative. So, why am I so eager that it should come out negative? Why am I eager that the root should be negative? Yes? [inaudible] No, even if I had positive, if I took two derivatives, it would work out. Yes? Because if alpha is greater than one, then the e won't converge to cosine. Won't converge to what? The cosine function? This is not a cosine function. This is never going to be. A cosine function is related to e to the iωt or e to ix. These are all real exponentials, yes? If alpha is positive t goes up [inaudible] Yeah, that's our main problem. When you write exponential function--;Usually, people write exponentials like this, for population growth. Everyone says our problems are increasing exponentially, they always think of exponentials as rising. Of course, it's also possible that if α were a negative number, you could write it as A times the absolute value of α just to show you it's a falling exponential. And we have a stomach only for falling exponentials. You've got to think if I pull this mass and I let it go, I expect x to go down from whatever value I have, not to keep growing indefinitely. That doesn't make any physical sense. And one of the great things about the union of mathematics and physics is the equation automatically works out that way. It gives you an answer that makes sense. Okay, so what you get then is a solution that looks like this. One number A times e to one of the roots plus another number, B, times e to the other root. I wrote them--they're both e to the αt, but I write it as minus the absolute value so you can all see they're falling exponentials. You understand if a number is negative, like negative five, that can be written as minus one times the absolute value of the number. So, it is e to the the αt, but I want to write it in this form, so it's falling. So, this is a case where if you pull the mass and you let it go, it will just relax eventually coming to x = 0, which is its normal equilibrium location."
+  },
+  {
+   "title": "Chapter 2. Initial Conditions at Start of Oscillation",
+   "t": 500,
+   "text": "Now, how about the numbers A and B? Right now, they're completely arbitrary. And another thing you guys should know by now is how we find A and B. In order to find A and B, we need to be given more information other than simply the mass and the spring constant. They're all sitting here, and the friction coefficient, but that's not enough to tell you what it does on a given day. It wants to know, well, yes, it's the mass, there's that the spring, but did you pull it or did you release it in this way or that way? That's what controls the answer. They're called initial conditions. One initial condition is what was the value of x at time, t = 0? That's asking you how much you pulled it when you let it go. The other initial condition is, what is the velocity? Namely, the derivative of x at time 0. Most of the time, what you will find as you pull the mass and release it, then it's got a non-0 x and a 0 velocity. But it doesn't have to be that way because I could have pulled it and released it at t = 0, starting to move inwards, and that's when you jump in and you set your clocks to 0. Well at that instant, x has a value and the velocity also has a non-0 value. They don't all have to be 0, but they are some two numbers that you can pick at will. You can see that if I put t = 0, I'm going to get A times e to the 0, which is one. I'm going to get A + B is x(0). That's one condition on A and B. I will take a derivative, namely, find the velocity, then put T = 0, and set that equal to some pre-assigned number, you'll get a second equation for A and B, and we all know we can solve those two equations to find A and B. That's how you fit these three parameters to the solution tailor-made for that particular situation. You should also ask another question. Why is it that I can pick these numbers, x0 and v0, but why not keep going? Maybe they're the acceleration of times 0 is some number. Why is that not up to me to decide? Can anyone tell me why that's not negotiable? Yes? [inaudible] Depends upon what? Can I pick the acceleration of a body at will? Yes? [inaudible] Yeah, I'm not sure I heard the exact answer but it sounds close enough to what I had in mind, which is Newton will tell you what the acceleration of a body is, namely mass times acceleration is the force, and the force, once it's given in any given problem, which is given by where the body is, and what the velocity is in this example, you have no choice on what the acceleration is. But initial position and velocity are not given by Newton's law. Newton's law says, if the force is so and so, the acceleration is so and so, but he doesn't tell you what should be the velocity at a given time, what should be the position at a given time. That's why they are two free numbers, that's why you have an answer with two free numbers that you can pick to bring it in accord with these two numbers. Okay, this solution to the equation with F = 0 from now on, I'm going to call xc, where c stands for the complimentary function. Now, there's another thing that could have happened here, which is in fact another alternative. You can think about what I'm saying. The other alternative is when this γ over 2 is smaller than this ω0. Then, of course, you have the square root of a negative number. So, then you go back to the stage where you're finding the root, and you say α equals minus γ over two, plus or minus the square root of γ over two2 minus ω02, but that number is negative. So, that can be returned as a negative sign, times the square root of this number, and the square root of minus one will come out as an i out front. So, either you will get two real roots, this is a mathematical result, it has nothing to do with physics, a quadratic equation with real coefficients either will have two real roots, or it will have two roots which are complex conjugates of each other. You learned the notion of complex conjugation, which is to exchange i to minus i, you can see the α plus and α minus have the same real part, minus γ over 2, and have opposite imaginary parts. So, in this example, α plus is the complex conjugate of α minus and I've told you this relationship works both ways; therefore, α minus is a complex conjugate of α plus. So, what's the solution going to look like? It's going to look like Ae to the minus γt over two, e to the iω ′ t, but I'm going to call this fellow in brackets as ω′. Then, there's the second solution. The real part is exactly the same, the imaginary part is opposite, minus iω′ t. ω′ is a new frequency connected to the natural frequency and the frictional force. That's why, we've got three ωs. We've got to keep that in mind. ω0 is a natural frequency of vibration. If I have a driving force, I reserve the symbol ω for the frequency of the driving force. Here is yet another quantity with units of frequency which I'm calling ω′. So, what does this guy look like? But first of all, it's full of complex numbers and we don't like it. We know the oscillator should have a real coordinate, so you ask, I've not picked A and B yet, how shall I pick them so that x is real? Well, forget A and B for a minute and look at this number and this number. Do you guys realize that they're complex conjugates of each other, because i has gone to minus i. So for example, if A and B were equal numbers, this would be a real number because number plus its conjugate, you killed imaginary part because they have opposite imaginary parts. So, A and B real [and equal as stated above] is a good answer, but it's too restrictive. All we will demand is that if A looks like absolute value of A times e to the iφ, B should look like the absolute value of A times e to the minus iφ. In other words, B should be the complex conjugate of A. That means the same absolute value, but opposite phase. I remind you, in the complex plane, if a number z is sitting there, the complex conjugate is sitting here, they have opposite angles, φ. So, if you do that, then you get A absolute value, e to the minus γ over two, times e to the iω′ t plus φ, plus e to the minus iω′ t plus φ. Now we have made it real. A and B, both being fully real means this φ is 0, but you see φ doesn't really have to be 0. That is too much of a restriction. φ can be whatever you like provided the φ that A has, the phase that A has, is the same [correction: should have said \"minus\"] the phase that B has. That means the angle in the complex plane of the number A and the number B have to be opposite of each other. This, you guys should know what it is. I've told you many times. This is unforgivable if you don't know what this is. e to iθ, plus e to the minus iθ over two, is cos θ. Since you don't have the over two, you can write it as 2A, e to the minus γ over two, cosine of whatever is in here, ω′ t plus φ. At this point, I'm going to change my notation a little bit in view of what's to come. Instead of calling this φ, I'm going to call it φ0. Alright, because another φ is going to come in and I want to separate those two. So, two times A is a new number, I'm going to call that C, and this is the bottom line. The answer looks like e to the minus γt over two, cos ω′ t plus φ0. So, we had done all this yesterday. I've given you the notes, but I want you to understand where we're going with all of this. If you pull a mass and let it go, it turns out there are two things that can happen. I really wish I had time to bring you these different masses and show you. If you have no friction, everyone knows what's going to happen. You pull the mass and let it go; it oscillates forever. In real life, there's always some friction, so let's turn on a little friction. What'll happen is what's very familiar and expected. We start with an amplitude of five, go to four, go to three, go to two, rock back and forth and slowly it may wiggle around but you won't be able to see it. That's called a damped oscillation. That's really what's described by this solution. Here, it looks like a cosine of something, but the number in front of it itself is falling with time. And the picture for that will look like the following: if you just draw an exponentially falling function as your amplitude, and you multiply that by an oscillating cosine it will do this. This is a damped oscillation. But another extreme case which you may not think about is, if you crank up the friction more, 'till γ over two is bigger than ω0, then what happens is if you pull the mass and let it go, it doesn't even go to the other side of x = 0. It just slowly gets to 0, in an infinite amount of time, you understand? If you pull it from here, you let it go. No friction is this [moving hand back and forth] for eternity. Small amount of friction has slowly damped the oscillation. Too much of friction, you come back slowly and you come to rest. These are different cases and the mathematics tells you the different cases so that's what we like about the union of mathematics and physics. Once you wrote down the basic law of Newton, you have no choice as to where it takes you. You go where it takes, and these are the different solutions."
+  },
+  {
+   "title": "Chapter 3. Solution to Harmonic Equation under Driving Force",
+   "t": 1132,
+   "text": "Okay, so this is what I did earlier on in the day. But now, let's go back to the more general problem I had, which is a right-hand side which, is not 0. So, let's write the right-hand side which is not zero as x double dot, plus γx dot, plus ω02x, equals F0 over m, cos ωt. This is called a driven oscillator. Driven oscillators are present all the time. For example, if you have a swing, the swing goes back and forth. You may choose to push the swing back and forth. If you've got a kid in a park, you're applying a force which is an oscillating force. Whereas in the absence of external forces, all oscillations will eventually die down. Do you guys understand that? Why? Why do all oscillations die down in the absence of external forces? Friction? Yes? [inaudible] Yeah, well in this case, it's not air resistance, but friction. But what friction does is that in the presence of friction, you cannot prove the Law of Conservation of Energy. We saw that. Whenever friction acts, the energy total mechanical energy goes down. So, kinetic plus potential will decrease with time so the oscillations get damped. But if you are pushing it from outside, you can provide a constant source of energy so you can maintain a steady oscillation, and that's the problem we're looking at. That is this problem. So, how did we solve this problem? Well, I said I don't want to solve this equation. I'm going to manufacture another problem. z double dot, plus γ times z dot, plus ω0 square z, is F0 over m, e to the iωt. So, let's be very clear. This is a real physics problem that occurs all the time. This [pointing to other equation] is clearly not of our world, because in our world you don't have a force, e to the iωt. All forces in the real world are real. So, this is a complex force. If you break down the e to the iωt, you all know it's cos ωt, which I like, plus i sin ωt, which I don't like. I'm solving a problem in which on top of the force I'm really applying, there's an imaginary force put on top of it. So, what is the strategy? Why have we taken the problem and making it worse than it is? Because we have a strategy and the strategy is the following. If you have right-hand side cos ωt, ask yourself what you're trying to do. You're looking for some function x(t), which will obey this equation. You can try various functions, maybe x is a cosine of time. If it's a cosine of time, two derivatives will be a cosine. No derivative will be a sine. One derivative will--I'm sorry, no derivative will be cosine, one derivative will be a sine. So, you cannot make it into a cosine. If you took a sine, the middle guy will look like a cosine. You can try to balance that against this; the end two terms look like cosine, so neither sin nor a cosine works. It turns out something in between will work. But something that always works is the following. If the right-hand side, instead of being cos ωt, was e to the iωt, you can guess the answer immediately. Namely z itself will behave like e to the iωt, because then if I take two derivatives, that's going to look like e to the iωt, times some numbers, that's going to look like e to the iωt, that's going to look like e to the iωt. So, the beauty of the exponential is when you take derivatives you keep getting the exponential. Okay, but now, the problem is this is not the problem. No one told you to solve this problem, but our strategy is the following. The right-hand side has got a real force and imaginary force. The real force will produce the x that I want. The imaginary force, purely imaginary, i times sin ωt, will produce a purely imaginary answer. So, at the end of the day, I will find the answer and keep only the real part. That's the plan. That's going to be the strategy, so that this z, this z is going to be the x that I want and, will have a part hanging around, y, that I don't want, but y is being driven by the sin ωt. And x is being driven by the cos ωt. But now, let's solve it by inspection. So, let's make a guess that z looks like some number z0, e to the iωt. Now, it's very easy to take derivatives of exponential. Just pull down iω every time you see a derivative. So, z double dot will become iω square, which is minus ω square. z dot will become iω, there's a γ there, and ω02 is just multiplying by a number. So, this is what I get on the left-hand side, and I want it to equal this on the right-hand side. And you're almost there because the time dependence of the two sides are identical, so you can cancel it and what you find is, yes, I can satisfy the equation that's given to me, provide the number z0, the number in front of it will obey condition. That's trivially solved, because we all know how to get the solution to that one. z0 is obtained by dividing both sides by everything that multiplies z0, which happens to be ω02 minus ω square plus iωγ. So, the beautiful property of the exponential function is that you take what is a differential equation and you turn it into an algebraic equation. Because the act of taking derivatives generally is a nasty operation. Sines become cosines, x cubed, becomes three x square. But exponential remains exponential. That's the property you're trying to exploit here. So now, we've got z0 to be this one. And z itself, the complex function I'm looking for is F0 over m, e to the iωt, divided by this quantity downstairs. This quantity downstairs I'm going to call I(ω). I(ω) is a complex number. It's got a real part and an imaginary part. The real part is ω02 - ω2. The imaginary part is ωγ. It's not a fixed complex number, but every frequency of the driving force ω, it is a different complex number, but if it's sitting at one frequency of the driving force, it's a particular number. Everyone should know how to work it out. ω0 is the root of k over m; ω is given to you, that's the real number. γ is given to you, that's an imaginary part. If you actually put in numbers, it might look like six plus five i. In the end, the thing I called impedance or I, is just a complex number. But it varies from frequency to frequency. You can see that. Okay, now we've got z of t. If the problem given to us was z we're done. You don't have to do any more work. Here's the answer. But we were told to take the real part of this answer because x was the real part of the answer; y was not part of the game. How do you take the real part? Your temptation may be well, e to the iωt is cos ωt plus i sine ωt, so drop the i sin ωt. But that would not be right. Now, why is that not right? Anyone know why that's not the way to get the real part yet? Yep? Yes? [inaudible] Professor Ramamurti Shankar Yes. This number downstairs is not a real number. It's a complex number. So, if you have a complex number on the top, divided by the complex number in the bottom, the real part is not simply the real part of the top. You got to write the whole thing so you can clearly separate the real and imaginary parts, and that's what I'm going to do next. Every complex number we know can be returned as an absolute value times e to the iφ. Right? Every z looks like [inaudible] e to the iθ, because then it's [inaudible] cos θ which is x, plus i times [inaudible] which is iy. So, every complex number can be written that way and what will be the magnitude of this guy? Well, by the Pythagoras' theorem, it'll be the square of the real part, plus the square of the imaginary part under root. Every complex number that you have will have an absolute value which is that square plus that square under the root, and it'll have a phase φ, obeying the condition tan φ, is the imaginary part divided by the real part. I want you to realize that in a given problem, with a given mass, given friction, given frequency, both these are known. They're simply a magnitude and the phase of I can by found by this process. Now, write it like that, then you get F0 over m, divided by the absolute value of I, e to the iφ, and I got e to the iωt on the top. I'm almost there. I'm almost there because e to the iφ in the bottom can be written as e to the minus iφ on the top. So then, this whole thing becomes F0 over m divided by the absolute value of i, e to the iωt, minus φ. Now, it's easy to take the real part because this is cos ωt minus φ plus i + sin ωt minus φ. These are all real numbers. So, they'll just multiply the whole thing. But the real to imaginary separation now comes from just taking the cosine part of this exponential. And that is our final answer. That's the answer we've been looking for, which is x(t) is equal to F0 over m, divided absolute value of I, cos ωt - φ. Why did we go through the whole business of complex numbers? We went there because the answer is not a cosine and it's not a sine. Cos ωt - φ, if you know your trigonometry, is cos ωt, cos φ - sin ωt sin φ. So, cos ωt has got some sin ωt and that's why it's hard to guess that answer. But if you go through complex numbers, it comes out very easily."
+  },
+  {
+   "title": "Chapter 4. Properties of the Oscillating Function, Resonance",
+   "t": 1801,
+   "text": "So, the next thing is to analyze the properties of the answer you got. You can write this whole thing in front as some overall amplitude x0 cos ωt - φ and you ask, \"What does this function look like?\" Well, this function is obvious to all of you, it's oscillating. Notice that even though it is oscillating like a cosine, it's not in step with the applied force. The applied force is cos ωt. Its maximum occurs at 0, 2π, 4π, et cetera. This guy's maximum occurs somewhat later. The first maximum occurs when ωt = φ. So, it's said to be lagging the function. You can imagine two functions oscillating. One is behind the other one. It reaches the maximum slightly later. So, the first property is in a driven oscillator, the x will not be in step with the F. It will be lagging. Or, it could be leading depends on what φ is. Then, what about the amplitude of oscillation? That's the thing that's very interesting. How big is the oscillation? It looks like F0 over m divided by the absolute value of I. Let me write the absolute value of I for you. So, the amplitude of oscillation depends on the frequency. You've got to draw the graph. That's the function of frequency. What does the one over this look like? Pardon me? [inaudible] Yes, but (A minus B)2 = (B minus A)2; that's why I've not been paying attention. Okay. Yeah, so I'm pretty careless on what I put in, but this is one occasion where I sort of know it's okay. I'm going to square this, I don't have to remember who is ω0 and who's ω. I have to be very careful where I don't square things like here. But if I'm squaring it, it doesn't matter. Okay, so go back here and plot something divided by this denominator and ask, \"What is it at various frequencies?\" When ω is 0, that goes away, that goes away, you get ω02, and ω02 is k over m, and I claim what you will find initially is this will become F0 over k. That'll be the value of this whole amplitude at 0 frequency. I hope that makes a lot of sense to you. Zero frequency means the force of not even oscillating. It's a constant force. What x are you going to get? You're going to get the force divided by the force constant. That's the x to which you'll pull the spring. That's why if you put all the ωs and masses back into their proper place, you'll find there's F0 over k. Then what happens is as ω increases, this denominator, one of these guys, a denominator is starting to vanish. If γ were a very, very tiny number, when ω0 = ω, you will be dividing by a very small number and the answer will have a huge rise. Then, you can see when ω goes to infinity, very large ω, you're diving by ω square, it'll fall off like this. Now, one of the homework problems is to find out exactly where it peaks. But if γ is very small, you don't have to do much work to know it peaks at ω = ω0, but otherwise it's near that. That's the phenomenon that's called resonance. Resonance is the following. You are applying a force, F0 cos ωt. You go on varying the frequency and in response to your force, the system oscillates. The amplitude of oscillation is the largest when the applied frequency is very near the natural frequency. If you take the limit of a very small γ, this maximum is very close to ω0. That's called resonance. If γ is really tiny, you can get graphs where it's incredibly peaked. So, that's when systems start vibrating a lot. That's why when your car goes over certain bumps, they're periodic, they're hitting your car at a certain frequency, and if that frequency is anywhere near the natural frequency or vibration of your suspension system in the car, the car begins to resonate. There's this famous bridge in Tacoma that was getting hit by these winds, they were coming at some frequency and by bad luck, they coincided with the natural frequency of the bridge. So, there is this famous movie made for high school, in which the bridge oscillates more and more and more and twists and turns and collapses. That's another example of resonance. People always say, \"Yeah I can resonate with what the person is saying.\" What does that mean? A person is saying whatever the hell he wants. Some people think it's interesting and some people think it's boring. It's the same thing here. The force is acting at a certain frequency. If your natural frequency is close to that, your response is high. If it's low, you don't care. Same thing. That's mechanical systems selecting a frequency. In fact, this is how radios work. You have a radio, if there's only one radio station, you build an electrical circuit in which the currents like to go back and forth and oscillate at a certain frequency, a radio station should send signals at that frequency, your response will be very high. But what if there's more than one radio station, which is a fact of life? What do they do? What they do is each one sends a signal at a different frequency. You take your radio and there are dials inside. Well, I forgot, do you kids--do you know what a dial is? You're not just pushing some other button. There is a time when you had to turn a dial. When you turn a dial, you're changing the properties of the electrical circuit and changing its natural frequency. You move the natural frequency until it lines up with the frequency of the radio station, with one particular station. Then, the response from that station is very high and that's the sound you hear. Other stations are also present, but you're not near their maximum, they are sitting, some right here and some right here. So, you want the station frequency to come under this resonance peak. So, if you've got a bad radio, it will pick up sound from many stations because it's not very refined. If the peak is broad, you will get sound from many stations. You want to build a system which is very finely sensitive to the frequency. That requires γ to be very small. If γ is very, very small, you can see if γ is going to 0, the denominator is one divided by 0, it's going to be infinite. So, if γ is very tiny, one over very tiny, is very big, and you can get enormous spikes in this part and that's what people need. Okay, the last thing you need to do this problem set. By the way, I know this problem set is very nasty. Towards the end, it got tough, you got email, I agree with you that this whole course is somewhat more difficult than it has always been. Okay? I'm aware of that fact, and I will bear this fact in mind when you go into your final because for some reason I wanted to use problems not in our book but for technical reasons so I got them from here or there or made them up. They generally tend to be more challenging and more time consuming. So, if you thought this was a tough course, well, it's supposed to be a tough course but maybe not this hard or not this time consuming. So, I will remember that in the end when I make the final exam or look at your grade, I will have to compare you not simply to your predecessors, but I will have to cut you some slack and then compare you to previous generations. So, this use of complex numbers is something from which I will not, however, back down. It turns out that yes, you can do all of this without using complex numbers. Why? Because in the real world, everything has got real numbers. So, you can in fact, by an orgy of trigonometric identities solve it with sines and cosines. But eventually, I'll give you a problem where you just cannot do it in a meaningful way. The power of complex numbers is they turn differential equations into algebraic equations. All you have to do is find the roots of a quadratic equation, whereas what you started out was to find a solution of a differential equation. That advantage you will lose if you stop using complex numbers, and when you do quantum mechanics in the second term, the complex numbers are in the equations of motion. The analog of F = ma, there's an i sitting there. So, you cannot escape the i. It's there, so I'm saying, depending on how much exposure you've had, you have to do more or less work, but you just got to get used to complex numbers. You got to get used to the absolute value, the phase angle, how to manipulate. If you already know it, good. If you don't know it, you have to do more work than other people but I'm not going to let off on it. Yes? [inaudible] No. Anything you need to know with differential equations is what I've done for you in the class today. That's it. That's the only part you know, and with complex numbers, you turned it into ordinary equations. So, you have to go over these steps and work them out. That's the part I cannot do for you. That's something you have to do."
+  },
+  {
+   "title": "Chapter 5. Complete Solution = Complimentary + Particular Solutions",
+   "t": 2363,
+   "text": "Alright, what is finally missing is that x of t; if I wrote for you what I wrote above, which is x0, I don't want to write the x0 again. It's F0 over mi; maybe I'll write the whole thing. F0 over m, divided by absolute value i times cosine ωt minus φ. It turns out this is not the full answer to the question of what happens when I push a mass. Let's understand why. Suppose I go this mass and spring system. I grab at a t = 0 and start shaking it. Well, at t = 0, x was 0 because I grabbed it at t = 0. But a t = 0, if I go to this solution, it's not giving me 0. It's saying it's F0 over mi cos φ. So, what happened to the freedom I had to assign the velocity and position arbitrarily? Well, it turns out that I can still do that. That's because this solution has got a part that's actually missing, and the part that's missing is this complimentary solution, Ae to the minus γt over two, cosine of ω′ t minus φ0. You can always add the solution to this solution. Why is that? Because if x obeyed a certain equation, if I put that in, I'm saying adding this part will not change the fact that it obeys the equation. Let's ask ourselves why. Go back to the top line there. x double dot + γx dot + ω02x, will be equal to F0 over m cos ωt, if you put this in. Now, what if you keep adding this to the solution? Will you mess it up? Imagine adding this to the left-hand side, but I claim on the left-hand side there'll be no extra terms because this guy double dot plus γ, times this guy dot, plus ω02 times this guy is 0. This is the function which you will say is annihilated by the operations on the left-hand side. It's like saying the following. If you want a function whose derivative is equal to sin x, then I'm going to say oh, I know the function is minus cos x, and you all know you can add to that a constant. Why do you add the constant? Why doesn't it screw up everything? Because a derivative of a constant is 0. Well, here this is not a constant and yet, the combination of derivatives appear in the equation act on this to give you 0. That's why you can add it without screwing up what you've done so far. So, the way you do these problems is you first find this function that depends on the applied force, and you add to this solution you get for free, even in the absence of an applied force. Yes? What does the xC stand for again? It's called a complimentary function and this is called a particular solution. This particular solution depends on the force and this is the function. I don't know why it's called complimentary. Maybe it compliments the answer, or it's a freebie, you don't pay for it with any force, but it's called complimentary. But you've got to add the two to get the final answer. So, you will still have the numbers A and φ 0 hanging around, and how do you select them? You select them if on top of it, somebody tells you that this driven oscillator had a certain coordinate and certain velocity at t = 0. So, you evaluate the whole expression of t = 0 by putting t = 0 everywhere, you'll get one equation involving A and φ 0 and you'll take the derivative for the velocity, set that equal to some given number. You get a second equation involving A and φ 0. You'll juggle the two equations and solve for the two numbers, A and φ 0. Okay, so that is the whole story, okay? That's what I tried to do yesterday, but this is not the first time it's happened to me that I tried to go fast; in the end I lost time because I was not happy with the way it was explained, and I usually come back and say sorry and then do it all over again, okay? But there's only so much I can do. The rest is up to you guys. You have to do the work and you have to do more problems."
+  },
+  {
+   "title": "Chapter 6. Introduction to Longitudinal and Transverse Waves",
+   "t": 2620,
+   "text": "Okay, so now, we are moving off to another topic. The other topic--Somebody was sighing with relief. It's not really different. Okay, these are waves. But I think it's going to be--I think this probably is the hardest point of what we're doing in this term, at least mathematically. Everything else we do, heat, hot water, cold water, that kind of stuff you've done in high school, that's all in your future, it's going to be a lot easier. Okay. Waves. So, everyone has a good feeling for waves. You go to a lake; you know if you're a hit man for the mafia, you're dropping things in with some weight. They go down, what's the first thing they do? When bodies are falling into the water, it's carving out some body of water and diving in so the water next to it dives in to fill that hole. But then the water, even next to it, tries to fill in the hole left behind by these guys. For you, it looks like a bunch of ripples traveling outwards from the center. So, this is the classic example of a wave. If you've got one example, you can latch onto it every time I say wave. So, what's the wave in this problem is that if I draw a plot of the height of the water, versus the place where it dropped, the rock--maybe I should do a top view here. This is the top view, after a while you've got these ripples emanating from this point. Or, if you kept your eye next to the water you will find these ups and downs going outwards. So, the wave is some displacement of a medium. That's what people say. That's not a perfect definition because we know electromagnetic waves have no medium. They travel in a vacuum. But I think for this purpose in this course, you should imagine waves as what happens when you excite a medium. So, here's the way to think about the wave. You all understand the harmonic oscillator pretty well, right? Mass and spring system in equilibrium will sit there forever. If you give it a kick, it'll start vibrating around its equilibrium position. There, you have to keep track of only one variable x, which is the location of the mass. The wave is an oscillation of a medium that means that every point in space there is something that's ready to oscillate. So, you start out a system with infinite number of degrees of freedom because the height of the water at each point is an independent variable. It can jump up and down with time. And that's what is oscillating. So, if you don't do anything to the water, it'll stay at the height, but if you fiddle with it or drop something, you hit it with something, it'll start vibrating. But except it's a vibration not out of one variable but of a variable in space and time. x was a function of time and the name we use for the wave, if something is oscillating such as the water measured from some point, x. I'm going to use the symbol ψ of x [and t] to denote the height of the water from its normal position at the point x at time t. So, x is not a dynamical variable here. x labels the point. Ψ is the dynamical variable. Ψ is the thing jumping up and down. Okay. Now, there are two kinds of waves; there's the longitudinal wave and the transverse wave. And we define them as follows. The wave travels out with some velocity. I'm going to use the symbol v for the velocity of the wave. That's something for which all of you would have intuitive understanding so no need to mess it up right now. You go to the lake, you drop a rock, you see when the waves get to the shore, you take the distance divided by time, that's the velocity. In sound, you know, you light up a firecracker, after a while, you hear it, you can see how long it took and how far you are and you can find the velocity. That's the velocity of sound in air. And all these velocities are all variable. Unlike the velocity of light that doesn't seem to depend on anything. All other velocities depend on various conditions. The velocity of sound depends on the temperature, for example. Or you can take the following thing, you can take an iron rod, which you know is made up of a lot of atoms and you take a hammer and you hit it here. You basically compress these atoms and they compress the atoms next to them and the shockwaves travels through this rod; that's also called sound. That travels at a speed which is much faster than the speed of sound and air. But it's technically also called sound. If you were a creature living inside the iron bar, you would think of it as sound. Now, here's another way you can hear it. For example, here's a standard example. Here's the railway track, and there is some kind of a mountain here, and you are over here and the train is coming here. It turns out, if the train lets out a sound, the sound will travel around the bend and you will hear it. But actually, the pounding of the train on the tracks will set up shockwaves in the track that you can hear by putting your ear to the track. And you will hear the train before you hear it by, depending on the sound coming through the air, because the waves going through the solids travel much faster. Okay, so I would recommend that if you're going to do this, you do this somewhere here because you won't have enough time to move if you do it here [laughter]. So, most of the things--please don't do this at home, this should be done by a trained person but I certainly did it as a kid, listened for trains before they come around the bend and you can actually hear the track. Or in water, the explosions in water, you can hear them faster if you're under the water than if you're outside the water because the waves travel faster in water than in air. Thunder and lightning is the most famous example. Something happens in the sky, the lights get to you first, and the sound gets to you; they're traveling at different velocities. Okay. So now, let's talk about longitudinal transverse waves. When I talk to you, I think you sort of know what happens. The air in this room is at some pressure, and that pressure is constant, and the pressure is pushing your eardrum from the outside and going through your Eustachian canal pushing the drum from the inside, and the two pressures balance and you don't feel anything. If I talk, the vocal chords move back and forth and they increase and decrease the pressure as I talk. If I push out, I increase the pressure, if I go backwards, I decompress the air and reduce the pressure. Those shockwaves propagate to your ear. They hit your eardrum, but the eardrum is getting the pressure difference from the outside, but the inside pressure is fixed. So, what happens is when I decompress, the eardrum comes out and goes in. It goes back and forth and the eardrum moves. Then, behind the eardrum are the little bones, and then the bones go and there is a tube and the doctors take over from this point. So, some loose hair is shaking in this fluid; then, it picks up some nervous things and goes to your brain. Then, you figure out and actually know what the person's saying. You don't know why he's talking in this particular fashion, but you can at least understand and translate. That's a long chain of transducers of energy from sound to the stuff in your ear into your brain. I draw the line at the eardrum. I don't want to go on the other side of the eardrum because it's very shaky turf. But this part I know very well. It's a sound wave and it's a longitudinal wave for the following reason. If you look at the pressure waves, the molecules of air--they're going back and forth, follow my hands, and the signal from me to you is also going from me to you, so the motion is in line with the velocity. The motion of the medium is in the same direction as the motion of the wave. A transverse wave is what you find in water if you are--or on a string. Take a string, clamp down that end and you give it a little flick like that. This bump after a while will end up here. So, the rope is moving, transfers but the velocity if the signal is to the right. So, do not confuse the motion of the medium with the motion of the signal, okay? The rope, at any given point, is either at rest or going up and down, but the signal is going from left to right. So, the medium doesn't have to actually move in the direction of the wave. For example, if a bunch of people line up and each one tells the person next to the next person some secret and the secret is eventually transmitted all the way to the end, what has traveled is a secret. The actual person in the first place has not gone over physically to the end. So, what happens is as you're sitting there not doing anything and suddenly you hear something, you pass it on to the next person, then you've gone back to doing nothing. Then, the signal travels. That's what will happen in the rope here. This section of the rope is not doing anything. When this pulse hits it, it'll jump up and down for a while. Then it'll quiet down and somebody to the right will start moving. Okay, so there are the examples of longitudinal and transverse waves."
+  },
+  {
+   "title": "Chapter 7. Derive Wave Equation as Differential Equation",
+   "t": 3175,
+   "text": "So, we have the notion of velocity. Now, I want to consider one concrete example of a wave, so you people have a good feeling of how to study waves in physics. So, there are many, many waves. Water waves, electromagnetic waves, elastic waves. I'm going to do one. I think to do one thing in some depth will give you a feeling for how we analyze waves. That's going to be waves on a string. So, you have to imagine that I have a string that's been clamped at two ends, and somebody plucks the string, say, into that shape and lets it go, we know the string is going to vibrate back and forth. Now, let's measure the coordinate x, which is the point on the string, and ψ is the displacement of the string at that point. You guys got that this is really the x, this is not my string. That is my string. Each point is labeled by an x value that it will have for the string to relax to the normal position. So, we are asking what is the displacement of the string at the point x, at time, t. So, ψ is our new dynamical variable, namely, the variable for which we like to write the equations governing its motion. And we want to ask how does ψ vary with time? What will it do? If I start it out, what will it do? Do you understand the parallel to the mass and spring system? The mass and spring system, you got a mass and you got a spring, you pull the mass out to some new location, you let it go and you want to know what it does. The answer was cos ωt. Now, at every point x, I have some string, and I displace all those degrees of freedom and I let them go, and they're going to do something and I want to know how they're all varying. So previously, we had only one coordinate which I called x, which varied with time. Now with every point, x, I have a coordinate ψ that varies with time. And our job is to find the equation satisfied by ψ. So, let us take a string and the string has to be under some tension. That means you hang some weights on the end or you tighten it with some screws. There's a tension so that the string is dying to break apart if you cut it. So, T is the tension on the string. Without the tension none of this would work. So, here is the string. And I'm going to analyze the fate of a tiny segment of length dx. An essential parameter here is called--which is μ, the mass per unit length. That means you put the string on a weighing machine, you find the mass and you divide by the length. For example, if you've got a ten meter string and it weighs one-tenth of a kilogram, then the mass per unit length is one over thousand [correction: should have said \"hundred\"] kilograms per meter. And T is the tension. The textbook may use F for tension because T is the time period also, so it depends on what symbol they use in the book. I'm not completely sure. I'm going to call it T because it's been called T in the past. Now, I pull this thing and I want to know what the whole string will do. Who is going to tell me now? I mean, what authority will decide the behavior of this string? What do we have to appeal to? Yes? [inaudible] Pardon me? [inaudible] Very good. So, he said, find the force that will return it to the original position and what was the it that you mentioned? [inaudible] Pardon me? Right, but we are going to apply--yes, any other answers before I go? Yes. Can't you model the motion of the string by saying that [inaudible] Yeah, it will look like that. That is correct. But all I want you to understand is, there are no new laws that I'm going to invoke. I'm not going to say, well, we studied masses and springs, today it's time to study strings and I'm going to tell you a new law of motion. There's only one law of motion. That's F = ma. The whole purpose of my exercise now is to show you that really does control, that's why it's a super law. Everything mechanical follows from that law and I want to show you F = ma is all I have and I've got to use it properly and that's going to tell me what the strings will do. So, what I do is--The string is, of course, a long and extended and complicated object. I isolate a portion of it, of length dx, and I'm going to apply F = ma to that guy. All I need to know if the F, the total force on it, and I'm going to equate it to mass times acceleration. Okay now, this force on the little segment is the tension pulling this way, the same tension pulling that way. The tension on the string doesn't change from point to point. But the angle at which it is pulling is not necessarily the same. Here, there is some angle θ + Δθ, and here, there is an angle θ. This force is at an angle, say, θ below the horizontal, this is pulling about θ + Δθ. So, the string is curving; therefore, the tangent to the string at this end and that end are not quite the same and that's the key. Because if they were exactly the same, the same tension on the two ends, if you take any object like this and apply exactly the same force, they will cancel because they're opposite forces, and F is 0, ma will be 0, and this thing won't move. The reason it moves is because even though the magnitude of the force is the same, the angle at which it's acting is not the same. So, I'm going to find out the vertical component of the force here and take the difference from there [pointing at picture]. So, the force here will be T times sin + Δθ. θ is the angle with the horizontal. And the force on the other side will be T times sin θ. θ is the angle made by the string from the horizontal, and that angle is simply changing over this tiny length. Next approximation--that's the force. That's going to be mass times acceleration. Mass of this little segment is the mass per unit length, times the length of the segment. Now, what is the acceleration in the language of calculus? What is the acceleration here? [inaudible] Pardon me? [inaudible] Ah, he said d2x over dt2, but the d by dt2 is right. It's not d2 of x of ψ because you've got to understand--I think--Look, this was not a fair trick, but you have to be aware that what is oscillating up and down is the coordinate side. x is not a real dynamical coordinate. x is a label on the string. What's jumping up and down is ψ, so the acceleration is the second derivative, and I write partial derivative because ψ can vary with x, or it can vary with time and I want to take the second time derivative. Now, come to the left-hand side and you assume the angles involved are very small. If the angles involved are very small, I remind you guys of the falling identity, sin θ begins as θ plus dot, dot, dot. You remember the series I wrote for you. Cos θ is one minus θ2 over two, and we have decided that we are going to treat θ so small that θ2, we're not interested in. And tan θ, which is sin θ over cos θ, is now θ over one, which is θ. So, small angle approximation is sin θ, approximately equal to θ, cos θ approximately equal to one, tan θ may be approximately replaced by θ. So, first nice break. We don't have to work with sine, we just want T of θ + Δθ minus that, which is T of θ. Δθ is a change in the angle from the left hand of the string bit to the right end of the string bit. Now, I got a dx here, so what I'm going to do is divide by a dx and multiply by a dx. We are almost there in deriving the equation. Look, I've been calling it dx and Δx so pardon that. Just call it dx. μ, dx, d2ψ over dt2. Now, what is θ? I'm going to say θ is the same as tan θ in the small angle approximation. tan θ is dψ/dx. You know from the calculus, if you move horizontally by dx and you move vertically by dψ, dψdx is a tan of the angle. That's one of the first things you learned in calculus. So, this is really d by dx of dψdx, that becomes d2ψ over dx2, equal to μd2ψ over dt2. Now, some of you may find the derivation hard. Then forget about the details. You're not responsible for that. But some of you may say look, I don't ever want you to tell me something which you cannot prove unless it's an axiom or a law of nature. Well, this is not a new law of nature, so I have to tell you where I got this. I got this by applying F = ma to a tiny portion of the string. And you can ask yourself, when you pull a string up, why does it come down? It comes down because there's a tension on the string and the tension here and the tension here have vertical components that don't quite match. You see the string is flattening out like this; the vertical downward component of this is bigger than the vertical upward component of this force. If it is resolved into the vertical or horizontal part the downward part is bigger than the upward part in this picture. Therefore, there's a net force bringing you down. That one is bringing you down is because the derivative here and here are not the same, because the derivative is the slope. So, the whole thing depends on the rate of change of the rate of change, and that's why you get this. But the mass of the tiny segment also depends on dx, so dx cancels in the end. You drop it and you get this equation. So, what I want you to think of is dθ/dx is really d by dx of dψ/dx. Well, I should actually use partial derivatives, because ψ depends on x and t, so if you're real careful with that, you get d2ψ over dt2."
+  },
+  {
+   "title": "Chapter 8. Solution to Wave Equation",
+   "t": 3880,
+   "text": "So now, I'm going to write down the final wave equation. From this point on, you have to get engaged in the problem because even though you may or may not follow the derivation, you should know what is called a wave equation. This is the wave equation: d2ψ over dx2 is equal to 1 over v2, d2ψ over dt2, where v2 is equal to t over μ, or v is square root of T over µ. I just invented a symbol v. This is very important. What you have to know is that ψ, the displacement of the string at the point labeled x horizontally from the left-hand, at the time t, varies with time according to this equation. This is a very famous equation and it turns out you take any elastic medium and you disturb it a little bit from equilibrium, always seems to obey equations of this type. So, our job from now until some time is to analyze the equation and see what it means. What are the consequences of this wave equation? And even though I called it v, as units of velocity, I have no right to argue that it really is the velocity of the wave. We'll have to find out. It's got dimensions of velocity; you can check by putting the units in. Okay but now, let me write down a solution to this equation; then, we'll understand what can happen. So, this is like saying I've got some equation, second derivative of x is equal to some number times x, and we said the answer is cos ωt and sin ωt. But now, we've got second derivatives with the respect to space, second derivatives with respect to time and I know that this guy is going to oscillate up and down. But it's going to oscillate, if you imagine a string, take a string or a water wave that is traveling back and forth; the ripples are traveling. If you took a snapshot of the wave at a given time, it would be going up and down in space. Or if you stood at one point in the water and have the wave go past you, the water will go up and down in time at a given space. You understand? If the wave is coming towards the shore, you stand in one place, you don't have to move. The wave will go past you and where you are, the water will go up and down with time. Or, if you took a picture of it at one instant, the wave will go up and down in space at a given time. So, waves oscillate in space and time and you have to guess the answer. Now, if I had more time, I can tell you guys how to deduce the answer. It's not very hard, but I just don't have that kind of time. So, I'm going to just write down a solution. In fact, there are many, many solutions to the equation. It's very general, so I'm going to write a particular solution. The solution I'm going to write down looks like this. It is some number A, which is the amplitude and it looks like cosine, some number called k times x minus ωt. Unfortunately, this k is not a force constant. It is a new symbol. And ω is another symbol whose meaning we will deduce shortly. At least you can see that I just cannot write a wave like x - t or something, because cosine should have an argument which has no dimensions. So, if I have an x, I should multiply it by some number that's got units of inverse x. And if I have a time, I should multiply it by something that looks like a frequency. From dimensional analysis, I look for a solution of this form to these equations. Once again, whether you solve it--By the way, this called a partial differential equation because it involves partial derivatives. All I'm going to do--I'm going to be content with showing you that this solution, when I stick it into this equation actually works. Let us first verify that it works. Then, we'll come next Monday and analyze in detail what does this really do? We'll come to that in a moment. Let's verify that it works. So, let's take dψ/dx. What happens when you take dψ/dx, when you take a partial derivative with respect to x it says forget about time; treat x as the only variable, then you'll get -a sin kx - ωt, times the derivative of what's inside the argument which happens to be k. Now, if you differentiate the second time, d2ψ/dx2, you do the whole thing again; then, you'll get -Ak2 sin kx - ωt. [inaudible] I'm sorry--;yes--thank you [correction: professor changes Ak2 sin kx - ωt to Ak2 cos kx - ωt]. Now, if you take d2ψ/dt2, you will get -ω2 A cos kx - ωt. If you take one over v2 times that, you'll get this. What does the wave equation say? It says, the second derivative of an x should be one over v2 times the second derivative in time. And for my solution, that's a second derivative in x; that's a second derivative in time; I want them to match. Well, they're almost there. A matches A, cosine matches the cosine, but ω and k are not independent numbers. ω over v should be equal to k. In other words, this wave equation for waves on a string will have solutions that look like this, where A can be any number you like, k and ω, between the two of them, there is one degree of freedom. You can pick k at will, and pick ω so that ω will equal the kv, or pick ω freely, and choose k so that k is ω over v. But there is a relation between the two of them, which you can write in any number of ways. So, let us put that knowledge back into the solution. Let us say ω is in fact kv, so that we write it explicitly in terms of the k, which is completely free. So, ψ now looks like A cos, k times x minus--;now, here is where you guys got to do a little mental algebra here. If I pulled the k out, can you see that t will be multiplied by ω over k? But ω over k is v. So, this is my solution. A cos [k(x - vt)]. And that is a very pretty result and I just--I will conclude by telling you what that is telling you. It says that ψ of xt, which depends on x and depends on t, depends on x and t through this combination x - vt. In other words, if x - vt has a certain value, ψ has a certain value. If I change x and if I change t, keeping x - vt constant, the function doesn't change, right, because it's a function only of this combination. I will argue that that really means it's a wave that's traveling at a velocity v. Let me show you why. Let's take a function, e to the -x2. You must have seen this function in statistics. It looks like this. It likes to have x = 0. Take the function that x is replaced by x - vt. Where does this function have its maximum? It has a maximum when this guy on top vanishes, that is to say, when x = vt. So, if you took the function, e to the (x - vt)2 with the minus sign, at t = 0 it'll be here, but other time it'll be here, but at every instant, the bump will be moving to the right, you can see with the velocity v, because the peak is at a location vt. So, in a wave, the whole profile moves at a velocity and that, for this symbol we use here is in fact the velocity of the wave. Maybe I'll give you one extreme example. At t = 0, it just looks like cos kx, and we all know what cos kx looks like. It's got a maximum of x = 0. If you wait a little longer, where is this maximum a little later? If you increase x a little bit, if you increase time a little bit, you got to increase x a little bit so that these two still cancel each other. Originally, x was at 0, and t was at 0; you were at a maximum. A little later, after some time Δt, if you go to the point Δx, so that these two numbers cancel, we are still riding the maximum. But that means that Δx over Δt is v. That means, if you move to the right, after ψ Δt, you will ride the crest. That means the crest is moving at the velocity v. So, I think to summarize what I've shown you so far, is that when you take a string and you have a tension on it, you pull it and let it go, it vibrates according to this equation; that is the first statement. This is a solution. I'm not telling you it's the most general one or the only one or anything. I want us to at least have one concrete solution. And I've not told you yet how to visualize the function, but I have told you whatever the function is, it is drifting to the right at a speed that we call v. Because any function of x - vt has a property that if [initially] it did something x = 0, it does the same thing at x = vt. That means the whole shape is bodily transported to the right. So, this really signifies a wave traveling to the right. If you wanted a wave traveling to the left, you should put a plus here; it'll go backwards."
+  }
+ ],
+ "sentences": [
+  {
+   "i": 0,
+   "chapter": 0,
+   "t": 0,
+   "text": "Okay, so what problem were we trying to solve?"
+  },
+  {
+   "i": 1,
+   "chapter": 0,
+   "t": 3,
+   "text": "We were trying to solve the problem of masses, coupled to springs, and acted upon by various forces."
+  },
+  {
+   "i": 2,
+   "chapter": 0,
+   "t": 10,
+   "text": "And the equation that we need is the following [writes equation on the board]."
+  },
+  {
+   "i": 3,
+   "chapter": 0,
+   "t": 16,
+   "text": "So, this is the most general problem we looked at."
+  },
+  {
+   "i": 4,
+   "chapter": 0,
+   "t": 20,
+   "text": "This is F0."
+  },
+  {
+   "i": 5,
+   "chapter": 0,
+   "t": 21,
+   "text": "I might have just called it F last time."
+  },
+  {
+   "i": 6,
+   "chapter": 0,
+   "t": 24,
+   "text": "It doesn't matter; it's a matter of this symbols, okay?"
+  },
+  {
+   "i": 7,
+   "chapter": 0,
+   "t": 28,
+   "text": "Alright."
+  },
+  {
+   "i": 8,
+   "chapter": 0,
+   "t": 29,
+   "text": "Let us first divide everything by m."
+  },
+  {
+   "i": 9,
+   "chapter": 0,
+   "t": 31,
+   "text": "Divide everything by m, then it becomes x double dot, plus γx dot, plus ω02x, equals F0 over m, cos ωt."
+  },
+  {
+   "i": 10,
+   "chapter": 0,
+   "t": 40,
+   "text": "I'm using the fact that ω0 was defined as the root of k over n."
+  },
+  {
+   "i": 11,
+   "chapter": 0,
+   "t": 45,
+   "text": "We used to call it ω, but now I'm calling it ω0, and you should understand why I'm doing that, because there are now two ωs in the problem."
+  },
+  {
+   "i": 12,
+   "chapter": 0,
+   "t": 57,
+   "text": "There is, the ω of the driving force, so you should imagine an oscillatory force grabbing this mass and moving it back and forth. ω0 is the natural frequency of the mass."
+  },
+  {
+   "i": 13,
+   "chapter": 0,
+   "t": 69,
+   "text": "If you pull the spring and let it go, that's the frequency that it will vibrate."
+  },
+  {
+   "i": 14,
+   "chapter": 0,
+   "t": 75,
+   "text": "There are really the natural frequency that is fixed by k and m and ω is for you to decide."
+  },
+  {
+   "i": 15,
+   "chapter": 0,
+   "t": 83,
+   "text": "You can decide to apply to it any force you like of any frequency."
+  },
+  {
+   "i": 16,
+   "chapter": 0,
+   "t": 89,
+   "text": "So first, take the easy case in which the right-hand side is 0."
+  },
+  {
+   "i": 17,
+   "chapter": 0,
+   "t": 94,
+   "text": "No driving force."
+  },
+  {
+   "i": 18,
+   "chapter": 0,
+   "t": 95,
+   "text": "So, I'm saying let's consider a simple case, F0, or F, the applied force vanishes."
+  },
+  {
+   "i": 19,
+   "chapter": 0,
+   "t": 101,
+   "text": "That's the problem I spent a considerable amount of time on yesterday."
+  },
+  {
+   "i": 20,
+   "chapter": 0,
+   "t": 105,
+   "text": "You can say, \"Well, if there's no driving force, why does anything move?\" That's actually correct."
+  },
+  {
+   "i": 21,
+   "chapter": 0,
+   "t": 111,
+   "text": "If you took a mass in a spring and didn't do anything to it, the solution of this equation is x = 0, and that is fine."
+  },
+  {
+   "i": 22,
+   "chapter": 0,
+   "t": 122,
+   "text": "But it also has interesting non-trivial solutions because you can pull the mass and then let it go."
+  },
+  {
+   "i": 23,
+   "chapter": 0,
+   "t": 129,
+   "text": "After you let it go, there are no forces on the system except the force of friction and the force of the spring, and that is this problem."
+  },
+  {
+   "i": 24,
+   "chapter": 0,
+   "t": 140,
+   "text": "Now, how do you solve this problem?"
+  },
+  {
+   "i": 25,
+   "chapter": 0,
+   "t": 142,
+   "text": "I told you the way you solve this problem is you make a guess: x of t is some number, A times e to the αt."
+  },
+  {
+   "i": 26,
+   "chapter": 0,
+   "t": 153,
+   "text": "See if it'll work."
+  },
+  {
+   "i": 27,
+   "chapter": 0,
+   "t": 154,
+   "text": "And you find it will work and you can do this in your head."
+  },
+  {
+   "i": 28,
+   "chapter": 0,
+   "t": 160,
+   "text": "I certainly don't want to repeat all of that."
+  },
+  {
+   "i": 29,
+   "chapter": 0,
+   "t": 163,
+   "text": "The reason it's going to work is that every time you take derivative of x, you bring down an α, and still keep e to the αt."
+  },
+  {
+   "i": 30,
+   "chapter": 0,
+   "t": 174,
+   "text": "So, when you put that guess into this equation, you're going to get α2 plus γα, plus ω0 square times A, e to the αt equal to 0."
+  },
+  {
+   "i": 31,
+   "chapter": 0,
+   "t": 184,
+   "text": "And if this is going to vanish, it's not because of A and it's not because of the αt, it's because this guy in brackets is going to vanish."
+  },
+  {
+   "i": 32,
+   "chapter": 0,
+   "t": 196,
+   "text": "So, when that's 0, you all recognize this to be a quadratic equation."
+  },
+  {
+   "i": 33,
+   "chapter": 0,
+   "t": 201,
+   "text": "You go back to your days in the sand box [earlier in the course or your life] when you all knew what the answer to this is; the answer to this is minus γ over two, plus or minus γ over two square, minus ω0 square."
+  },
+  {
+   "i": 34,
+   "chapter": 0,
+   "t": 219,
+   "text": "These are the roots."
+  },
+  {
+   "i": 35,
+   "chapter": 0,
+   "t": 220,
+   "text": "Now here, you have to look at--So anyway, what does this mean?"
+  },
+  {
+   "i": 36,
+   "chapter": 0,
+   "t": 225,
+   "text": "This means that yes, you can find a solution to this equation that looks like A to the αt; A can be any number you like."
+  },
+  {
+   "i": 37,
+   "chapter": 0,
+   "t": 235,
+   "text": "No restriction is placed on A."
+  },
+  {
+   "i": 38,
+   "chapter": 0,
+   "t": 237,
+   "text": "But α cannot be any number you like. α has to be the solution to this quadratic equation and there are two solutions."
+  },
+  {
+   "i": 39,
+   "chapter": 0,
+   "t": 246,
+   "text": "So, you can call them α plus and α minus."
+  },
+  {
+   "i": 40,
+   "chapter": 0,
+   "t": 250,
+   "text": "That's when I branched off into two different cases."
+  },
+  {
+   "i": 41,
+   "chapter": 0,
+   "t": 253,
+   "text": "Case one, you can see look, many of the quadratic equations, you know the way it's going to fall out is depending on whether the stuff inside the bracket is positive or negative."
+  },
+  {
+   "i": 42,
+   "chapter": 0,
+   "t": 266,
+   "text": "So, let's take the easier case when it's positive, that means γ over two is bigger than ω0n. γ, you remember, is the force of friction so we want it to be not only non-zero, but bigger than this amount controlled by the natural frequency."
+  },
+  {
+   "i": 43,
+   "chapter": 0,
+   "t": 284,
+   "text": "In that case, let's not go into details, but you can all see you put whatever value you have for γ, the square root of this is some number."
+  },
+  {
+   "i": 44,
+   "chapter": 0,
+   "t": 295,
+   "text": "The whole thing is going to be two real choices you get."
+  },
+  {
+   "i": 45,
+   "chapter": 0,
+   "t": 300,
+   "text": "One will be minus γ over 2, plus whatever is inside the square root."
+  },
+  {
+   "i": 46,
+   "chapter": 0,
+   "t": 305,
+   "text": "The other will be minus γ over 2, minus what you have in the square root."
+  },
+  {
+   "i": 47,
+   "chapter": 0,
+   "t": 311,
+   "text": "The only thing I want you to notice is that both these roots are negative."
+  },
+  {
+   "i": 48,
+   "chapter": 0,
+   "t": 317,
+   "text": "This guy's obviously negative because it's a minus γ over 2 minus something else, that's definitely negative."
+  },
+  {
+   "i": 49,
+   "chapter": 0,
+   "t": 324,
+   "text": "You have a little [inaudible] worried [inaudible] here, that this is minus γ over two and this is plus something."
+  },
+  {
+   "i": 50,
+   "chapter": 0,
+   "t": 332,
+   "text": "But the plus something is smaller than the minus something, because what's inside the square root is γ over 2 square."
+  },
+  {
+   "i": 51,
+   "chapter": 0,
+   "t": 340,
+   "text": "If you took the square root of that you'll get exactly γ over 2."
+  },
+  {
+   "i": 52,
+   "chapter": 0,
+   "t": 345,
+   "text": "But you're taking away from it, this number; therefore, this square root is smaller than this number, so the overall thing will still come out negative."
+  },
+  {
+   "i": 53,
+   "chapter": 0,
+   "t": 355,
+   "text": "So, why am I so eager that it should come out negative?"
+  },
+  {
+   "i": 54,
+   "chapter": 0,
+   "t": 360,
+   "text": "Why am I eager that the root should be negative?"
+  },
+  {
+   "i": 55,
+   "chapter": 0,
+   "t": 364,
+   "text": "Yes? [inaudible] No, even if I had positive, if I took two derivatives, it would work out."
+  },
+  {
+   "i": 56,
+   "chapter": 0,
+   "t": 370,
+   "text": "Yes?"
+  },
+  {
+   "i": 57,
+   "chapter": 0,
+   "t": 371,
+   "text": "Because if alpha is greater than one, then the e won't converge to cosine."
+  },
+  {
+   "i": 58,
+   "chapter": 0,
+   "t": 376,
+   "text": "Won't converge to what?"
+  },
+  {
+   "i": 59,
+   "chapter": 0,
+   "t": 378,
+   "text": "The cosine function?"
+  },
+  {
+   "i": 60,
+   "chapter": 0,
+   "t": 379,
+   "text": "This is not a cosine function."
+  },
+  {
+   "i": 61,
+   "chapter": 0,
+   "t": 381,
+   "text": "This is never going to be."
+  },
+  {
+   "i": 62,
+   "chapter": 0,
+   "t": 384,
+   "text": "A cosine function is related to e to the iωt or e to ix."
+  },
+  {
+   "i": 63,
+   "chapter": 0,
+   "t": 389,
+   "text": "These are all real exponentials, yes?"
+  },
+  {
+   "i": 64,
+   "chapter": 0,
+   "t": 391,
+   "text": "If alpha is positive t goes up [inaudible] Yeah, that's our main problem."
+  },
+  {
+   "i": 65,
+   "chapter": 0,
+   "t": 396,
+   "text": "When you write exponential function--;Usually, people write exponentials like this, for population growth."
+  },
+  {
+   "i": 66,
+   "chapter": 0,
+   "t": 401,
+   "text": "Everyone says our problems are increasing exponentially, they always think of exponentials as rising."
+  },
+  {
+   "i": 67,
+   "chapter": 0,
+   "t": 407,
+   "text": "Of course, it's also possible that if α were a negative number, you could write it as A times the absolute value of α just to show you it's a falling exponential."
+  },
+  {
+   "i": 68,
+   "chapter": 0,
+   "t": 419,
+   "text": "And we have a stomach only for falling exponentials."
+  },
+  {
+   "i": 69,
+   "chapter": 0,
+   "t": 423,
+   "text": "You've got to think if I pull this mass and I let it go, I expect x to go down from whatever value I have, not to keep growing indefinitely."
+  },
+  {
+   "i": 70,
+   "chapter": 0,
+   "t": 434,
+   "text": "That doesn't make any physical sense."
+  },
+  {
+   "i": 71,
+   "chapter": 0,
+   "t": 437,
+   "text": "And one of the great things about the union of mathematics and physics is the equation automatically works out that way."
+  },
+  {
+   "i": 72,
+   "chapter": 0,
+   "t": 445,
+   "text": "It gives you an answer that makes sense."
+  },
+  {
+   "i": 73,
+   "chapter": 0,
+   "t": 448,
+   "text": "Okay, so what you get then is a solution that looks like this."
+  },
+  {
+   "i": 74,
+   "chapter": 0,
+   "t": 453,
+   "text": "One number A times e to one of the roots plus another number, B, times e to the other root."
+  },
+  {
+   "i": 75,
+   "chapter": 0,
+   "t": 461,
+   "text": "I wrote them--they're both e to the αt, but I write it as minus the absolute value so you can all see they're falling exponentials."
+  },
+  {
+   "i": 76,
+   "chapter": 0,
+   "t": 470,
+   "text": "You understand if a number is negative, like negative five, that can be written as minus one times the absolute value of the number."
+  },
+  {
+   "i": 77,
+   "chapter": 0,
+   "t": 480,
+   "text": "So, it is e to the the αt, but I want to write it in this form, so it's falling."
+  },
+  {
+   "i": 78,
+   "chapter": 0,
+   "t": 488,
+   "text": "So, this is a case where if you pull the mass and you let it go, it will just relax eventually coming to x = 0, which is its normal equilibrium location."
+  },
+  {
+   "i": 79,
+   "chapter": 1,
+   "t": 500,
+   "text": "Now, how about the numbers A and B?"
+  },
+  {
+   "i": 80,
+   "chapter": 1,
+   "t": 503,
+   "text": "Right now, they're completely arbitrary."
+  },
+  {
+   "i": 81,
+   "chapter": 1,
+   "t": 505,
+   "text": "And another thing you guys should know by now is how we find A and B."
+  },
+  {
+   "i": 82,
+   "chapter": 1,
+   "t": 510,
+   "text": "In order to find A and B, we need to be given more information other than simply the mass and the spring constant."
+  },
+  {
+   "i": 83,
+   "chapter": 1,
+   "t": 518,
+   "text": "They're all sitting here, and the friction coefficient, but that's not enough to tell you what it does on a given day."
+  },
+  {
+   "i": 84,
+   "chapter": 1,
+   "t": 526,
+   "text": "It wants to know, well, yes, it's the mass, there's that the spring, but did you pull it or did you release it in this way or that way?"
+  },
+  {
+   "i": 85,
+   "chapter": 1,
+   "t": 536,
+   "text": "That's what controls the answer."
+  },
+  {
+   "i": 86,
+   "chapter": 1,
+   "t": 538,
+   "text": "They're called initial conditions."
+  },
+  {
+   "i": 87,
+   "chapter": 1,
+   "t": 539,
+   "text": "One initial condition is what was the value of x at time, t = 0?"
+  },
+  {
+   "i": 88,
+   "chapter": 1,
+   "t": 544,
+   "text": "That's asking you how much you pulled it when you let it go."
+  },
+  {
+   "i": 89,
+   "chapter": 1,
+   "t": 549,
+   "text": "The other initial condition is, what is the velocity?"
+  },
+  {
+   "i": 90,
+   "chapter": 1,
+   "t": 552,
+   "text": "Namely, the derivative of x at time 0."
+  },
+  {
+   "i": 91,
+   "chapter": 1,
+   "t": 555,
+   "text": "Most of the time, what you will find as you pull the mass and release it, then it's got a non-0 x and a 0 velocity."
+  },
+  {
+   "i": 92,
+   "chapter": 1,
+   "t": 564,
+   "text": "But it doesn't have to be that way because I could have pulled it and released it at t = 0, starting to move inwards, and that's when you jump in and you set your clocks to 0."
+  },
+  {
+   "i": 93,
+   "chapter": 1,
+   "t": 577,
+   "text": "Well at that instant, x has a value and the velocity also has a non-0 value."
+  },
+  {
+   "i": 94,
+   "chapter": 1,
+   "t": 583,
+   "text": "They don't all have to be 0, but they are some two numbers that you can pick at will."
+  },
+  {
+   "i": 95,
+   "chapter": 1,
+   "t": 589,
+   "text": "You can see that if I put t = 0, I'm going to get A times e to the 0, which is one."
+  },
+  {
+   "i": 96,
+   "chapter": 1,
+   "t": 597,
+   "text": "I'm going to get A + B is x(0)."
+  },
+  {
+   "i": 97,
+   "chapter": 1,
+   "t": 601,
+   "text": "That's one condition on A and B."
+  },
+  {
+   "i": 98,
+   "chapter": 1,
+   "t": 603,
+   "text": "I will take a derivative, namely, find the velocity, then put T = 0, and set that equal to some pre-assigned number, you'll get a second equation for A and B, and we all know we can solve those two equations to find A and B."
+  },
+  {
+   "i": 99,
+   "chapter": 1,
+   "t": 619,
+   "text": "That's how you fit these three parameters to the solution tailor-made for that particular situation."
+  },
+  {
+   "i": 100,
+   "chapter": 1,
+   "t": 624,
+   "text": "You should also ask another question."
+  },
+  {
+   "i": 101,
+   "chapter": 1,
+   "t": 626,
+   "text": "Why is it that I can pick these numbers, x0 and v0, but why not keep going?"
+  },
+  {
+   "i": 102,
+   "chapter": 1,
+   "t": 632,
+   "text": "Maybe they're the acceleration of times 0 is some number."
+  },
+  {
+   "i": 103,
+   "chapter": 1,
+   "t": 636,
+   "text": "Why is that not up to me to decide?"
+  },
+  {
+   "i": 104,
+   "chapter": 1,
+   "t": 639,
+   "text": "Can anyone tell me why that's not negotiable?"
+  },
+  {
+   "i": 105,
+   "chapter": 1,
+   "t": 642,
+   "text": "Yes? [inaudible] Depends upon what?"
+  },
+  {
+   "i": 106,
+   "chapter": 1,
+   "t": 644,
+   "text": "Can I pick the acceleration of a body at will?"
+  },
+  {
+   "i": 107,
+   "chapter": 1,
+   "t": 647,
+   "text": "Yes? [inaudible] Yeah, I'm not sure I heard the exact answer but it sounds close enough to what I had in mind, which is Newton will tell you what the acceleration of a body is, namely mass times acceleration is the force, and the force, once it's given in any given problem, which is given by where the body is, and what the velocity is in this example, you have no choice on what the acceleration is."
+  },
+  {
+   "i": 108,
+   "chapter": 1,
+   "t": 674,
+   "text": "But initial position and velocity are not given by Newton's law."
+  },
+  {
+   "i": 109,
+   "chapter": 1,
+   "t": 678,
+   "text": "Newton's law says, if the force is so and so, the acceleration is so and so, but he doesn't tell you what should be the velocity at a given time, what should be the position at a given time."
+  },
+  {
+   "i": 110,
+   "chapter": 1,
+   "t": 691,
+   "text": "That's why they are two free numbers, that's why you have an answer with two free numbers that you can pick to bring it in accord with these two numbers."
+  },
+  {
+   "i": 111,
+   "chapter": 1,
+   "t": 702,
+   "text": "Okay, this solution to the equation with F = 0 from now on, I'm going to call xc, where c stands for the complimentary function."
+  },
+  {
+   "i": 112,
+   "chapter": 1,
+   "t": 711,
+   "text": "Now, there's another thing that could have happened here, which is in fact another alternative."
+  },
+  {
+   "i": 113,
+   "chapter": 1,
+   "t": 716,
+   "text": "You can think about what I'm saying."
+  },
+  {
+   "i": 114,
+   "chapter": 1,
+   "t": 718,
+   "text": "The other alternative is when this γ over 2 is smaller than this ω0."
+  },
+  {
+   "i": 115,
+   "chapter": 1,
+   "t": 723,
+   "text": "Then, of course, you have the square root of a negative number."
+  },
+  {
+   "i": 116,
+   "chapter": 1,
+   "t": 727,
+   "text": "So, then you go back to the stage where you're finding the root, and you say α equals minus γ over two, plus or minus the square root of γ over two2 minus ω02, but that number is negative."
+  },
+  {
+   "i": 117,
+   "chapter": 1,
+   "t": 741,
+   "text": "So, that can be returned as a negative sign, times the square root of this number, and the square root of minus one will come out as an i out front."
+  },
+  {
+   "i": 118,
+   "chapter": 1,
+   "t": 752,
+   "text": "So, either you will get two real roots, this is a mathematical result, it has nothing to do with physics, a quadratic equation with real coefficients either will have two real roots, or it will have two roots which are complex conjugates of each other."
+  },
+  {
+   "i": 119,
+   "chapter": 1,
+   "t": 767,
+   "text": "You learned the notion of complex conjugation, which is to exchange i to minus i, you can see the α plus and α minus have the same real part, minus γ over 2, and have opposite imaginary parts."
+  },
+  {
+   "i": 120,
+   "chapter": 1,
+   "t": 781,
+   "text": "So, in this example, α plus is the complex conjugate of α minus and I've told you this relationship works both ways; therefore, α minus is a complex conjugate of α plus."
+  },
+  {
+   "i": 121,
+   "chapter": 1,
+   "t": 792,
+   "text": "So, what's the solution going to look like?"
+  },
+  {
+   "i": 122,
+   "chapter": 1,
+   "t": 795,
+   "text": "It's going to look like Ae to the minus γt over two, e to the iω ′ t, but I'm going to call this fellow in brackets as ω′."
+  },
+  {
+   "i": 123,
+   "chapter": 1,
+   "t": 805,
+   "text": "Then, there's the second solution."
+  },
+  {
+   "i": 124,
+   "chapter": 1,
+   "t": 807,
+   "text": "The real part is exactly the same, the imaginary part is opposite, minus iω′ t. ω′ is a new frequency connected to the natural frequency and the frictional force."
+  },
+  {
+   "i": 125,
+   "chapter": 1,
+   "t": 817,
+   "text": "That's why, we've got three ωs."
+  },
+  {
+   "i": 126,
+   "chapter": 1,
+   "t": 819,
+   "text": "We've got to keep that in mind. ω0 is a natural frequency of vibration."
+  },
+  {
+   "i": 127,
+   "chapter": 1,
+   "t": 824,
+   "text": "If I have a driving force, I reserve the symbol ω for the frequency of the driving force."
+  },
+  {
+   "i": 128,
+   "chapter": 1,
+   "t": 830,
+   "text": "Here is yet another quantity with units of frequency which I'm calling ω′."
+  },
+  {
+   "i": 129,
+   "chapter": 1,
+   "t": 835,
+   "text": "So, what does this guy look like?"
+  },
+  {
+   "i": 130,
+   "chapter": 1,
+   "t": 837,
+   "text": "But first of all, it's full of complex numbers and we don't like it."
+  },
+  {
+   "i": 131,
+   "chapter": 1,
+   "t": 842,
+   "text": "We know the oscillator should have a real coordinate, so you ask, I've not picked A and B yet, how shall I pick them so that x is real?"
+  },
+  {
+   "i": 132,
+   "chapter": 1,
+   "t": 852,
+   "text": "Well, forget A and B for a minute and look at this number and this number."
+  },
+  {
+   "i": 133,
+   "chapter": 1,
+   "t": 858,
+   "text": "Do you guys realize that they're complex conjugates of each other, because i has gone to minus i."
+  },
+  {
+   "i": 134,
+   "chapter": 1,
+   "t": 864,
+   "text": "So for example, if A and B were equal numbers, this would be a real number because number plus its conjugate, you killed imaginary part because they have opposite imaginary parts."
+  },
+  {
+   "i": 135,
+   "chapter": 1,
+   "t": 875,
+   "text": "So, A and B real [and equal as stated above] is a good answer, but it's too restrictive."
+  },
+  {
+   "i": 136,
+   "chapter": 1,
+   "t": 881,
+   "text": "All we will demand is that if A looks like absolute value of A times e to the iφ, B should look like the absolute value of A times e to the minus iφ."
+  },
+  {
+   "i": 137,
+   "chapter": 1,
+   "t": 893,
+   "text": "In other words, B should be the complex conjugate of A."
+  },
+  {
+   "i": 138,
+   "chapter": 1,
+   "t": 897,
+   "text": "That means the same absolute value, but opposite phase."
+  },
+  {
+   "i": 139,
+   "chapter": 1,
+   "t": 900,
+   "text": "I remind you, in the complex plane, if a number z is sitting there, the complex conjugate is sitting here, they have opposite angles, φ."
+  },
+  {
+   "i": 140,
+   "chapter": 1,
+   "t": 909,
+   "text": "So, if you do that, then you get A absolute value, e to the minus γ over two, times e to the iω′ t plus φ, plus e to the minus iω′ t plus φ."
+  },
+  {
+   "i": 141,
+   "chapter": 1,
+   "t": 921,
+   "text": "Now we have made it real."
+  },
+  {
+   "i": 142,
+   "chapter": 1,
+   "t": 923,
+   "text": "A and B, both being fully real means this φ is 0, but you see φ doesn't really have to be 0."
+  },
+  {
+   "i": 143,
+   "chapter": 1,
+   "t": 931,
+   "text": "That is too much of a restriction. φ can be whatever you like provided the φ that A has, the phase that A has, is the same [correction: should have said \"minus\"] the phase that B has."
+  },
+  {
+   "i": 144,
+   "chapter": 1,
+   "t": 943,
+   "text": "That means the angle in the complex plane of the number A and the number B have to be opposite of each other."
+  },
+  {
+   "i": 145,
+   "chapter": 1,
+   "t": 951,
+   "text": "This, you guys should know what it is."
+  },
+  {
+   "i": 146,
+   "chapter": 1,
+   "t": 954,
+   "text": "I've told you many times."
+  },
+  {
+   "i": 147,
+   "chapter": 1,
+   "t": 956,
+   "text": "This is unforgivable if you don't know what this is. e to iθ, plus e to the minus iθ over two, is cos θ."
+  },
+  {
+   "i": 148,
+   "chapter": 1,
+   "t": 964,
+   "text": "Since you don't have the over two, you can write it as 2A, e to the minus γ over two, cosine of whatever is in here, ω′ t plus φ."
+  },
+  {
+   "i": 149,
+   "chapter": 1,
+   "t": 975,
+   "text": "At this point, I'm going to change my notation a little bit in view of what's to come."
+  },
+  {
+   "i": 150,
+   "chapter": 1,
+   "t": 981,
+   "text": "Instead of calling this φ, I'm going to call it φ0."
+  },
+  {
+   "i": 151,
+   "chapter": 1,
+   "t": 985,
+   "text": "Alright, because another φ is going to come in and I want to separate those two."
+  },
+  {
+   "i": 152,
+   "chapter": 1,
+   "t": 991,
+   "text": "So, two times A is a new number, I'm going to call that C, and this is the bottom line."
+  },
+  {
+   "i": 153,
+   "chapter": 1,
+   "t": 998,
+   "text": "The answer looks like e to the minus γt over two, cos ω′ t plus φ0."
+  },
+  {
+   "i": 154,
+   "chapter": 1,
+   "t": 1003,
+   "text": "So, we had done all this yesterday."
+  },
+  {
+   "i": 155,
+   "chapter": 1,
+   "t": 1006,
+   "text": "I've given you the notes, but I want you to understand where we're going with all of this."
+  },
+  {
+   "i": 156,
+   "chapter": 1,
+   "t": 1012,
+   "text": "If you pull a mass and let it go, it turns out there are two things that can happen."
+  },
+  {
+   "i": 157,
+   "chapter": 1,
+   "t": 1019,
+   "text": "I really wish I had time to bring you these different masses and show you."
+  },
+  {
+   "i": 158,
+   "chapter": 1,
+   "t": 1024,
+   "text": "If you have no friction, everyone knows what's going to happen."
+  },
+  {
+   "i": 159,
+   "chapter": 1,
+   "t": 1028,
+   "text": "You pull the mass and let it go; it oscillates forever."
+  },
+  {
+   "i": 160,
+   "chapter": 1,
+   "t": 1031,
+   "text": "In real life, there's always some friction, so let's turn on a little friction."
+  },
+  {
+   "i": 161,
+   "chapter": 1,
+   "t": 1036,
+   "text": "What'll happen is what's very familiar and expected."
+  },
+  {
+   "i": 162,
+   "chapter": 1,
+   "t": 1039,
+   "text": "We start with an amplitude of five, go to four, go to three, go to two, rock back and forth and slowly it may wiggle around but you won't be able to see it."
+  },
+  {
+   "i": 163,
+   "chapter": 1,
+   "t": 1051,
+   "text": "That's called a damped oscillation."
+  },
+  {
+   "i": 164,
+   "chapter": 1,
+   "t": 1053,
+   "text": "That's really what's described by this solution."
+  },
+  {
+   "i": 165,
+   "chapter": 1,
+   "t": 1055,
+   "text": "Here, it looks like a cosine of something, but the number in front of it itself is falling with time."
+  },
+  {
+   "i": 166,
+   "chapter": 1,
+   "t": 1062,
+   "text": "And the picture for that will look like the following: if you just draw an exponentially falling function as your amplitude, and you multiply that by an oscillating cosine it will do this."
+  },
+  {
+   "i": 167,
+   "chapter": 1,
+   "t": 1074,
+   "text": "This is a damped oscillation."
+  },
+  {
+   "i": 168,
+   "chapter": 1,
+   "t": 1075,
+   "text": "But another extreme case which you may not think about is, if you crank up the friction more, 'till γ over two is bigger than ω0, then what happens is if you pull the mass and let it go, it doesn't even go to the other side of x = 0."
+  },
+  {
+   "i": 169,
+   "chapter": 1,
+   "t": 1093,
+   "text": "It just slowly gets to 0, in an infinite amount of time, you understand?"
+  },
+  {
+   "i": 170,
+   "chapter": 1,
+   "t": 1098,
+   "text": "If you pull it from here, you let it go."
+  },
+  {
+   "i": 171,
+   "chapter": 1,
+   "t": 1102,
+   "text": "No friction is this [moving hand back and forth] for eternity."
+  },
+  {
+   "i": 172,
+   "chapter": 1,
+   "t": 1105,
+   "text": "Small amount of friction has slowly damped the oscillation."
+  },
+  {
+   "i": 173,
+   "chapter": 1,
+   "t": 1109,
+   "text": "Too much of friction, you come back slowly and you come to rest."
+  },
+  {
+   "i": 174,
+   "chapter": 1,
+   "t": 1113,
+   "text": "These are different cases and the mathematics tells you the different cases so that's what we like about the union of mathematics and physics."
+  },
+  {
+   "i": 175,
+   "chapter": 1,
+   "t": 1122,
+   "text": "Once you wrote down the basic law of Newton, you have no choice as to where it takes you."
+  },
+  {
+   "i": 176,
+   "chapter": 1,
+   "t": 1128,
+   "text": "You go where it takes, and these are the different solutions."
+  },
+  {
+   "i": 177,
+   "chapter": 2,
+   "t": 1132,
+   "text": "Okay, so this is what I did earlier on in the day."
+  },
+  {
+   "i": 178,
+   "chapter": 2,
+   "t": 1137,
+   "text": "But now, let's go back to the more general problem I had, which is a right-hand side which, is not 0."
+  },
+  {
+   "i": 179,
+   "chapter": 2,
+   "t": 1145,
+   "text": "So, let's write the right-hand side which is not zero as x double dot, plus γx dot, plus ω02x, equals F0 over m, cos ωt."
+  },
+  {
+   "i": 180,
+   "chapter": 2,
+   "t": 1154,
+   "text": "This is called a driven oscillator."
+  },
+  {
+   "i": 181,
+   "chapter": 2,
+   "t": 1157,
+   "text": "Driven oscillators are present all the time."
+  },
+  {
+   "i": 182,
+   "chapter": 2,
+   "t": 1159,
+   "text": "For example, if you have a swing, the swing goes back and forth."
+  },
+  {
+   "i": 183,
+   "chapter": 2,
+   "t": 1164,
+   "text": "You may choose to push the swing back and forth."
+  },
+  {
+   "i": 184,
+   "chapter": 2,
+   "t": 1168,
+   "text": "If you've got a kid in a park, you're applying a force which is an oscillating force."
+  },
+  {
+   "i": 185,
+   "chapter": 2,
+   "t": 1175,
+   "text": "Whereas in the absence of external forces, all oscillations will eventually die down."
+  },
+  {
+   "i": 186,
+   "chapter": 2,
+   "t": 1180,
+   "text": "Do you guys understand that?"
+  },
+  {
+   "i": 187,
+   "chapter": 2,
+   "t": 1181,
+   "text": "Why?"
+  },
+  {
+   "i": 188,
+   "chapter": 2,
+   "t": 1182,
+   "text": "Why do all oscillations die down in the absence of external forces?"
+  },
+  {
+   "i": 189,
+   "chapter": 2,
+   "t": 1186,
+   "text": "Friction?"
+  },
+  {
+   "i": 190,
+   "chapter": 2,
+   "t": 1187,
+   "text": "Yes? [inaudible] Yeah, well in this case, it's not air resistance, but friction."
+  },
+  {
+   "i": 191,
+   "chapter": 2,
+   "t": 1192,
+   "text": "But what friction does is that in the presence of friction, you cannot prove the Law of Conservation of Energy."
+  },
+  {
+   "i": 192,
+   "chapter": 2,
+   "t": 1199,
+   "text": "We saw that."
+  },
+  {
+   "i": 193,
+   "chapter": 2,
+   "t": 1201,
+   "text": "Whenever friction acts, the energy total mechanical energy goes down."
+  },
+  {
+   "i": 194,
+   "chapter": 2,
+   "t": 1204,
+   "text": "So, kinetic plus potential will decrease with time so the oscillations get damped."
+  },
+  {
+   "i": 195,
+   "chapter": 2,
+   "t": 1209,
+   "text": "But if you are pushing it from outside, you can provide a constant source of energy so you can maintain a steady oscillation, and that's the problem we're looking at."
+  },
+  {
+   "i": 196,
+   "chapter": 2,
+   "t": 1221,
+   "text": "That is this problem."
+  },
+  {
+   "i": 197,
+   "chapter": 2,
+   "t": 1222,
+   "text": "So, how did we solve this problem?"
+  },
+  {
+   "i": 198,
+   "chapter": 2,
+   "t": 1225,
+   "text": "Well, I said I don't want to solve this equation."
+  },
+  {
+   "i": 199,
+   "chapter": 2,
+   "t": 1229,
+   "text": "I'm going to manufacture another problem. z double dot, plus γ times z dot, plus ω0 square z, is F0 over m, e to the iωt."
+  },
+  {
+   "i": 200,
+   "chapter": 2,
+   "t": 1239,
+   "text": "So, let's be very clear."
+  },
+  {
+   "i": 201,
+   "chapter": 2,
+   "t": 1241,
+   "text": "This is a real physics problem that occurs all the time."
+  },
+  {
+   "i": 202,
+   "chapter": 2,
+   "t": 1245,
+   "text": "This [pointing to other equation] is clearly not of our world, because in our world you don't have a force, e to the iωt."
+  },
+  {
+   "i": 203,
+   "chapter": 2,
+   "t": 1254,
+   "text": "All forces in the real world are real."
+  },
+  {
+   "i": 204,
+   "chapter": 2,
+   "t": 1257,
+   "text": "So, this is a complex force."
+  },
+  {
+   "i": 205,
+   "chapter": 2,
+   "t": 1260,
+   "text": "If you break down the e to the iωt, you all know it's cos ωt, which I like, plus i sin ωt, which I don't like."
+  },
+  {
+   "i": 206,
+   "chapter": 2,
+   "t": 1270,
+   "text": "I'm solving a problem in which on top of the force I'm really applying, there's an imaginary force put on top of it."
+  },
+  {
+   "i": 207,
+   "chapter": 2,
+   "t": 1278,
+   "text": "So, what is the strategy?"
+  },
+  {
+   "i": 208,
+   "chapter": 2,
+   "t": 1280,
+   "text": "Why have we taken the problem and making it worse than it is?"
+  },
+  {
+   "i": 209,
+   "chapter": 2,
+   "t": 1285,
+   "text": "Because we have a strategy and the strategy is the following."
+  },
+  {
+   "i": 210,
+   "chapter": 2,
+   "t": 1290,
+   "text": "If you have right-hand side cos ωt, ask yourself what you're trying to do."
+  },
+  {
+   "i": 211,
+   "chapter": 2,
+   "t": 1295,
+   "text": "You're looking for some function x(t), which will obey this equation."
+  },
+  {
+   "i": 212,
+   "chapter": 2,
+   "t": 1299,
+   "text": "You can try various functions, maybe x is a cosine of time."
+  },
+  {
+   "i": 213,
+   "chapter": 2,
+   "t": 1304,
+   "text": "If it's a cosine of time, two derivatives will be a cosine."
+  },
+  {
+   "i": 214,
+   "chapter": 2,
+   "t": 1308,
+   "text": "No derivative will be a sine."
+  },
+  {
+   "i": 215,
+   "chapter": 2,
+   "t": 1311,
+   "text": "One derivative will--I'm sorry, no derivative will be cosine, one derivative will be a sine."
+  },
+  {
+   "i": 216,
+   "chapter": 2,
+   "t": 1316,
+   "text": "So, you cannot make it into a cosine."
+  },
+  {
+   "i": 217,
+   "chapter": 2,
+   "t": 1319,
+   "text": "If you took a sine, the middle guy will look like a cosine."
+  },
+  {
+   "i": 218,
+   "chapter": 2,
+   "t": 1324,
+   "text": "You can try to balance that against this; the end two terms look like cosine, so neither sin nor a cosine works."
+  },
+  {
+   "i": 219,
+   "chapter": 2,
+   "t": 1333,
+   "text": "It turns out something in between will work."
+  },
+  {
+   "i": 220,
+   "chapter": 2,
+   "t": 1336,
+   "text": "But something that always works is the following."
+  },
+  {
+   "i": 221,
+   "chapter": 2,
+   "t": 1339,
+   "text": "If the right-hand side, instead of being cos ωt, was e to the iωt, you can guess the answer immediately."
+  },
+  {
+   "i": 222,
+   "chapter": 2,
+   "t": 1347,
+   "text": "Namely z itself will behave like e to the iωt, because then if I take two derivatives, that's going to look like e to the iωt, times some numbers, that's going to look like e to the iωt, that's going to look like e to the iωt."
+  },
+  {
+   "i": 223,
+   "chapter": 2,
+   "t": 1365,
+   "text": "So, the beauty of the exponential is when you take derivatives you keep getting the exponential."
+  },
+  {
+   "i": 224,
+   "chapter": 2,
+   "t": 1371,
+   "text": "Okay, but now, the problem is this is not the problem."
+  },
+  {
+   "i": 225,
+   "chapter": 2,
+   "t": 1375,
+   "text": "No one told you to solve this problem, but our strategy is the following."
+  },
+  {
+   "i": 226,
+   "chapter": 2,
+   "t": 1380,
+   "text": "The right-hand side has got a real force and imaginary force."
+  },
+  {
+   "i": 227,
+   "chapter": 2,
+   "t": 1385,
+   "text": "The real force will produce the x that I want."
+  },
+  {
+   "i": 228,
+   "chapter": 2,
+   "t": 1388,
+   "text": "The imaginary force, purely imaginary, i times sin ωt, will produce a purely imaginary answer."
+  },
+  {
+   "i": 229,
+   "chapter": 2,
+   "t": 1394,
+   "text": "So, at the end of the day, I will find the answer and keep only the real part."
+  },
+  {
+   "i": 230,
+   "chapter": 2,
+   "t": 1401,
+   "text": "That's the plan."
+  },
+  {
+   "i": 231,
+   "chapter": 2,
+   "t": 1402,
+   "text": "That's going to be the strategy, so that this z, this z is going to be the x that I want and, will have a part hanging around, y, that I don't want, but y is being driven by the sin ωt."
+  },
+  {
+   "i": 232,
+   "chapter": 2,
+   "t": 1418,
+   "text": "And x is being driven by the cos ωt."
+  },
+  {
+   "i": 233,
+   "chapter": 2,
+   "t": 1422,
+   "text": "But now, let's solve it by inspection."
+  },
+  {
+   "i": 234,
+   "chapter": 2,
+   "t": 1425,
+   "text": "So, let's make a guess that z looks like some number z0, e to the iωt."
+  },
+  {
+   "i": 235,
+   "chapter": 2,
+   "t": 1431,
+   "text": "Now, it's very easy to take derivatives of exponential."
+  },
+  {
+   "i": 236,
+   "chapter": 2,
+   "t": 1434,
+   "text": "Just pull down iω every time you see a derivative."
+  },
+  {
+   "i": 237,
+   "chapter": 2,
+   "t": 1438,
+   "text": "So, z double dot will become iω square, which is minus ω square. z dot will become iω, there's a γ there, and ω02 is just multiplying by a number."
+  },
+  {
+   "i": 238,
+   "chapter": 2,
+   "t": 1449,
+   "text": "So, this is what I get on the left-hand side, and I want it to equal this on the right-hand side."
+  },
+  {
+   "i": 239,
+   "chapter": 2,
+   "t": 1457,
+   "text": "And you're almost there because the time dependence of the two sides are identical, so you can cancel it and what you find is, yes, I can satisfy the equation that's given to me, provide the number z0, the number in front of it will obey condition."
+  },
+  {
+   "i": 240,
+   "chapter": 2,
+   "t": 1476,
+   "text": "That's trivially solved, because we all know how to get the solution to that one. z0 is obtained by dividing both sides by everything that multiplies z0, which happens to be ω02 minus ω square plus iωγ."
+  },
+  {
+   "i": 241,
+   "chapter": 2,
+   "t": 1490,
+   "text": "So, the beautiful property of the exponential function is that you take what is a differential equation and you turn it into an algebraic equation."
+  },
+  {
+   "i": 242,
+   "chapter": 2,
+   "t": 1499,
+   "text": "Because the act of taking derivatives generally is a nasty operation."
+  },
+  {
+   "i": 243,
+   "chapter": 2,
+   "t": 1503,
+   "text": "Sines become cosines, x cubed, becomes three x square."
+  },
+  {
+   "i": 244,
+   "chapter": 2,
+   "t": 1507,
+   "text": "But exponential remains exponential."
+  },
+  {
+   "i": 245,
+   "chapter": 2,
+   "t": 1508,
+   "text": "That's the property you're trying to exploit here."
+  },
+  {
+   "i": 246,
+   "chapter": 2,
+   "t": 1512,
+   "text": "So now, we've got z0 to be this one."
+  },
+  {
+   "i": 247,
+   "chapter": 2,
+   "t": 1515,
+   "text": "And z itself, the complex function I'm looking for is F0 over m, e to the iωt, divided by this quantity downstairs."
+  },
+  {
+   "i": 248,
+   "chapter": 2,
+   "t": 1523,
+   "text": "This quantity downstairs I'm going to call I(ω)."
+  },
+  {
+   "i": 249,
+   "chapter": 2,
+   "t": 1526,
+   "text": "I(ω) is a complex number."
+  },
+  {
+   "i": 250,
+   "chapter": 2,
+   "t": 1528,
+   "text": "It's got a real part and an imaginary part."
+  },
+  {
+   "i": 251,
+   "chapter": 2,
+   "t": 1532,
+   "text": "The real part is ω02 - ω2."
+  },
+  {
+   "i": 252,
+   "chapter": 2,
+   "t": 1535,
+   "text": "The imaginary part is ωγ."
+  },
+  {
+   "i": 253,
+   "chapter": 2,
+   "t": 1536,
+   "text": "It's not a fixed complex number, but every frequency of the driving force ω, it is a different complex number, but if it's sitting at one frequency of the driving force, it's a particular number."
+  },
+  {
+   "i": 254,
+   "chapter": 2,
+   "t": 1550,
+   "text": "Everyone should know how to work it out. ω0 is the root of k over m; ω is given to you, that's the real number. γ is given to you, that's an imaginary part."
+  },
+  {
+   "i": 255,
+   "chapter": 2,
+   "t": 1563,
+   "text": "If you actually put in numbers, it might look like six plus five i."
+  },
+  {
+   "i": 256,
+   "chapter": 2,
+   "t": 1568,
+   "text": "In the end, the thing I called impedance or I, is just a complex number."
+  },
+  {
+   "i": 257,
+   "chapter": 2,
+   "t": 1574,
+   "text": "But it varies from frequency to frequency."
+  },
+  {
+   "i": 258,
+   "chapter": 2,
+   "t": 1577,
+   "text": "You can see that."
+  },
+  {
+   "i": 259,
+   "chapter": 2,
+   "t": 1578,
+   "text": "Okay, now we've got z of t."
+  },
+  {
+   "i": 260,
+   "chapter": 2,
+   "t": 1581,
+   "text": "If the problem given to us was z we're done."
+  },
+  {
+   "i": 261,
+   "chapter": 2,
+   "t": 1585,
+   "text": "You don't have to do any more work."
+  },
+  {
+   "i": 262,
+   "chapter": 2,
+   "t": 1588,
+   "text": "Here's the answer."
+  },
+  {
+   "i": 263,
+   "chapter": 2,
+   "t": 1589,
+   "text": "But we were told to take the real part of this answer because x was the real part of the answer; y was not part of the game."
+  },
+  {
+   "i": 264,
+   "chapter": 2,
+   "t": 1600,
+   "text": "How do you take the real part?"
+  },
+  {
+   "i": 265,
+   "chapter": 2,
+   "t": 1602,
+   "text": "Your temptation may be well, e to the iωt is cos ωt plus i sine ωt, so drop the i sin ωt."
+  },
+  {
+   "i": 266,
+   "chapter": 2,
+   "t": 1611,
+   "text": "But that would not be right."
+  },
+  {
+   "i": 267,
+   "chapter": 2,
+   "t": 1613,
+   "text": "Now, why is that not right?"
+  },
+  {
+   "i": 268,
+   "chapter": 2,
+   "t": 1615,
+   "text": "Anyone know why that's not the way to get the real part yet?"
+  },
+  {
+   "i": 269,
+   "chapter": 2,
+   "t": 1620,
+   "text": "Yep?"
+  },
+  {
+   "i": 270,
+   "chapter": 2,
+   "t": 1621,
+   "text": "Yes? [inaudible] Professor Ramamurti Shankar Yes."
+  },
+  {
+   "i": 271,
+   "chapter": 2,
+   "t": 1623,
+   "text": "This number downstairs is not a real number."
+  },
+  {
+   "i": 272,
+   "chapter": 2,
+   "t": 1626,
+   "text": "It's a complex number."
+  },
+  {
+   "i": 273,
+   "chapter": 2,
+   "t": 1628,
+   "text": "So, if you have a complex number on the top, divided by the complex number in the bottom, the real part is not simply the real part of the top."
+  },
+  {
+   "i": 274,
+   "chapter": 2,
+   "t": 1639,
+   "text": "You got to write the whole thing so you can clearly separate the real and imaginary parts, and that's what I'm going to do next."
+  },
+  {
+   "i": 275,
+   "chapter": 2,
+   "t": 1649,
+   "text": "Every complex number we know can be returned as an absolute value times e to the iφ."
+  },
+  {
+   "i": 276,
+   "chapter": 2,
+   "t": 1655,
+   "text": "Right?"
+  },
+  {
+   "i": 277,
+   "chapter": 2,
+   "t": 1656,
+   "text": "Every z looks like [inaudible] e to the iθ, because then it's [inaudible] cos θ which is x, plus i times [inaudible] which is iy."
+  },
+  {
+   "i": 278,
+   "chapter": 2,
+   "t": 1665,
+   "text": "So, every complex number can be written that way and what will be the magnitude of this guy?"
+  },
+  {
+   "i": 279,
+   "chapter": 2,
+   "t": 1672,
+   "text": "Well, by the Pythagoras' theorem, it'll be the square of the real part, plus the square of the imaginary part under root."
+  },
+  {
+   "i": 280,
+   "chapter": 2,
+   "t": 1681,
+   "text": "Every complex number that you have will have an absolute value which is that square plus that square under the root, and it'll have a phase φ, obeying the condition tan φ, is the imaginary part divided by the real part."
+  },
+  {
+   "i": 281,
+   "chapter": 2,
+   "t": 1696,
+   "text": "I want you to realize that in a given problem, with a given mass, given friction, given frequency, both these are known."
+  },
+  {
+   "i": 282,
+   "chapter": 2,
+   "t": 1705,
+   "text": "They're simply a magnitude and the phase of I can by found by this process."
+  },
+  {
+   "i": 283,
+   "chapter": 2,
+   "t": 1711,
+   "text": "Now, write it like that, then you get F0 over m, divided by the absolute value of I, e to the iφ, and I got e to the iωt on the top."
+  },
+  {
+   "i": 284,
+   "chapter": 2,
+   "t": 1723,
+   "text": "I'm almost there."
+  },
+  {
+   "i": 285,
+   "chapter": 2,
+   "t": 1724,
+   "text": "I'm almost there because e to the iφ in the bottom can be written as e to the minus iφ on the top."
+  },
+  {
+   "i": 286,
+   "chapter": 2,
+   "t": 1733,
+   "text": "So then, this whole thing becomes F0 over m divided by the absolute value of i, e to the iωt, minus φ."
+  },
+  {
+   "i": 287,
+   "chapter": 2,
+   "t": 1741,
+   "text": "Now, it's easy to take the real part because this is cos ωt minus φ plus i + sin ωt minus φ."
+  },
+  {
+   "i": 288,
+   "chapter": 2,
+   "t": 1750,
+   "text": "These are all real numbers."
+  },
+  {
+   "i": 289,
+   "chapter": 2,
+   "t": 1752,
+   "text": "So, they'll just multiply the whole thing."
+  },
+  {
+   "i": 290,
+   "chapter": 2,
+   "t": 1754,
+   "text": "But the real to imaginary separation now comes from just taking the cosine part of this exponential."
+  },
+  {
+   "i": 291,
+   "chapter": 2,
+   "t": 1761,
+   "text": "And that is our final answer."
+  },
+  {
+   "i": 292,
+   "chapter": 2,
+   "t": 1763,
+   "text": "That's the answer we've been looking for, which is x(t) is equal to F0 over m, divided absolute value of I, cos ωt - φ."
+  },
+  {
+   "i": 293,
+   "chapter": 2,
+   "t": 1773,
+   "text": "Why did we go through the whole business of complex numbers?"
+  },
+  {
+   "i": 294,
+   "chapter": 2,
+   "t": 1777,
+   "text": "We went there because the answer is not a cosine and it's not a sine."
+  },
+  {
+   "i": 295,
+   "chapter": 2,
+   "t": 1783,
+   "text": "Cos ωt - φ, if you know your trigonometry, is cos ωt, cos φ - sin ωt sin φ."
+  },
+  {
+   "i": 296,
+   "chapter": 2,
+   "t": 1790,
+   "text": "So, cos ωt has got some sin ωt and that's why it's hard to guess that answer."
+  },
+  {
+   "i": 297,
+   "chapter": 2,
+   "t": 1796,
+   "text": "But if you go through complex numbers, it comes out very easily."
+  },
+  {
+   "i": 298,
+   "chapter": 3,
+   "t": 1801,
+   "text": "So, the next thing is to analyze the properties of the answer you got."
+  },
+  {
+   "i": 299,
+   "chapter": 3,
+   "t": 1806,
+   "text": "You can write this whole thing in front as some overall amplitude x0 cos ωt - φ and you ask, \"What does this function look like?\" Well, this function is obvious to all of you, it's oscillating."
+  },
+  {
+   "i": 300,
+   "chapter": 3,
+   "t": 1819,
+   "text": "Notice that even though it is oscillating like a cosine, it's not in step with the applied force."
+  },
+  {
+   "i": 301,
+   "chapter": 3,
+   "t": 1825,
+   "text": "The applied force is cos ωt."
+  },
+  {
+   "i": 302,
+   "chapter": 3,
+   "t": 1827,
+   "text": "Its maximum occurs at 0, 2π, 4π, et cetera."
+  },
+  {
+   "i": 303,
+   "chapter": 3,
+   "t": 1830,
+   "text": "This guy's maximum occurs somewhat later."
+  },
+  {
+   "i": 304,
+   "chapter": 3,
+   "t": 1832,
+   "text": "The first maximum occurs when ωt = φ."
+  },
+  {
+   "i": 305,
+   "chapter": 3,
+   "t": 1835,
+   "text": "So, it's said to be lagging the function."
+  },
+  {
+   "i": 306,
+   "chapter": 3,
+   "t": 1838,
+   "text": "You can imagine two functions oscillating."
+  },
+  {
+   "i": 307,
+   "chapter": 3,
+   "t": 1840,
+   "text": "One is behind the other one."
+  },
+  {
+   "i": 308,
+   "chapter": 3,
+   "t": 1842,
+   "text": "It reaches the maximum slightly later."
+  },
+  {
+   "i": 309,
+   "chapter": 3,
+   "t": 1844,
+   "text": "So, the first property is in a driven oscillator, the x will not be in step with the F."
+  },
+  {
+   "i": 310,
+   "chapter": 3,
+   "t": 1850,
+   "text": "It will be lagging."
+  },
+  {
+   "i": 311,
+   "chapter": 3,
+   "t": 1852,
+   "text": "Or, it could be leading depends on what φ is."
+  },
+  {
+   "i": 312,
+   "chapter": 3,
+   "t": 1855,
+   "text": "Then, what about the amplitude of oscillation?"
+  },
+  {
+   "i": 313,
+   "chapter": 3,
+   "t": 1858,
+   "text": "That's the thing that's very interesting."
+  },
+  {
+   "i": 314,
+   "chapter": 3,
+   "t": 1860,
+   "text": "How big is the oscillation?"
+  },
+  {
+   "i": 315,
+   "chapter": 3,
+   "t": 1862,
+   "text": "It looks like F0 over m divided by the absolute value of I."
+  },
+  {
+   "i": 316,
+   "chapter": 3,
+   "t": 1866,
+   "text": "Let me write the absolute value of I for you."
+  },
+  {
+   "i": 317,
+   "chapter": 3,
+   "t": 1870,
+   "text": "So, the amplitude of oscillation depends on the frequency."
+  },
+  {
+   "i": 318,
+   "chapter": 3,
+   "t": 1873,
+   "text": "You've got to draw the graph."
+  },
+  {
+   "i": 319,
+   "chapter": 3,
+   "t": 1875,
+   "text": "That's the function of frequency."
+  },
+  {
+   "i": 320,
+   "chapter": 3,
+   "t": 1876,
+   "text": "What does the one over this look like?"
+  },
+  {
+   "i": 321,
+   "chapter": 3,
+   "t": 1879,
+   "text": "Pardon me? [inaudible] Yes, but (A minus B)2 = (B minus A)2; that's why I've not been paying attention."
+  },
+  {
+   "i": 322,
+   "chapter": 3,
+   "t": 1886,
+   "text": "Okay."
+  },
+  {
+   "i": 323,
+   "chapter": 3,
+   "t": 1886,
+   "text": "Yeah, so I'm pretty careless on what I put in, but this is one occasion where I sort of know it's okay."
+  },
+  {
+   "i": 324,
+   "chapter": 3,
+   "t": 1894,
+   "text": "I'm going to square this, I don't have to remember who is ω0 and who's ω."
+  },
+  {
+   "i": 325,
+   "chapter": 3,
+   "t": 1899,
+   "text": "I have to be very careful where I don't square things like here."
+  },
+  {
+   "i": 326,
+   "chapter": 3,
+   "t": 1904,
+   "text": "But if I'm squaring it, it doesn't matter."
+  },
+  {
+   "i": 327,
+   "chapter": 3,
+   "t": 1907,
+   "text": "Okay, so go back here and plot something divided by this denominator and ask, \"What is it at various frequencies?\" When ω is 0, that goes away, that goes away, you get ω02, and ω02 is k over m, and I claim what you will find initially is this will become F0 over k."
+  },
+  {
+   "i": 328,
+   "chapter": 3,
+   "t": 1925,
+   "text": "That'll be the value of this whole amplitude at 0 frequency."
+  },
+  {
+   "i": 329,
+   "chapter": 3,
+   "t": 1929,
+   "text": "I hope that makes a lot of sense to you."
+  },
+  {
+   "i": 330,
+   "chapter": 3,
+   "t": 1933,
+   "text": "Zero frequency means the force of not even oscillating."
+  },
+  {
+   "i": 331,
+   "chapter": 3,
+   "t": 1936,
+   "text": "It's a constant force."
+  },
+  {
+   "i": 332,
+   "chapter": 3,
+   "t": 1937,
+   "text": "What x are you going to get?"
+  },
+  {
+   "i": 333,
+   "chapter": 3,
+   "t": 1939,
+   "text": "You're going to get the force divided by the force constant."
+  },
+  {
+   "i": 334,
+   "chapter": 3,
+   "t": 1943,
+   "text": "That's the x to which you'll pull the spring."
+  },
+  {
+   "i": 335,
+   "chapter": 3,
+   "t": 1946,
+   "text": "That's why if you put all the ωs and masses back into their proper place, you'll find there's F0 over k."
+  },
+  {
+   "i": 336,
+   "chapter": 3,
+   "t": 1954,
+   "text": "Then what happens is as ω increases, this denominator, one of these guys, a denominator is starting to vanish."
+  },
+  {
+   "i": 337,
+   "chapter": 3,
+   "t": 1960,
+   "text": "If γ were a very, very tiny number, when ω0 = ω, you will be dividing by a very small number and the answer will have a huge rise."
+  },
+  {
+   "i": 338,
+   "chapter": 3,
+   "t": 1970,
+   "text": "Then, you can see when ω goes to infinity, very large ω, you're diving by ω square, it'll fall off like this."
+  },
+  {
+   "i": 339,
+   "chapter": 3,
+   "t": 1978,
+   "text": "Now, one of the homework problems is to find out exactly where it peaks."
+  },
+  {
+   "i": 340,
+   "chapter": 3,
+   "t": 1983,
+   "text": "But if γ is very small, you don't have to do much work to know it peaks at ω = ω0, but otherwise it's near that."
+  },
+  {
+   "i": 341,
+   "chapter": 3,
+   "t": 1992,
+   "text": "That's the phenomenon that's called resonance."
+  },
+  {
+   "i": 342,
+   "chapter": 3,
+   "t": 1994,
+   "text": "Resonance is the following."
+  },
+  {
+   "i": 343,
+   "chapter": 3,
+   "t": 1995,
+   "text": "You are applying a force, F0 cos ωt."
+  },
+  {
+   "i": 344,
+   "chapter": 3,
+   "t": 1998,
+   "text": "You go on varying the frequency and in response to your force, the system oscillates."
+  },
+  {
+   "i": 345,
+   "chapter": 3,
+   "t": 2003,
+   "text": "The amplitude of oscillation is the largest when the applied frequency is very near the natural frequency."
+  },
+  {
+   "i": 346,
+   "chapter": 3,
+   "t": 2009,
+   "text": "If you take the limit of a very small γ, this maximum is very close to ω0."
+  },
+  {
+   "i": 347,
+   "chapter": 3,
+   "t": 2015,
+   "text": "That's called resonance."
+  },
+  {
+   "i": 348,
+   "chapter": 3,
+   "t": 2016,
+   "text": "If γ is really tiny, you can get graphs where it's incredibly peaked."
+  },
+  {
+   "i": 349,
+   "chapter": 3,
+   "t": 2020,
+   "text": "So, that's when systems start vibrating a lot."
+  },
+  {
+   "i": 350,
+   "chapter": 3,
+   "t": 2023,
+   "text": "That's why when your car goes over certain bumps, they're periodic, they're hitting your car at a certain frequency, and if that frequency is anywhere near the natural frequency or vibration of your suspension system in the car, the car begins to resonate."
+  },
+  {
+   "i": 351,
+   "chapter": 3,
+   "t": 2038,
+   "text": "There's this famous bridge in Tacoma that was getting hit by these winds, they were coming at some frequency and by bad luck, they coincided with the natural frequency of the bridge."
+  },
+  {
+   "i": 352,
+   "chapter": 3,
+   "t": 2049,
+   "text": "So, there is this famous movie made for high school, in which the bridge oscillates more and more and more and twists and turns and collapses."
+  },
+  {
+   "i": 353,
+   "chapter": 3,
+   "t": 2058,
+   "text": "That's another example of resonance."
+  },
+  {
+   "i": 354,
+   "chapter": 3,
+   "t": 2060,
+   "text": "People always say, \"Yeah I can resonate with what the person is saying.\" What does that mean?"
+  },
+  {
+   "i": 355,
+   "chapter": 3,
+   "t": 2066,
+   "text": "A person is saying whatever the hell he wants."
+  },
+  {
+   "i": 356,
+   "chapter": 3,
+   "t": 2069,
+   "text": "Some people think it's interesting and some people think it's boring."
+  },
+  {
+   "i": 357,
+   "chapter": 3,
+   "t": 2073,
+   "text": "It's the same thing here."
+  },
+  {
+   "i": 358,
+   "chapter": 3,
+   "t": 2074,
+   "text": "The force is acting at a certain frequency."
+  },
+  {
+   "i": 359,
+   "chapter": 3,
+   "t": 2077,
+   "text": "If your natural frequency is close to that, your response is high."
+  },
+  {
+   "i": 360,
+   "chapter": 3,
+   "t": 2081,
+   "text": "If it's low, you don't care."
+  },
+  {
+   "i": 361,
+   "chapter": 3,
+   "t": 2083,
+   "text": "Same thing."
+  },
+  {
+   "i": 362,
+   "chapter": 3,
+   "t": 2084,
+   "text": "That's mechanical systems selecting a frequency."
+  },
+  {
+   "i": 363,
+   "chapter": 3,
+   "t": 2086,
+   "text": "In fact, this is how radios work."
+  },
+  {
+   "i": 364,
+   "chapter": 3,
+   "t": 2089,
+   "text": "You have a radio, if there's only one radio station, you build an electrical circuit in which the currents like to go back and forth and oscillate at a certain frequency, a radio station should send signals at that frequency, your response will be very high."
+  },
+  {
+   "i": 365,
+   "chapter": 3,
+   "t": 2104,
+   "text": "But what if there's more than one radio station, which is a fact of life?"
+  },
+  {
+   "i": 366,
+   "chapter": 3,
+   "t": 2110,
+   "text": "What do they do?"
+  },
+  {
+   "i": 367,
+   "chapter": 3,
+   "t": 2111,
+   "text": "What they do is each one sends a signal at a different frequency."
+  },
+  {
+   "i": 368,
+   "chapter": 3,
+   "t": 2116,
+   "text": "You take your radio and there are dials inside."
+  },
+  {
+   "i": 369,
+   "chapter": 3,
+   "t": 2119,
+   "text": "Well, I forgot, do you kids--do you know what a dial is?"
+  },
+  {
+   "i": 370,
+   "chapter": 3,
+   "t": 2123,
+   "text": "You're not just pushing some other button."
+  },
+  {
+   "i": 371,
+   "chapter": 3,
+   "t": 2125,
+   "text": "There is a time when you had to turn a dial."
+  },
+  {
+   "i": 372,
+   "chapter": 3,
+   "t": 2129,
+   "text": "When you turn a dial, you're changing the properties of the electrical circuit and changing its natural frequency."
+  },
+  {
+   "i": 373,
+   "chapter": 3,
+   "t": 2135,
+   "text": "You move the natural frequency until it lines up with the frequency of the radio station, with one particular station."
+  },
+  {
+   "i": 374,
+   "chapter": 3,
+   "t": 2142,
+   "text": "Then, the response from that station is very high and that's the sound you hear."
+  },
+  {
+   "i": 375,
+   "chapter": 3,
+   "t": 2147,
+   "text": "Other stations are also present, but you're not near their maximum, they are sitting, some right here and some right here."
+  },
+  {
+   "i": 376,
+   "chapter": 3,
+   "t": 2155,
+   "text": "So, you want the station frequency to come under this resonance peak."
+  },
+  {
+   "i": 377,
+   "chapter": 3,
+   "t": 2159,
+   "text": "So, if you've got a bad radio, it will pick up sound from many stations because it's not very refined."
+  },
+  {
+   "i": 378,
+   "chapter": 3,
+   "t": 2166,
+   "text": "If the peak is broad, you will get sound from many stations."
+  },
+  {
+   "i": 379,
+   "chapter": 3,
+   "t": 2170,
+   "text": "You want to build a system which is very finely sensitive to the frequency."
+  },
+  {
+   "i": 380,
+   "chapter": 3,
+   "t": 2175,
+   "text": "That requires γ to be very small."
+  },
+  {
+   "i": 381,
+   "chapter": 3,
+   "t": 2177,
+   "text": "If γ is very, very small, you can see if γ is going to 0, the denominator is one divided by 0, it's going to be infinite."
+  },
+  {
+   "i": 382,
+   "chapter": 3,
+   "t": 2187,
+   "text": "So, if γ is very tiny, one over very tiny, is very big, and you can get enormous spikes in this part and that's what people need."
+  },
+  {
+   "i": 383,
+   "chapter": 3,
+   "t": 2196,
+   "text": "Okay, the last thing you need to do this problem set."
+  },
+  {
+   "i": 384,
+   "chapter": 3,
+   "t": 2200,
+   "text": "By the way, I know this problem set is very nasty."
+  },
+  {
+   "i": 385,
+   "chapter": 3,
+   "t": 2203,
+   "text": "Towards the end, it got tough, you got email, I agree with you that this whole course is somewhat more difficult than it has always been."
+  },
+  {
+   "i": 386,
+   "chapter": 3,
+   "t": 2212,
+   "text": "Okay?"
+  },
+  {
+   "i": 387,
+   "chapter": 3,
+   "t": 2213,
+   "text": "I'm aware of that fact, and I will bear this fact in mind when you go into your final because for some reason I wanted to use problems not in our book but for technical reasons so I got them from here or there or made them up."
+  },
+  {
+   "i": 388,
+   "chapter": 3,
+   "t": 2229,
+   "text": "They generally tend to be more challenging and more time consuming."
+  },
+  {
+   "i": 389,
+   "chapter": 3,
+   "t": 2233,
+   "text": "So, if you thought this was a tough course, well, it's supposed to be a tough course but maybe not this hard or not this time consuming."
+  },
+  {
+   "i": 390,
+   "chapter": 3,
+   "t": 2243,
+   "text": "So, I will remember that in the end when I make the final exam or look at your grade, I will have to compare you not simply to your predecessors, but I will have to cut you some slack and then compare you to previous generations."
+  },
+  {
+   "i": 391,
+   "chapter": 3,
+   "t": 2258,
+   "text": "So, this use of complex numbers is something from which I will not, however, back down."
+  },
+  {
+   "i": 392,
+   "chapter": 3,
+   "t": 2264,
+   "text": "It turns out that yes, you can do all of this without using complex numbers."
+  },
+  {
+   "i": 393,
+   "chapter": 3,
+   "t": 2269,
+   "text": "Why?"
+  },
+  {
+   "i": 394,
+   "chapter": 3,
+   "t": 2270,
+   "text": "Because in the real world, everything has got real numbers."
+  },
+  {
+   "i": 395,
+   "chapter": 3,
+   "t": 2273,
+   "text": "So, you can in fact, by an orgy of trigonometric identities solve it with sines and cosines."
+  },
+  {
+   "i": 396,
+   "chapter": 3,
+   "t": 2279,
+   "text": "But eventually, I'll give you a problem where you just cannot do it in a meaningful way."
+  },
+  {
+   "i": 397,
+   "chapter": 3,
+   "t": 2285,
+   "text": "The power of complex numbers is they turn differential equations into algebraic equations."
+  },
+  {
+   "i": 398,
+   "chapter": 3,
+   "t": 2289,
+   "text": "All you have to do is find the roots of a quadratic equation, whereas what you started out was to find a solution of a differential equation."
+  },
+  {
+   "i": 399,
+   "chapter": 3,
+   "t": 2299,
+   "text": "That advantage you will lose if you stop using complex numbers, and when you do quantum mechanics in the second term, the complex numbers are in the equations of motion."
+  },
+  {
+   "i": 400,
+   "chapter": 3,
+   "t": 2309,
+   "text": "The analog of F = ma, there's an i sitting there."
+  },
+  {
+   "i": 401,
+   "chapter": 3,
+   "t": 2313,
+   "text": "So, you cannot escape the i."
+  },
+  {
+   "i": 402,
+   "chapter": 3,
+   "t": 2315,
+   "text": "It's there, so I'm saying, depending on how much exposure you've had, you have to do more or less work, but you just got to get used to complex numbers."
+  },
+  {
+   "i": 403,
+   "chapter": 3,
+   "t": 2325,
+   "text": "You got to get used to the absolute value, the phase angle, how to manipulate."
+  },
+  {
+   "i": 404,
+   "chapter": 3,
+   "t": 2330,
+   "text": "If you already know it, good."
+  },
+  {
+   "i": 405,
+   "chapter": 3,
+   "t": 2333,
+   "text": "If you don't know it, you have to do more work than other people but I'm not going to let off on it."
+  },
+  {
+   "i": 406,
+   "chapter": 3,
+   "t": 2341,
+   "text": "Yes? [inaudible] No."
+  },
+  {
+   "i": 407,
+   "chapter": 3,
+   "t": 2342,
+   "text": "Anything you need to know with differential equations is what I've done for you in the class today."
+  },
+  {
+   "i": 408,
+   "chapter": 3,
+   "t": 2348,
+   "text": "That's it."
+  },
+  {
+   "i": 409,
+   "chapter": 3,
+   "t": 2348,
+   "text": "That's the only part you know, and with complex numbers, you turned it into ordinary equations."
+  },
+  {
+   "i": 410,
+   "chapter": 3,
+   "t": 2354,
+   "text": "So, you have to go over these steps and work them out."
+  },
+  {
+   "i": 411,
+   "chapter": 3,
+   "t": 2358,
+   "text": "That's the part I cannot do for you."
+  },
+  {
+   "i": 412,
+   "chapter": 3,
+   "t": 2361,
+   "text": "That's something you have to do."
+  },
+  {
+   "i": 413,
+   "chapter": 4,
+   "t": 2363,
+   "text": "Alright, what is finally missing is that x of t; if I wrote for you what I wrote above, which is x0, I don't want to write the x0 again."
+  },
+  {
+   "i": 414,
+   "chapter": 4,
+   "t": 2373,
+   "text": "It's F0 over mi; maybe I'll write the whole thing."
+  },
+  {
+   "i": 415,
+   "chapter": 4,
+   "t": 2377,
+   "text": "F0 over m, divided by absolute value i times cosine ωt minus φ."
+  },
+  {
+   "i": 416,
+   "chapter": 4,
+   "t": 2381,
+   "text": "It turns out this is not the full answer to the question of what happens when I push a mass."
+  },
+  {
+   "i": 417,
+   "chapter": 4,
+   "t": 2388,
+   "text": "Let's understand why."
+  },
+  {
+   "i": 418,
+   "chapter": 4,
+   "t": 2389,
+   "text": "Suppose I go this mass and spring system."
+  },
+  {
+   "i": 419,
+   "chapter": 4,
+   "t": 2392,
+   "text": "I grab at a t = 0 and start shaking it."
+  },
+  {
+   "i": 420,
+   "chapter": 4,
+   "t": 2396,
+   "text": "Well, at t = 0, x was 0 because I grabbed it at t = 0."
+  },
+  {
+   "i": 421,
+   "chapter": 4,
+   "t": 2401,
+   "text": "But a t = 0, if I go to this solution, it's not giving me 0."
+  },
+  {
+   "i": 422,
+   "chapter": 4,
+   "t": 2407,
+   "text": "It's saying it's F0 over mi cos φ."
+  },
+  {
+   "i": 423,
+   "chapter": 4,
+   "t": 2410,
+   "text": "So, what happened to the freedom I had to assign the velocity and position arbitrarily?"
+  },
+  {
+   "i": 424,
+   "chapter": 4,
+   "t": 2415,
+   "text": "Well, it turns out that I can still do that."
+  },
+  {
+   "i": 425,
+   "chapter": 4,
+   "t": 2418,
+   "text": "That's because this solution has got a part that's actually missing, and the part that's missing is this complimentary solution, Ae to the minus γt over two, cosine of ω′ t minus φ0."
+  },
+  {
+   "i": 426,
+   "chapter": 4,
+   "t": 2429,
+   "text": "You can always add the solution to this solution."
+  },
+  {
+   "i": 427,
+   "chapter": 4,
+   "t": 2433,
+   "text": "Why is that?"
+  },
+  {
+   "i": 428,
+   "chapter": 4,
+   "t": 2434,
+   "text": "Because if x obeyed a certain equation, if I put that in, I'm saying adding this part will not change the fact that it obeys the equation."
+  },
+  {
+   "i": 429,
+   "chapter": 4,
+   "t": 2443,
+   "text": "Let's ask ourselves why."
+  },
+  {
+   "i": 430,
+   "chapter": 4,
+   "t": 2444,
+   "text": "Go back to the top line there. x double dot + γx dot + ω02x, will be equal to F0 over m cos ωt, if you put this in."
+  },
+  {
+   "i": 431,
+   "chapter": 4,
+   "t": 2454,
+   "text": "Now, what if you keep adding this to the solution?"
+  },
+  {
+   "i": 432,
+   "chapter": 4,
+   "t": 2458,
+   "text": "Will you mess it up?"
+  },
+  {
+   "i": 433,
+   "chapter": 4,
+   "t": 2459,
+   "text": "Imagine adding this to the left-hand side, but I claim on the left-hand side there'll be no extra terms because this guy double dot plus γ, times this guy dot, plus ω02 times this guy is 0."
+  },
+  {
+   "i": 434,
+   "chapter": 4,
+   "t": 2472,
+   "text": "This is the function which you will say is annihilated by the operations on the left-hand side."
+  },
+  {
+   "i": 435,
+   "chapter": 4,
+   "t": 2478,
+   "text": "It's like saying the following."
+  },
+  {
+   "i": 436,
+   "chapter": 4,
+   "t": 2480,
+   "text": "If you want a function whose derivative is equal to sin x, then I'm going to say oh, I know the function is minus cos x, and you all know you can add to that a constant."
+  },
+  {
+   "i": 437,
+   "chapter": 4,
+   "t": 2493,
+   "text": "Why do you add the constant?"
+  },
+  {
+   "i": 438,
+   "chapter": 4,
+   "t": 2495,
+   "text": "Why doesn't it screw up everything?"
+  },
+  {
+   "i": 439,
+   "chapter": 4,
+   "t": 2497,
+   "text": "Because a derivative of a constant is 0."
+  },
+  {
+   "i": 440,
+   "chapter": 4,
+   "t": 2499,
+   "text": "Well, here this is not a constant and yet, the combination of derivatives appear in the equation act on this to give you 0."
+  },
+  {
+   "i": 441,
+   "chapter": 4,
+   "t": 2508,
+   "text": "That's why you can add it without screwing up what you've done so far."
+  },
+  {
+   "i": 442,
+   "chapter": 4,
+   "t": 2513,
+   "text": "So, the way you do these problems is you first find this function that depends on the applied force, and you add to this solution you get for free, even in the absence of an applied force."
+  },
+  {
+   "i": 443,
+   "chapter": 4,
+   "t": 2525,
+   "text": "Yes?"
+  },
+  {
+   "i": 444,
+   "chapter": 4,
+   "t": 2526,
+   "text": "What does the xC stand for again?"
+  },
+  {
+   "i": 445,
+   "chapter": 4,
+   "t": 2528,
+   "text": "It's called a complimentary function and this is called a particular solution."
+  },
+  {
+   "i": 446,
+   "chapter": 4,
+   "t": 2532,
+   "text": "This particular solution depends on the force and this is the function."
+  },
+  {
+   "i": 447,
+   "chapter": 4,
+   "t": 2536,
+   "text": "I don't know why it's called complimentary."
+  },
+  {
+   "i": 448,
+   "chapter": 4,
+   "t": 2539,
+   "text": "Maybe it compliments the answer, or it's a freebie, you don't pay for it with any force, but it's called complimentary."
+  },
+  {
+   "i": 449,
+   "chapter": 4,
+   "t": 2546,
+   "text": "But you've got to add the two to get the final answer."
+  },
+  {
+   "i": 450,
+   "chapter": 4,
+   "t": 2550,
+   "text": "So, you will still have the numbers A and φ 0 hanging around, and how do you select them?"
+  },
+  {
+   "i": 451,
+   "chapter": 4,
+   "t": 2557,
+   "text": "You select them if on top of it, somebody tells you that this driven oscillator had a certain coordinate and certain velocity at t = 0."
+  },
+  {
+   "i": 452,
+   "chapter": 4,
+   "t": 2566,
+   "text": "So, you evaluate the whole expression of t = 0 by putting t = 0 everywhere, you'll get one equation involving A and φ 0 and you'll take the derivative for the velocity, set that equal to some given number."
+  },
+  {
+   "i": 453,
+   "chapter": 4,
+   "t": 2579,
+   "text": "You get a second equation involving A and φ 0."
+  },
+  {
+   "i": 454,
+   "chapter": 4,
+   "t": 2583,
+   "text": "You'll juggle the two equations and solve for the two numbers, A and φ 0."
+  },
+  {
+   "i": 455,
+   "chapter": 4,
+   "t": 2588,
+   "text": "Okay, so that is the whole story, okay?"
+  },
+  {
+   "i": 456,
+   "chapter": 4,
+   "t": 2591,
+   "text": "That's what I tried to do yesterday, but this is not the first time it's happened to me that I tried to go fast; in the end I lost time because I was not happy with the way it was explained, and I usually come back and say sorry and then do it all over again, okay?"
+  },
+  {
+   "i": 457,
+   "chapter": 4,
+   "t": 2610,
+   "text": "But there's only so much I can do."
+  },
+  {
+   "i": 458,
+   "chapter": 4,
+   "t": 2613,
+   "text": "The rest is up to you guys."
+  },
+  {
+   "i": 459,
+   "chapter": 4,
+   "t": 2616,
+   "text": "You have to do the work and you have to do more problems."
+  },
+  {
+   "i": 460,
+   "chapter": 5,
+   "t": 2620,
+   "text": "Okay, so now, we are moving off to another topic."
+  },
+  {
+   "i": 461,
+   "chapter": 5,
+   "t": 2623,
+   "text": "The other topic--Somebody was sighing with relief."
+  },
+  {
+   "i": 462,
+   "chapter": 5,
+   "t": 2626,
+   "text": "It's not really different."
+  },
+  {
+   "i": 463,
+   "chapter": 5,
+   "t": 2627,
+   "text": "Okay, these are waves."
+  },
+  {
+   "i": 464,
+   "chapter": 5,
+   "t": 2628,
+   "text": "But I think it's going to be--I think this probably is the hardest point of what we're doing in this term, at least mathematically."
+  },
+  {
+   "i": 465,
+   "chapter": 5,
+   "t": 2636,
+   "text": "Everything else we do, heat, hot water, cold water, that kind of stuff you've done in high school, that's all in your future, it's going to be a lot easier."
+  },
+  {
+   "i": 466,
+   "chapter": 5,
+   "t": 2646,
+   "text": "Okay."
+  },
+  {
+   "i": 467,
+   "chapter": 5,
+   "t": 2646,
+   "text": "Waves."
+  },
+  {
+   "i": 468,
+   "chapter": 5,
+   "t": 2646,
+   "text": "So, everyone has a good feeling for waves."
+  },
+  {
+   "i": 469,
+   "chapter": 5,
+   "t": 2649,
+   "text": "You go to a lake; you know if you're a hit man for the mafia, you're dropping things in with some weight."
+  },
+  {
+   "i": 470,
+   "chapter": 5,
+   "t": 2656,
+   "text": "They go down, what's the first thing they do?"
+  },
+  {
+   "i": 471,
+   "chapter": 5,
+   "t": 2659,
+   "text": "When bodies are falling into the water, it's carving out some body of water and diving in so the water next to it dives in to fill that hole."
+  },
+  {
+   "i": 472,
+   "chapter": 5,
+   "t": 2669,
+   "text": "But then the water, even next to it, tries to fill in the hole left behind by these guys."
+  },
+  {
+   "i": 473,
+   "chapter": 5,
+   "t": 2675,
+   "text": "For you, it looks like a bunch of ripples traveling outwards from the center."
+  },
+  {
+   "i": 474,
+   "chapter": 5,
+   "t": 2679,
+   "text": "So, this is the classic example of a wave."
+  },
+  {
+   "i": 475,
+   "chapter": 5,
+   "t": 2682,
+   "text": "If you've got one example, you can latch onto it every time I say wave."
+  },
+  {
+   "i": 476,
+   "chapter": 5,
+   "t": 2687,
+   "text": "So, what's the wave in this problem is that if I draw a plot of the height of the water, versus the place where it dropped, the rock--maybe I should do a top view here."
+  },
+  {
+   "i": 477,
+   "chapter": 5,
+   "t": 2699,
+   "text": "This is the top view, after a while you've got these ripples emanating from this point."
+  },
+  {
+   "i": 478,
+   "chapter": 5,
+   "t": 2704,
+   "text": "Or, if you kept your eye next to the water you will find these ups and downs going outwards."
+  },
+  {
+   "i": 479,
+   "chapter": 5,
+   "t": 2710,
+   "text": "So, the wave is some displacement of a medium."
+  },
+  {
+   "i": 480,
+   "chapter": 5,
+   "t": 2713,
+   "text": "That's what people say."
+  },
+  {
+   "i": 481,
+   "chapter": 5,
+   "t": 2714,
+   "text": "That's not a perfect definition because we know electromagnetic waves have no medium."
+  },
+  {
+   "i": 482,
+   "chapter": 5,
+   "t": 2719,
+   "text": "They travel in a vacuum."
+  },
+  {
+   "i": 483,
+   "chapter": 5,
+   "t": 2720,
+   "text": "But I think for this purpose in this course, you should imagine waves as what happens when you excite a medium."
+  },
+  {
+   "i": 484,
+   "chapter": 5,
+   "t": 2727,
+   "text": "So, here's the way to think about the wave."
+  },
+  {
+   "i": 485,
+   "chapter": 5,
+   "t": 2730,
+   "text": "You all understand the harmonic oscillator pretty well, right?"
+  },
+  {
+   "i": 486,
+   "chapter": 5,
+   "t": 2733,
+   "text": "Mass and spring system in equilibrium will sit there forever."
+  },
+  {
+   "i": 487,
+   "chapter": 5,
+   "t": 2736,
+   "text": "If you give it a kick, it'll start vibrating around its equilibrium position."
+  },
+  {
+   "i": 488,
+   "chapter": 5,
+   "t": 2740,
+   "text": "There, you have to keep track of only one variable x, which is the location of the mass."
+  },
+  {
+   "i": 489,
+   "chapter": 5,
+   "t": 2746,
+   "text": "The wave is an oscillation of a medium that means that every point in space there is something that's ready to oscillate."
+  },
+  {
+   "i": 490,
+   "chapter": 5,
+   "t": 2753,
+   "text": "So, you start out a system with infinite number of degrees of freedom because the height of the water at each point is an independent variable."
+  },
+  {
+   "i": 491,
+   "chapter": 5,
+   "t": 2762,
+   "text": "It can jump up and down with time."
+  },
+  {
+   "i": 492,
+   "chapter": 5,
+   "t": 2765,
+   "text": "And that's what is oscillating."
+  },
+  {
+   "i": 493,
+   "chapter": 5,
+   "t": 2766,
+   "text": "So, if you don't do anything to the water, it'll stay at the height, but if you fiddle with it or drop something, you hit it with something, it'll start vibrating."
+  },
+  {
+   "i": 494,
+   "chapter": 5,
+   "t": 2776,
+   "text": "But except it's a vibration not out of one variable but of a variable in space and time. x was a function of time and the name we use for the wave, if something is oscillating such as the water measured from some point, x."
+  },
+  {
+   "i": 495,
+   "chapter": 5,
+   "t": 2791,
+   "text": "I'm going to use the symbol ψ of x [and t] to denote the height of the water from its normal position at the point x at time t."
+  },
+  {
+   "i": 496,
+   "chapter": 5,
+   "t": 2800,
+   "text": "So, x is not a dynamical variable here. x labels the point. Ψ is the dynamical variable. Ψ is the thing jumping up and down."
+  },
+  {
+   "i": 497,
+   "chapter": 5,
+   "t": 2809,
+   "text": "Okay."
+  },
+  {
+   "i": 498,
+   "chapter": 5,
+   "t": 2809,
+   "text": "Now, there are two kinds of waves; there's the longitudinal wave and the transverse wave."
+  },
+  {
+   "i": 499,
+   "chapter": 5,
+   "t": 2814,
+   "text": "And we define them as follows."
+  },
+  {
+   "i": 500,
+   "chapter": 5,
+   "t": 2816,
+   "text": "The wave travels out with some velocity."
+  },
+  {
+   "i": 501,
+   "chapter": 5,
+   "t": 2818,
+   "text": "I'm going to use the symbol v for the velocity of the wave."
+  },
+  {
+   "i": 502,
+   "chapter": 5,
+   "t": 2822,
+   "text": "That's something for which all of you would have intuitive understanding so no need to mess it up right now."
+  },
+  {
+   "i": 503,
+   "chapter": 5,
+   "t": 2829,
+   "text": "You go to the lake, you drop a rock, you see when the waves get to the shore, you take the distance divided by time, that's the velocity."
+  },
+  {
+   "i": 504,
+   "chapter": 5,
+   "t": 2838,
+   "text": "In sound, you know, you light up a firecracker, after a while, you hear it, you can see how long it took and how far you are and you can find the velocity."
+  },
+  {
+   "i": 505,
+   "chapter": 5,
+   "t": 2849,
+   "text": "That's the velocity of sound in air."
+  },
+  {
+   "i": 506,
+   "chapter": 5,
+   "t": 2851,
+   "text": "And all these velocities are all variable."
+  },
+  {
+   "i": 507,
+   "chapter": 5,
+   "t": 2853,
+   "text": "Unlike the velocity of light that doesn't seem to depend on anything."
+  },
+  {
+   "i": 508,
+   "chapter": 5,
+   "t": 2857,
+   "text": "All other velocities depend on various conditions."
+  },
+  {
+   "i": 509,
+   "chapter": 5,
+   "t": 2859,
+   "text": "The velocity of sound depends on the temperature, for example."
+  },
+  {
+   "i": 510,
+   "chapter": 5,
+   "t": 2863,
+   "text": "Or you can take the following thing, you can take an iron rod, which you know is made up of a lot of atoms and you take a hammer and you hit it here."
+  },
+  {
+   "i": 511,
+   "chapter": 5,
+   "t": 2874,
+   "text": "You basically compress these atoms and they compress the atoms next to them and the shockwaves travels through this rod; that's also called sound."
+  },
+  {
+   "i": 512,
+   "chapter": 5,
+   "t": 2882,
+   "text": "That travels at a speed which is much faster than the speed of sound and air."
+  },
+  {
+   "i": 513,
+   "chapter": 5,
+   "t": 2887,
+   "text": "But it's technically also called sound."
+  },
+  {
+   "i": 514,
+   "chapter": 5,
+   "t": 2889,
+   "text": "If you were a creature living inside the iron bar, you would think of it as sound."
+  },
+  {
+   "i": 515,
+   "chapter": 5,
+   "t": 2894,
+   "text": "Now, here's another way you can hear it."
+  },
+  {
+   "i": 516,
+   "chapter": 5,
+   "t": 2897,
+   "text": "For example, here's a standard example."
+  },
+  {
+   "i": 517,
+   "chapter": 5,
+   "t": 2899,
+   "text": "Here's the railway track, and there is some kind of a mountain here, and you are over here and the train is coming here."
+  },
+  {
+   "i": 518,
+   "chapter": 5,
+   "t": 2907,
+   "text": "It turns out, if the train lets out a sound, the sound will travel around the bend and you will hear it."
+  },
+  {
+   "i": 519,
+   "chapter": 5,
+   "t": 2914,
+   "text": "But actually, the pounding of the train on the tracks will set up shockwaves in the track that you can hear by putting your ear to the track."
+  },
+  {
+   "i": 520,
+   "chapter": 5,
+   "t": 2923,
+   "text": "And you will hear the train before you hear it by, depending on the sound coming through the air, because the waves going through the solids travel much faster."
+  },
+  {
+   "i": 521,
+   "chapter": 5,
+   "t": 2933,
+   "text": "Okay, so I would recommend that if you're going to do this, you do this somewhere here because you won't have enough time to move if you do it here [laughter]."
+  },
+  {
+   "i": 522,
+   "chapter": 5,
+   "t": 2943,
+   "text": "So, most of the things--please don't do this at home, this should be done by a trained person but I certainly did it as a kid, listened for trains before they come around the bend and you can actually hear the track."
+  },
+  {
+   "i": 523,
+   "chapter": 5,
+   "t": 2956,
+   "text": "Or in water, the explosions in water, you can hear them faster if you're under the water than if you're outside the water because the waves travel faster in water than in air."
+  },
+  {
+   "i": 524,
+   "chapter": 5,
+   "t": 2967,
+   "text": "Thunder and lightning is the most famous example."
+  },
+  {
+   "i": 525,
+   "chapter": 5,
+   "t": 2970,
+   "text": "Something happens in the sky, the lights get to you first, and the sound gets to you; they're traveling at different velocities."
+  },
+  {
+   "i": 526,
+   "chapter": 5,
+   "t": 2977,
+   "text": "Okay."
+  },
+  {
+   "i": 527,
+   "chapter": 5,
+   "t": 2977,
+   "text": "So now, let's talk about longitudinal transverse waves."
+  },
+  {
+   "i": 528,
+   "chapter": 5,
+   "t": 2980,
+   "text": "When I talk to you, I think you sort of know what happens."
+  },
+  {
+   "i": 529,
+   "chapter": 5,
+   "t": 2984,
+   "text": "The air in this room is at some pressure, and that pressure is constant, and the pressure is pushing your eardrum from the outside and going through your Eustachian canal pushing the drum from the inside, and the two pressures balance and you don't feel anything."
+  },
+  {
+   "i": 530,
+   "chapter": 5,
+   "t": 2999,
+   "text": "If I talk, the vocal chords move back and forth and they increase and decrease the pressure as I talk."
+  },
+  {
+   "i": 531,
+   "chapter": 5,
+   "t": 3006,
+   "text": "If I push out, I increase the pressure, if I go backwards, I decompress the air and reduce the pressure."
+  },
+  {
+   "i": 532,
+   "chapter": 5,
+   "t": 3012,
+   "text": "Those shockwaves propagate to your ear."
+  },
+  {
+   "i": 533,
+   "chapter": 5,
+   "t": 3014,
+   "text": "They hit your eardrum, but the eardrum is getting the pressure difference from the outside, but the inside pressure is fixed."
+  },
+  {
+   "i": 534,
+   "chapter": 5,
+   "t": 3021,
+   "text": "So, what happens is when I decompress, the eardrum comes out and goes in."
+  },
+  {
+   "i": 535,
+   "chapter": 5,
+   "t": 3026,
+   "text": "It goes back and forth and the eardrum moves."
+  },
+  {
+   "i": 536,
+   "chapter": 5,
+   "t": 3029,
+   "text": "Then, behind the eardrum are the little bones, and then the bones go and there is a tube and the doctors take over from this point."
+  },
+  {
+   "i": 537,
+   "chapter": 5,
+   "t": 3037,
+   "text": "So, some loose hair is shaking in this fluid; then, it picks up some nervous things and goes to your brain."
+  },
+  {
+   "i": 538,
+   "chapter": 5,
+   "t": 3044,
+   "text": "Then, you figure out and actually know what the person's saying."
+  },
+  {
+   "i": 539,
+   "chapter": 5,
+   "t": 3047,
+   "text": "You don't know why he's talking in this particular fashion, but you can at least understand and translate."
+  },
+  {
+   "i": 540,
+   "chapter": 5,
+   "t": 3053,
+   "text": "That's a long chain of transducers of energy from sound to the stuff in your ear into your brain."
+  },
+  {
+   "i": 541,
+   "chapter": 5,
+   "t": 3059,
+   "text": "I draw the line at the eardrum."
+  },
+  {
+   "i": 542,
+   "chapter": 5,
+   "t": 3062,
+   "text": "I don't want to go on the other side of the eardrum because it's very shaky turf."
+  },
+  {
+   "i": 543,
+   "chapter": 5,
+   "t": 3067,
+   "text": "But this part I know very well."
+  },
+  {
+   "i": 544,
+   "chapter": 5,
+   "t": 3070,
+   "text": "It's a sound wave and it's a longitudinal wave for the following reason."
+  },
+  {
+   "i": 545,
+   "chapter": 5,
+   "t": 3074,
+   "text": "If you look at the pressure waves, the molecules of air--they're going back and forth, follow my hands, and the signal from me to you is also going from me to you, so the motion is in line with the velocity."
+  },
+  {
+   "i": 546,
+   "chapter": 5,
+   "t": 3087,
+   "text": "The motion of the medium is in the same direction as the motion of the wave."
+  },
+  {
+   "i": 547,
+   "chapter": 5,
+   "t": 3092,
+   "text": "A transverse wave is what you find in water if you are--or on a string."
+  },
+  {
+   "i": 548,
+   "chapter": 5,
+   "t": 3097,
+   "text": "Take a string, clamp down that end and you give it a little flick like that."
+  },
+  {
+   "i": 549,
+   "chapter": 5,
+   "t": 3103,
+   "text": "This bump after a while will end up here."
+  },
+  {
+   "i": 550,
+   "chapter": 5,
+   "t": 3106,
+   "text": "So, the rope is moving, transfers but the velocity if the signal is to the right."
+  },
+  {
+   "i": 551,
+   "chapter": 5,
+   "t": 3111,
+   "text": "So, do not confuse the motion of the medium with the motion of the signal, okay?"
+  },
+  {
+   "i": 552,
+   "chapter": 5,
+   "t": 3116,
+   "text": "The rope, at any given point, is either at rest or going up and down, but the signal is going from left to right."
+  },
+  {
+   "i": 553,
+   "chapter": 5,
+   "t": 3124,
+   "text": "So, the medium doesn't have to actually move in the direction of the wave."
+  },
+  {
+   "i": 554,
+   "chapter": 5,
+   "t": 3128,
+   "text": "For example, if a bunch of people line up and each one tells the person next to the next person some secret and the secret is eventually transmitted all the way to the end, what has traveled is a secret."
+  },
+  {
+   "i": 555,
+   "chapter": 5,
+   "t": 3141,
+   "text": "The actual person in the first place has not gone over physically to the end."
+  },
+  {
+   "i": 556,
+   "chapter": 5,
+   "t": 3146,
+   "text": "So, what happens is as you're sitting there not doing anything and suddenly you hear something, you pass it on to the next person, then you've gone back to doing nothing."
+  },
+  {
+   "i": 557,
+   "chapter": 5,
+   "t": 3156,
+   "text": "Then, the signal travels."
+  },
+  {
+   "i": 558,
+   "chapter": 5,
+   "t": 3158,
+   "text": "That's what will happen in the rope here."
+  },
+  {
+   "i": 559,
+   "chapter": 5,
+   "t": 3160,
+   "text": "This section of the rope is not doing anything."
+  },
+  {
+   "i": 560,
+   "chapter": 5,
+   "t": 3163,
+   "text": "When this pulse hits it, it'll jump up and down for a while."
+  },
+  {
+   "i": 561,
+   "chapter": 5,
+   "t": 3167,
+   "text": "Then it'll quiet down and somebody to the right will start moving."
+  },
+  {
+   "i": 562,
+   "chapter": 5,
+   "t": 3171,
+   "text": "Okay, so there are the examples of longitudinal and transverse waves."
+  },
+  {
+   "i": 563,
+   "chapter": 6,
+   "t": 3175,
+   "text": "So, we have the notion of velocity."
+  },
+  {
+   "i": 564,
+   "chapter": 6,
+   "t": 3178,
+   "text": "Now, I want to consider one concrete example of a wave, so you people have a good feeling of how to study waves in physics."
+  },
+  {
+   "i": 565,
+   "chapter": 6,
+   "t": 3187,
+   "text": "So, there are many, many waves."
+  },
+  {
+   "i": 566,
+   "chapter": 6,
+   "t": 3190,
+   "text": "Water waves, electromagnetic waves, elastic waves."
+  },
+  {
+   "i": 567,
+   "chapter": 6,
+   "t": 3192,
+   "text": "I'm going to do one."
+  },
+  {
+   "i": 568,
+   "chapter": 6,
+   "t": 3194,
+   "text": "I think to do one thing in some depth will give you a feeling for how we analyze waves."
+  },
+  {
+   "i": 569,
+   "chapter": 6,
+   "t": 3201,
+   "text": "That's going to be waves on a string."
+  },
+  {
+   "i": 570,
+   "chapter": 6,
+   "t": 3204,
+   "text": "So, you have to imagine that I have a string that's been clamped at two ends, and somebody plucks the string, say, into that shape and lets it go, we know the string is going to vibrate back and forth."
+  },
+  {
+   "i": 571,
+   "chapter": 6,
+   "t": 3220,
+   "text": "Now, let's measure the coordinate x, which is the point on the string, and ψ is the displacement of the string at that point."
+  },
+  {
+   "i": 572,
+   "chapter": 6,
+   "t": 3229,
+   "text": "You guys got that this is really the x, this is not my string."
+  },
+  {
+   "i": 573,
+   "chapter": 6,
+   "t": 3234,
+   "text": "That is my string."
+  },
+  {
+   "i": 574,
+   "chapter": 6,
+   "t": 3236,
+   "text": "Each point is labeled by an x value that it will have for the string to relax to the normal position."
+  },
+  {
+   "i": 575,
+   "chapter": 6,
+   "t": 3244,
+   "text": "So, we are asking what is the displacement of the string at the point x, at time, t."
+  },
+  {
+   "i": 576,
+   "chapter": 6,
+   "t": 3251,
+   "text": "So, ψ is our new dynamical variable, namely, the variable for which we like to write the equations governing its motion."
+  },
+  {
+   "i": 577,
+   "chapter": 6,
+   "t": 3259,
+   "text": "And we want to ask how does ψ vary with time?"
+  },
+  {
+   "i": 578,
+   "chapter": 6,
+   "t": 3263,
+   "text": "What will it do?"
+  },
+  {
+   "i": 579,
+   "chapter": 6,
+   "t": 3265,
+   "text": "If I start it out, what will it do?"
+  },
+  {
+   "i": 580,
+   "chapter": 6,
+   "t": 3268,
+   "text": "Do you understand the parallel to the mass and spring system?"
+  },
+  {
+   "i": 581,
+   "chapter": 6,
+   "t": 3272,
+   "text": "The mass and spring system, you got a mass and you got a spring, you pull the mass out to some new location, you let it go and you want to know what it does."
+  },
+  {
+   "i": 582,
+   "chapter": 6,
+   "t": 3286,
+   "text": "The answer was cos ωt."
+  },
+  {
+   "i": 583,
+   "chapter": 6,
+   "t": 3288,
+   "text": "Now, at every point x, I have some string, and I displace all those degrees of freedom and I let them go, and they're going to do something and I want to know how they're all varying."
+  },
+  {
+   "i": 584,
+   "chapter": 6,
+   "t": 3302,
+   "text": "So previously, we had only one coordinate which I called x, which varied with time."
+  },
+  {
+   "i": 585,
+   "chapter": 6,
+   "t": 3308,
+   "text": "Now with every point, x, I have a coordinate ψ that varies with time."
+  },
+  {
+   "i": 586,
+   "chapter": 6,
+   "t": 3313,
+   "text": "And our job is to find the equation satisfied by ψ."
+  },
+  {
+   "i": 587,
+   "chapter": 6,
+   "t": 3317,
+   "text": "So, let us take a string and the string has to be under some tension."
+  },
+  {
+   "i": 588,
+   "chapter": 6,
+   "t": 3323,
+   "text": "That means you hang some weights on the end or you tighten it with some screws."
+  },
+  {
+   "i": 589,
+   "chapter": 6,
+   "t": 3329,
+   "text": "There's a tension so that the string is dying to break apart if you cut it."
+  },
+  {
+   "i": 590,
+   "chapter": 6,
+   "t": 3336,
+   "text": "So, T is the tension on the string."
+  },
+  {
+   "i": 591,
+   "chapter": 6,
+   "t": 3339,
+   "text": "Without the tension none of this would work."
+  },
+  {
+   "i": 592,
+   "chapter": 6,
+   "t": 3342,
+   "text": "So, here is the string."
+  },
+  {
+   "i": 593,
+   "chapter": 6,
+   "t": 3344,
+   "text": "And I'm going to analyze the fate of a tiny segment of length dx."
+  },
+  {
+   "i": 594,
+   "chapter": 6,
+   "t": 3349,
+   "text": "An essential parameter here is called--which is μ, the mass per unit length."
+  },
+  {
+   "i": 595,
+   "chapter": 6,
+   "t": 3354,
+   "text": "That means you put the string on a weighing machine, you find the mass and you divide by the length."
+  },
+  {
+   "i": 596,
+   "chapter": 6,
+   "t": 3362,
+   "text": "For example, if you've got a ten meter string and it weighs one-tenth of a kilogram, then the mass per unit length is one over thousand [correction: should have said \"hundred\"] kilograms per meter."
+  },
+  {
+   "i": 597,
+   "chapter": 6,
+   "t": 3375,
+   "text": "And T is the tension."
+  },
+  {
+   "i": 598,
+   "chapter": 6,
+   "t": 3377,
+   "text": "The textbook may use F for tension because T is the time period also, so it depends on what symbol they use in the book."
+  },
+  {
+   "i": 599,
+   "chapter": 6,
+   "t": 3386,
+   "text": "I'm not completely sure."
+  },
+  {
+   "i": 600,
+   "chapter": 6,
+   "t": 3388,
+   "text": "I'm going to call it T because it's been called T in the past."
+  },
+  {
+   "i": 601,
+   "chapter": 6,
+   "t": 3393,
+   "text": "Now, I pull this thing and I want to know what the whole string will do."
+  },
+  {
+   "i": 602,
+   "chapter": 6,
+   "t": 3399,
+   "text": "Who is going to tell me now?"
+  },
+  {
+   "i": 603,
+   "chapter": 6,
+   "t": 3402,
+   "text": "I mean, what authority will decide the behavior of this string?"
+  },
+  {
+   "i": 604,
+   "chapter": 6,
+   "t": 3406,
+   "text": "What do we have to appeal to?"
+  },
+  {
+   "i": 605,
+   "chapter": 6,
+   "t": 3409,
+   "text": "Yes? [inaudible] Pardon me? [inaudible] Very good."
+  },
+  {
+   "i": 606,
+   "chapter": 6,
+   "t": 3412,
+   "text": "So, he said, find the force that will return it to the original position and what was the it that you mentioned? [inaudible] Pardon me?"
+  },
+  {
+   "i": 607,
+   "chapter": 6,
+   "t": 3421,
+   "text": "Right, but we are going to apply--yes, any other answers before I go?"
+  },
+  {
+   "i": 608,
+   "chapter": 6,
+   "t": 3426,
+   "text": "Yes."
+  },
+  {
+   "i": 609,
+   "chapter": 6,
+   "t": 3427,
+   "text": "Can't you model the motion of the string by saying that [inaudible] Yeah, it will look like that."
+  },
+  {
+   "i": 610,
+   "chapter": 6,
+   "t": 3434,
+   "text": "That is correct."
+  },
+  {
+   "i": 611,
+   "chapter": 6,
+   "t": 3435,
+   "text": "But all I want you to understand is, there are no new laws that I'm going to invoke."
+  },
+  {
+   "i": 612,
+   "chapter": 6,
+   "t": 3442,
+   "text": "I'm not going to say, well, we studied masses and springs, today it's time to study strings and I'm going to tell you a new law of motion."
+  },
+  {
+   "i": 613,
+   "chapter": 6,
+   "t": 3453,
+   "text": "There's only one law of motion."
+  },
+  {
+   "i": 614,
+   "chapter": 6,
+   "t": 3455,
+   "text": "That's F = ma."
+  },
+  {
+   "i": 615,
+   "chapter": 6,
+   "t": 3456,
+   "text": "The whole purpose of my exercise now is to show you that really does control, that's why it's a super law."
+  },
+  {
+   "i": 616,
+   "chapter": 6,
+   "t": 3465,
+   "text": "Everything mechanical follows from that law and I want to show you F = ma is all I have and I've got to use it properly and that's going to tell me what the strings will do."
+  },
+  {
+   "i": 617,
+   "chapter": 6,
+   "t": 3479,
+   "text": "So, what I do is--The string is, of course, a long and extended and complicated object."
+  },
+  {
+   "i": 618,
+   "chapter": 6,
+   "t": 3485,
+   "text": "I isolate a portion of it, of length dx, and I'm going to apply F = ma to that guy."
+  },
+  {
+   "i": 619,
+   "chapter": 6,
+   "t": 3493,
+   "text": "All I need to know if the F, the total force on it, and I'm going to equate it to mass times acceleration."
+  },
+  {
+   "i": 620,
+   "chapter": 6,
+   "t": 3502,
+   "text": "Okay now, this force on the little segment is the tension pulling this way, the same tension pulling that way."
+  },
+  {
+   "i": 621,
+   "chapter": 6,
+   "t": 3509,
+   "text": "The tension on the string doesn't change from point to point."
+  },
+  {
+   "i": 622,
+   "chapter": 6,
+   "t": 3513,
+   "text": "But the angle at which it is pulling is not necessarily the same."
+  },
+  {
+   "i": 623,
+   "chapter": 6,
+   "t": 3518,
+   "text": "Here, there is some angle θ + Δθ, and here, there is an angle θ."
+  },
+  {
+   "i": 624,
+   "chapter": 6,
+   "t": 3524,
+   "text": "This force is at an angle, say, θ below the horizontal, this is pulling about θ + Δθ."
+  },
+  {
+   "i": 625,
+   "chapter": 6,
+   "t": 3531,
+   "text": "So, the string is curving; therefore, the tangent to the string at this end and that end are not quite the same and that's the key."
+  },
+  {
+   "i": 626,
+   "chapter": 6,
+   "t": 3541,
+   "text": "Because if they were exactly the same, the same tension on the two ends, if you take any object like this and apply exactly the same force, they will cancel because they're opposite forces, and F is 0, ma will be 0, and this thing won't move."
+  },
+  {
+   "i": 627,
+   "chapter": 6,
+   "t": 3559,
+   "text": "The reason it moves is because even though the magnitude of the force is the same, the angle at which it's acting is not the same."
+  },
+  {
+   "i": 628,
+   "chapter": 6,
+   "t": 3569,
+   "text": "So, I'm going to find out the vertical component of the force here and take the difference from there [pointing at picture]."
+  },
+  {
+   "i": 629,
+   "chapter": 6,
+   "t": 3578,
+   "text": "So, the force here will be T times sin + Δθ. θ is the angle with the horizontal."
+  },
+  {
+   "i": 630,
+   "chapter": 6,
+   "t": 3585,
+   "text": "And the force on the other side will be T times sin θ. θ is the angle made by the string from the horizontal, and that angle is simply changing over this tiny length."
+  },
+  {
+   "i": 631,
+   "chapter": 6,
+   "t": 3598,
+   "text": "Next approximation--that's the force."
+  },
+  {
+   "i": 632,
+   "chapter": 6,
+   "t": 3599,
+   "text": "That's going to be mass times acceleration."
+  },
+  {
+   "i": 633,
+   "chapter": 6,
+   "t": 3602,
+   "text": "Mass of this little segment is the mass per unit length, times the length of the segment."
+  },
+  {
+   "i": 634,
+   "chapter": 6,
+   "t": 3609,
+   "text": "Now, what is the acceleration in the language of calculus?"
+  },
+  {
+   "i": 635,
+   "chapter": 6,
+   "t": 3612,
+   "text": "What is the acceleration here? [inaudible] Pardon me? [inaudible] Ah, he said d2x over dt2, but the d by dt2 is right."
+  },
+  {
+   "i": 636,
+   "chapter": 6,
+   "t": 3621,
+   "text": "It's not d2 of x of ψ because you've got to understand--I think--Look, this was not a fair trick, but you have to be aware that what is oscillating up and down is the coordinate side. x is not a real dynamical coordinate. x is a label on the string."
+  },
+  {
+   "i": 637,
+   "chapter": 6,
+   "t": 3640,
+   "text": "What's jumping up and down is ψ, so the acceleration is the second derivative, and I write partial derivative because ψ can vary with x, or it can vary with time and I want to take the second time derivative."
+  },
+  {
+   "i": 638,
+   "chapter": 6,
+   "t": 3656,
+   "text": "Now, come to the left-hand side and you assume the angles involved are very small."
+  },
+  {
+   "i": 639,
+   "chapter": 6,
+   "t": 3661,
+   "text": "If the angles involved are very small, I remind you guys of the falling identity, sin θ begins as θ plus dot, dot, dot."
+  },
+  {
+   "i": 640,
+   "chapter": 6,
+   "t": 3671,
+   "text": "You remember the series I wrote for you."
+  },
+  {
+   "i": 641,
+   "chapter": 6,
+   "t": 3674,
+   "text": "Cos θ is one minus θ2 over two, and we have decided that we are going to treat θ so small that θ2, we're not interested in."
+  },
+  {
+   "i": 642,
+   "chapter": 6,
+   "t": 3684,
+   "text": "And tan θ, which is sin θ over cos θ, is now θ over one, which is θ."
+  },
+  {
+   "i": 643,
+   "chapter": 6,
+   "t": 3691,
+   "text": "So, small angle approximation is sin θ, approximately equal to θ, cos θ approximately equal to one, tan θ may be approximately replaced by θ."
+  },
+  {
+   "i": 644,
+   "chapter": 6,
+   "t": 3701,
+   "text": "So, first nice break."
+  },
+  {
+   "i": 645,
+   "chapter": 6,
+   "t": 3702,
+   "text": "We don't have to work with sine, we just want T of θ + Δθ minus that, which is T of θ. Δθ is a change in the angle from the left hand of the string bit to the right end of the string bit."
+  },
+  {
+   "i": 646,
+   "chapter": 6,
+   "t": 3719,
+   "text": "Now, I got a dx here, so what I'm going to do is divide by a dx and multiply by a dx."
+  },
+  {
+   "i": 647,
+   "chapter": 6,
+   "t": 3728,
+   "text": "We are almost there in deriving the equation."
+  },
+  {
+   "i": 648,
+   "chapter": 6,
+   "t": 3731,
+   "text": "Look, I've been calling it dx and Δx so pardon that."
+  },
+  {
+   "i": 649,
+   "chapter": 6,
+   "t": 3735,
+   "text": "Just call it dx. μ, dx, d2ψ over dt2."
+  },
+  {
+   "i": 650,
+   "chapter": 6,
+   "t": 3739,
+   "text": "Now, what is θ?"
+  },
+  {
+   "i": 651,
+   "chapter": 6,
+   "t": 3740,
+   "text": "I'm going to say θ is the same as tan θ in the small angle approximation. tan θ is dψ/dx."
+  },
+  {
+   "i": 652,
+   "chapter": 6,
+   "t": 3748,
+   "text": "You know from the calculus, if you move horizontally by dx and you move vertically by dψ, dψdx is a tan of the angle."
+  },
+  {
+   "i": 653,
+   "chapter": 6,
+   "t": 3757,
+   "text": "That's one of the first things you learned in calculus."
+  },
+  {
+   "i": 654,
+   "chapter": 6,
+   "t": 3761,
+   "text": "So, this is really d by dx of dψdx, that becomes d2ψ over dx2, equal to μd2ψ over dt2."
+  },
+  {
+   "i": 655,
+   "chapter": 6,
+   "t": 3768,
+   "text": "Now, some of you may find the derivation hard."
+  },
+  {
+   "i": 656,
+   "chapter": 6,
+   "t": 3772,
+   "text": "Then forget about the details."
+  },
+  {
+   "i": 657,
+   "chapter": 6,
+   "t": 3774,
+   "text": "You're not responsible for that."
+  },
+  {
+   "i": 658,
+   "chapter": 6,
+   "t": 3776,
+   "text": "But some of you may say look, I don't ever want you to tell me something which you cannot prove unless it's an axiom or a law of nature."
+  },
+  {
+   "i": 659,
+   "chapter": 6,
+   "t": 3787,
+   "text": "Well, this is not a new law of nature, so I have to tell you where I got this."
+  },
+  {
+   "i": 660,
+   "chapter": 6,
+   "t": 3794,
+   "text": "I got this by applying F = ma to a tiny portion of the string."
+  },
+  {
+   "i": 661,
+   "chapter": 6,
+   "t": 3800,
+   "text": "And you can ask yourself, when you pull a string up, why does it come down?"
+  },
+  {
+   "i": 662,
+   "chapter": 6,
+   "t": 3806,
+   "text": "It comes down because there's a tension on the string and the tension here and the tension here have vertical components that don't quite match."
+  },
+  {
+   "i": 663,
+   "chapter": 6,
+   "t": 3816,
+   "text": "You see the string is flattening out like this; the vertical downward component of this is bigger than the vertical upward component of this force."
+  },
+  {
+   "i": 664,
+   "chapter": 6,
+   "t": 3825,
+   "text": "If it is resolved into the vertical or horizontal part the downward part is bigger than the upward part in this picture."
+  },
+  {
+   "i": 665,
+   "chapter": 6,
+   "t": 3834,
+   "text": "Therefore, there's a net force bringing you down."
+  },
+  {
+   "i": 666,
+   "chapter": 6,
+   "t": 3837,
+   "text": "That one is bringing you down is because the derivative here and here are not the same, because the derivative is the slope."
+  },
+  {
+   "i": 667,
+   "chapter": 6,
+   "t": 3846,
+   "text": "So, the whole thing depends on the rate of change of the rate of change, and that's why you get this."
+  },
+  {
+   "i": 668,
+   "chapter": 6,
+   "t": 3854,
+   "text": "But the mass of the tiny segment also depends on dx, so dx cancels in the end."
+  },
+  {
+   "i": 669,
+   "chapter": 6,
+   "t": 3860,
+   "text": "You drop it and you get this equation."
+  },
+  {
+   "i": 670,
+   "chapter": 6,
+   "t": 3863,
+   "text": "So, what I want you to think of is dθ/dx is really d by dx of dψ/dx."
+  },
+  {
+   "i": 671,
+   "chapter": 6,
+   "t": 3870,
+   "text": "Well, I should actually use partial derivatives, because ψ depends on x and t, so if you're real careful with that, you get d2ψ over dt2."
+  },
+  {
+   "i": 672,
+   "chapter": 7,
+   "t": 3880,
+   "text": "So now, I'm going to write down the final wave equation."
+  },
+  {
+   "i": 673,
+   "chapter": 7,
+   "t": 3884,
+   "text": "From this point on, you have to get engaged in the problem because even though you may or may not follow the derivation, you should know what is called a wave equation."
+  },
+  {
+   "i": 674,
+   "chapter": 7,
+   "t": 3896,
+   "text": "This is the wave equation: d2ψ over dx2 is equal to 1 over v2, d2ψ over dt2, where v2 is equal to t over μ, or v is square root of T over µ."
+  },
+  {
+   "i": 675,
+   "chapter": 7,
+   "t": 3908,
+   "text": "I just invented a symbol v."
+  },
+  {
+   "i": 676,
+   "chapter": 7,
+   "t": 3910,
+   "text": "This is very important."
+  },
+  {
+   "i": 677,
+   "chapter": 7,
+   "t": 3911,
+   "text": "What you have to know is that ψ, the displacement of the string at the point labeled x horizontally from the left-hand, at the time t, varies with time according to this equation."
+  },
+  {
+   "i": 678,
+   "chapter": 7,
+   "t": 3923,
+   "text": "This is a very famous equation and it turns out you take any elastic medium and you disturb it a little bit from equilibrium, always seems to obey equations of this type."
+  },
+  {
+   "i": 679,
+   "chapter": 7,
+   "t": 3935,
+   "text": "So, our job from now until some time is to analyze the equation and see what it means."
+  },
+  {
+   "i": 680,
+   "chapter": 7,
+   "t": 3941,
+   "text": "What are the consequences of this wave equation?"
+  },
+  {
+   "i": 681,
+   "chapter": 7,
+   "t": 3944,
+   "text": "And even though I called it v, as units of velocity, I have no right to argue that it really is the velocity of the wave."
+  },
+  {
+   "i": 682,
+   "chapter": 7,
+   "t": 3954,
+   "text": "We'll have to find out."
+  },
+  {
+   "i": 683,
+   "chapter": 7,
+   "t": 3955,
+   "text": "It's got dimensions of velocity; you can check by putting the units in."
+  },
+  {
+   "i": 684,
+   "chapter": 7,
+   "t": 3960,
+   "text": "Okay but now, let me write down a solution to this equation; then, we'll understand what can happen."
+  },
+  {
+   "i": 685,
+   "chapter": 7,
+   "t": 3967,
+   "text": "So, this is like saying I've got some equation, second derivative of x is equal to some number times x, and we said the answer is cos ωt and sin ωt."
+  },
+  {
+   "i": 686,
+   "chapter": 7,
+   "t": 3978,
+   "text": "But now, we've got second derivatives with the respect to space, second derivatives with respect to time and I know that this guy is going to oscillate up and down."
+  },
+  {
+   "i": 687,
+   "chapter": 7,
+   "t": 3989,
+   "text": "But it's going to oscillate, if you imagine a string, take a string or a water wave that is traveling back and forth; the ripples are traveling."
+  },
+  {
+   "i": 688,
+   "chapter": 7,
+   "t": 3998,
+   "text": "If you took a snapshot of the wave at a given time, it would be going up and down in space."
+  },
+  {
+   "i": 689,
+   "chapter": 7,
+   "t": 4006,
+   "text": "Or if you stood at one point in the water and have the wave go past you, the water will go up and down in time at a given space."
+  },
+  {
+   "i": 690,
+   "chapter": 7,
+   "t": 4017,
+   "text": "You understand?"
+  },
+  {
+   "i": 691,
+   "chapter": 7,
+   "t": 4018,
+   "text": "If the wave is coming towards the shore, you stand in one place, you don't have to move."
+  },
+  {
+   "i": 692,
+   "chapter": 7,
+   "t": 4024,
+   "text": "The wave will go past you and where you are, the water will go up and down with time."
+  },
+  {
+   "i": 693,
+   "chapter": 7,
+   "t": 4031,
+   "text": "Or, if you took a picture of it at one instant, the wave will go up and down in space at a given time."
+  },
+  {
+   "i": 694,
+   "chapter": 7,
+   "t": 4040,
+   "text": "So, waves oscillate in space and time and you have to guess the answer."
+  },
+  {
+   "i": 695,
+   "chapter": 7,
+   "t": 4045,
+   "text": "Now, if I had more time, I can tell you guys how to deduce the answer."
+  },
+  {
+   "i": 696,
+   "chapter": 7,
+   "t": 4050,
+   "text": "It's not very hard, but I just don't have that kind of time."
+  },
+  {
+   "i": 697,
+   "chapter": 7,
+   "t": 4055,
+   "text": "So, I'm going to just write down a solution."
+  },
+  {
+   "i": 698,
+   "chapter": 7,
+   "t": 4058,
+   "text": "In fact, there are many, many solutions to the equation."
+  },
+  {
+   "i": 699,
+   "chapter": 7,
+   "t": 4062,
+   "text": "It's very general, so I'm going to write a particular solution."
+  },
+  {
+   "i": 700,
+   "chapter": 7,
+   "t": 4066,
+   "text": "The solution I'm going to write down looks like this."
+  },
+  {
+   "i": 701,
+   "chapter": 7,
+   "t": 4070,
+   "text": "It is some number A, which is the amplitude and it looks like cosine, some number called k times x minus ωt."
+  },
+  {
+   "i": 702,
+   "chapter": 7,
+   "t": 4078,
+   "text": "Unfortunately, this k is not a force constant."
+  },
+  {
+   "i": 703,
+   "chapter": 7,
+   "t": 4080,
+   "text": "It is a new symbol."
+  },
+  {
+   "i": 704,
+   "chapter": 7,
+   "t": 4082,
+   "text": "And ω is another symbol whose meaning we will deduce shortly."
+  },
+  {
+   "i": 705,
+   "chapter": 7,
+   "t": 4086,
+   "text": "At least you can see that I just cannot write a wave like x - t or something, because cosine should have an argument which has no dimensions."
+  },
+  {
+   "i": 706,
+   "chapter": 7,
+   "t": 4096,
+   "text": "So, if I have an x, I should multiply it by some number that's got units of inverse x."
+  },
+  {
+   "i": 707,
+   "chapter": 7,
+   "t": 4103,
+   "text": "And if I have a time, I should multiply it by something that looks like a frequency."
+  },
+  {
+   "i": 708,
+   "chapter": 7,
+   "t": 4109,
+   "text": "From dimensional analysis, I look for a solution of this form to these equations."
+  },
+  {
+   "i": 709,
+   "chapter": 7,
+   "t": 4114,
+   "text": "Once again, whether you solve it--By the way, this called a partial differential equation because it involves partial derivatives."
+  },
+  {
+   "i": 710,
+   "chapter": 7,
+   "t": 4121,
+   "text": "All I'm going to do--I'm going to be content with showing you that this solution, when I stick it into this equation actually works."
+  },
+  {
+   "i": 711,
+   "chapter": 7,
+   "t": 4130,
+   "text": "Let us first verify that it works."
+  },
+  {
+   "i": 712,
+   "chapter": 7,
+   "t": 4132,
+   "text": "Then, we'll come next Monday and analyze in detail what does this really do?"
+  },
+  {
+   "i": 713,
+   "chapter": 7,
+   "t": 4137,
+   "text": "We'll come to that in a moment."
+  },
+  {
+   "i": 714,
+   "chapter": 7,
+   "t": 4140,
+   "text": "Let's verify that it works."
+  },
+  {
+   "i": 715,
+   "chapter": 7,
+   "t": 4142,
+   "text": "So, let's take dψ/dx."
+  },
+  {
+   "i": 716,
+   "chapter": 7,
+   "t": 4143,
+   "text": "What happens when you take dψ/dx, when you take a partial derivative with respect to x it says forget about time; treat x as the only variable, then you'll get -a sin kx - ωt, times the derivative of what's inside the argument which happens to be k."
+  },
+  {
+   "i": 717,
+   "chapter": 7,
+   "t": 4161,
+   "text": "Now, if you differentiate the second time, d2ψ/dx2, you do the whole thing again; then, you'll get -Ak2 sin kx - ωt. [inaudible] I'm sorry--;yes--thank you [correction: professor changes Ak2 sin kx - ωt to Ak2 cos kx - ωt]."
+  },
+  {
+   "i": 718,
+   "chapter": 7,
+   "t": 4175,
+   "text": "Now, if you take d2ψ/dt2, you will get -ω2 A cos kx - ωt."
+  },
+  {
+   "i": 719,
+   "chapter": 7,
+   "t": 4180,
+   "text": "If you take one over v2 times that, you'll get this."
+  },
+  {
+   "i": 720,
+   "chapter": 7,
+   "t": 4184,
+   "text": "What does the wave equation say?"
+  },
+  {
+   "i": 721,
+   "chapter": 7,
+   "t": 4186,
+   "text": "It says, the second derivative of an x should be one over v2 times the second derivative in time."
+  },
+  {
+   "i": 722,
+   "chapter": 7,
+   "t": 4193,
+   "text": "And for my solution, that's a second derivative in x; that's a second derivative in time; I want them to match."
+  },
+  {
+   "i": 723,
+   "chapter": 7,
+   "t": 4201,
+   "text": "Well, they're almost there."
+  },
+  {
+   "i": 724,
+   "chapter": 7,
+   "t": 4202,
+   "text": "A matches A, cosine matches the cosine, but ω and k are not independent numbers. ω over v should be equal to k."
+  },
+  {
+   "i": 725,
+   "chapter": 7,
+   "t": 4210,
+   "text": "In other words, this wave equation for waves on a string will have solutions that look like this, where A can be any number you like, k and ω, between the two of them, there is one degree of freedom."
+  },
+  {
+   "i": 726,
+   "chapter": 7,
+   "t": 4225,
+   "text": "You can pick k at will, and pick ω so that ω will equal the kv, or pick ω freely, and choose k so that k is ω over v."
+  },
+  {
+   "i": 727,
+   "chapter": 7,
+   "t": 4236,
+   "text": "But there is a relation between the two of them, which you can write in any number of ways."
+  },
+  {
+   "i": 728,
+   "chapter": 7,
+   "t": 4243,
+   "text": "So, let us put that knowledge back into the solution."
+  },
+  {
+   "i": 729,
+   "chapter": 7,
+   "t": 4246,
+   "text": "Let us say ω is in fact kv, so that we write it explicitly in terms of the k, which is completely free."
+  },
+  {
+   "i": 730,
+   "chapter": 7,
+   "t": 4254,
+   "text": "So, ψ now looks like A cos, k times x minus--;now, here is where you guys got to do a little mental algebra here."
+  },
+  {
+   "i": 731,
+   "chapter": 7,
+   "t": 4263,
+   "text": "If I pulled the k out, can you see that t will be multiplied by ω over k?"
+  },
+  {
+   "i": 732,
+   "chapter": 7,
+   "t": 4270,
+   "text": "But ω over k is v."
+  },
+  {
+   "i": 733,
+   "chapter": 7,
+   "t": 4272,
+   "text": "So, this is my solution."
+  },
+  {
+   "i": 734,
+   "chapter": 7,
+   "t": 4274,
+   "text": "A cos [k(x - vt)]."
+  },
+  {
+   "i": 735,
+   "chapter": 7,
+   "t": 4275,
+   "text": "And that is a very pretty result and I just--I will conclude by telling you what that is telling you."
+  },
+  {
+   "i": 736,
+   "chapter": 7,
+   "t": 4283,
+   "text": "It says that ψ of xt, which depends on x and depends on t, depends on x and t through this combination x - vt."
+  },
+  {
+   "i": 737,
+   "chapter": 7,
+   "t": 4292,
+   "text": "In other words, if x - vt has a certain value, ψ has a certain value."
+  },
+  {
+   "i": 738,
+   "chapter": 7,
+   "t": 4297,
+   "text": "If I change x and if I change t, keeping x - vt constant, the function doesn't change, right, because it's a function only of this combination."
+  },
+  {
+   "i": 739,
+   "chapter": 7,
+   "t": 4307,
+   "text": "I will argue that that really means it's a wave that's traveling at a velocity v."
+  },
+  {
+   "i": 740,
+   "chapter": 7,
+   "t": 4313,
+   "text": "Let me show you why."
+  },
+  {
+   "i": 741,
+   "chapter": 7,
+   "t": 4315,
+   "text": "Let's take a function, e to the -x2."
+  },
+  {
+   "i": 742,
+   "chapter": 7,
+   "t": 4318,
+   "text": "You must have seen this function in statistics."
+  },
+  {
+   "i": 743,
+   "chapter": 7,
+   "t": 4321,
+   "text": "It looks like this."
+  },
+  {
+   "i": 744,
+   "chapter": 7,
+   "t": 4322,
+   "text": "It likes to have x = 0."
+  },
+  {
+   "i": 745,
+   "chapter": 7,
+   "t": 4325,
+   "text": "Take the function that x is replaced by x - vt."
+  },
+  {
+   "i": 746,
+   "chapter": 7,
+   "t": 4328,
+   "text": "Where does this function have its maximum?"
+  },
+  {
+   "i": 747,
+   "chapter": 7,
+   "t": 4331,
+   "text": "It has a maximum when this guy on top vanishes, that is to say, when x = vt."
+  },
+  {
+   "i": 748,
+   "chapter": 7,
+   "t": 4338,
+   "text": "So, if you took the function, e to the (x - vt)2 with the minus sign, at t = 0 it'll be here, but other time it'll be here, but at every instant, the bump will be moving to the right, you can see with the velocity v, because the peak is at a location vt."
+  },
+  {
+   "i": 749,
+   "chapter": 7,
+   "t": 4358,
+   "text": "So, in a wave, the whole profile moves at a velocity and that, for this symbol we use here is in fact the velocity of the wave."
+  },
+  {
+   "i": 750,
+   "chapter": 7,
+   "t": 4367,
+   "text": "Maybe I'll give you one extreme example."
+  },
+  {
+   "i": 751,
+   "chapter": 7,
+   "t": 4370,
+   "text": "At t = 0, it just looks like cos kx, and we all know what cos kx looks like."
+  },
+  {
+   "i": 752,
+   "chapter": 7,
+   "t": 4377,
+   "text": "It's got a maximum of x = 0."
+  },
+  {
+   "i": 753,
+   "chapter": 7,
+   "t": 4380,
+   "text": "If you wait a little longer, where is this maximum a little later?"
+  },
+  {
+   "i": 754,
+   "chapter": 7,
+   "t": 4384,
+   "text": "If you increase x a little bit, if you increase time a little bit, you got to increase x a little bit so that these two still cancel each other."
+  },
+  {
+   "i": 755,
+   "chapter": 7,
+   "t": 4395,
+   "text": "Originally, x was at 0, and t was at 0; you were at a maximum."
+  },
+  {
+   "i": 756,
+   "chapter": 7,
+   "t": 4401,
+   "text": "A little later, after some time Δt, if you go to the point Δx, so that these two numbers cancel, we are still riding the maximum."
+  },
+  {
+   "i": 757,
+   "chapter": 7,
+   "t": 4410,
+   "text": "But that means that Δx over Δt is v."
+  },
+  {
+   "i": 758,
+   "chapter": 7,
+   "t": 4413,
+   "text": "That means, if you move to the right, after ψ Δt, you will ride the crest."
+  },
+  {
+   "i": 759,
+   "chapter": 7,
+   "t": 4419,
+   "text": "That means the crest is moving at the velocity v."
+  },
+  {
+   "i": 760,
+   "chapter": 7,
+   "t": 4423,
+   "text": "So, I think to summarize what I've shown you so far, is that when you take a string and you have a tension on it, you pull it and let it go, it vibrates according to this equation; that is the first statement."
+  },
+  {
+   "i": 761,
+   "chapter": 7,
+   "t": 4438,
+   "text": "This is a solution."
+  },
+  {
+   "i": 762,
+   "chapter": 7,
+   "t": 4440,
+   "text": "I'm not telling you it's the most general one or the only one or anything."
+  },
+  {
+   "i": 763,
+   "chapter": 7,
+   "t": 4445,
+   "text": "I want us to at least have one concrete solution."
+  },
+  {
+   "i": 764,
+   "chapter": 7,
+   "t": 4449,
+   "text": "And I've not told you yet how to visualize the function, but I have told you whatever the function is, it is drifting to the right at a speed that we call v."
+  },
+  {
+   "i": 765,
+   "chapter": 7,
+   "t": 4461,
+   "text": "Because any function of x - vt has a property that if [initially] it did something x = 0, it does the same thing at x = vt."
+  },
+  {
+   "i": 766,
+   "chapter": 7,
+   "t": 4471,
+   "text": "That means the whole shape is bodily transported to the right."
+  },
+  {
+   "i": 767,
+   "chapter": 7,
+   "t": 4475,
+   "text": "So, this really signifies a wave traveling to the right."
+  },
+  {
+   "i": 768,
+   "chapter": 7,
+   "t": 4478,
+   "text": "If you wanted a wave traveling to the left, you should put a plus here; it'll go backwards."
+  }
+ ],
+ "words": 12420,
+ "duration": 4485,
+ "timesEstimated": true,
+ "transcriptHash": "31f536cc015fa438f209b38358d0fc1a2786397a041dfbf7a90895bbda57ff6d"
+}

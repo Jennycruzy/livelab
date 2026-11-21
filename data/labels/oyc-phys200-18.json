@@ -1,0 +1,136 @@
+{
+ "lecture": "oyc-phys200-18",
+ "transcriptHash": "31f536cc015fa438f209b38358d0fc1a2786397a041dfbf7a90895bbda57ff6d",
+ "labelledBy": "hand, from a full reading of the transcript",
+ "labelledAt": "2026-11-21T20:18:26.391Z",
+ "labels": [
+  {
+   "id": "oyc-phys200-18#1",
+   "sentences": [
+    13,
+    14
+   ],
+   "t": 69,
+   "minute": 1,
+   "quotes": [
+    "If you pull the spring and let it go, that's the frequency that it will vibrate.",
+    "There are really the natural frequency that is fixed by k and m and ω is for you to decide."
+   ],
+   "model": "spring",
+   "rule": "period_formula",
+   "inLibrary": true,
+   "note": "natural frequency fixed by k and m"
+  },
+  {
+   "id": "oyc-phys200-18#2",
+   "sentences": [
+    639,
+    643
+   ],
+   "t": 3661,
+   "minute": 61,
+   "quotes": [
+    "If the angles involved are very small, I remind you guys of the falling identity, sin θ begins as θ plus dot, dot, dot.",
+    "So, small angle approximation is sin θ, approximately equal to θ, cos θ approximately equal to one, tan θ may be approximately replaced by θ."
+   ],
+   "model": "series",
+   "rule": "sin_x",
+   "inLibrary": true,
+   "note": "small angles: sin θ ≈ θ"
+  },
+  {
+   "id": "oyc-phys200-18#3",
+   "sentences": [
+    643
+   ],
+   "t": 3691,
+   "minute": 61,
+   "quotes": [
+    "So, small angle approximation is sin θ, approximately equal to θ, cos θ approximately equal to one, tan θ may be approximately replaced by θ."
+   ],
+   "model": "series",
+   "rule": "cos_one",
+   "inLibrary": true,
+   "note": "small angles: cos θ ≈ 1"
+  },
+  {
+   "id": "oyc-phys200-18#4",
+   "sentences": [
+    642,
+    643,
+    651
+   ],
+   "t": 3684,
+   "minute": 61,
+   "quotes": [
+    "And tan θ, which is sin θ over cos θ, is now θ over one, which is θ.",
+    "So, small angle approximation is sin θ, approximately equal to θ, cos θ approximately equal to one, tan θ may be approximately replaced by θ.",
+    "I'm going to say θ is the same as tan θ in the small angle approximation. tan θ is dψ/dx."
+   ],
+   "model": "series",
+   "rule": "tan_x",
+   "inLibrary": true,
+   "note": "small angles: tan θ ≈ θ"
+  },
+  {
+   "id": "oyc-phys200-18#5",
+   "sentences": [
+    185
+   ],
+   "t": 1175,
+   "minute": 19,
+   "quotes": [
+    "Whereas in the absence of external forces, all oscillations will eventually die down."
+   ],
+   "model": null,
+   "rule": null,
+   "inLibrary": false,
+   "note": "without external forces all oscillations die down (not in library)"
+  },
+  {
+   "id": "oyc-phys200-18#6",
+   "sentences": [
+    333
+   ],
+   "t": 1939,
+   "minute": 32,
+   "quotes": [
+    "You're going to get the force divided by the force constant."
+   ],
+   "model": null,
+   "rule": null,
+   "inLibrary": false,
+   "note": "driven oscillator at zero frequency: amplitude F/k (not in library)"
+  },
+  {
+   "id": "oyc-phys200-18#7",
+   "sentences": [
+    345
+   ],
+   "t": 2003,
+   "minute": 33,
+   "quotes": [
+    "The amplitude of oscillation is the largest when the applied frequency is very near the natural frequency."
+   ],
+   "model": null,
+   "rule": null,
+   "inLibrary": false,
+   "note": "resonance: amplitude largest near the natural frequency (not in library)"
+  },
+  {
+   "id": "oyc-phys200-18#8",
+   "sentences": [
+    509
+   ],
+   "t": 2859,
+   "minute": 47,
+   "quotes": [
+    "The velocity of sound depends on the temperature, for example."
+   ],
+   "model": null,
+   "rule": null,
+   "inLibrary": false,
+   "note": "speed of sound depends on temperature (not in library)"
+  }
+ ]
+}

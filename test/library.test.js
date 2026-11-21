@@ -49,6 +49,18 @@ test('verdicts: holds rules break when the physics changes', () => {
   assert.ok(air.lo > 1 && air.lo < 2, 'in air only the heavier objects fall like in a vacuum');
 });
 
+test('verdicts: pendulum formula, spring energy and cos x ≈ 1', () => {
+  assert.equal(check({ model: 'pendulum', rule: 'period_formula' }).verdict, 'holds');
+  assert.equal(check({ model: 'pendulum', rule: 'period_formula', fixed: { amplitude_deg: 40 } }).verdict, 'fails');
+  assert.equal(check({ model: 'spring', rule: 'energy_conservation' }).verdict, 'holds');
+  // With a cubic term in the force, ½mv² + ½kx² is no longer constant.
+  assert.equal(check({ model: 'spring', rule: 'energy_conservation', fixed: { k3_Nm3: 5000 } }).verdict, 'breaks');
+  const cos1 = check({ model: 'series', rule: 'cos_one' });
+  assert.equal(cos1.verdict, 'breaks');
+  // |1 - cos x| / cos x = 0.01 exactly where cos x = 1/1.01.
+  assert.ok(Math.abs(cos1.limit - Math.acos(1 / 1.01) / (Math.PI / 180)) < 1e-9, 'cos x = 1/1.01 at the limit');
+});
+
 test('verdicts: a wrong rule fails everywhere', () => {
   // "Heavier pendulums swing faster": the library's mass rule at a large swing is off by >1% at every mass.
   assert.equal(check({ model: 'pendulum', rule: 'mass_independence', fixed: { amplitude_deg: 40 } }).verdict, 'fails');
