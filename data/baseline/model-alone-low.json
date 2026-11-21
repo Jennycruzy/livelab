@@ -1,0 +1,890 @@
+{
+ "summary": {
+  "model": "moonshotai-kimi-k3.1-pro-trial",
+  "reasoning_effort": "low",
+  "at": "2026-11-21T21:14:25.462Z",
+  "moments": 20,
+  "verdictRight": 18,
+  "limitWithin5pct": 11,
+  "bothRight": 11
+ },
+ "rows": [
+  {
+   "id": 1,
+   "line": "For small swings the period is two pi root L over g. The mass isn't in there.",
+   "key": {
+    "verdict": "holds",
+    "limit": null,
+    "limitLow": null,
+    "unit": null
+   },
+   "reply": {
+    "content": "{\"verdict\":\"breaks\",\"limit\":22.82,\"unit\":\"degrees\",\"limit_low\":null}",
+    "usage": {
+     "total_tokens": 1297,
+     "completion_tokens": 1008,
+     "completion_tokens_details": {
+      "reasoning_tokens": 976
+     },
+     "prompt_tokens": 289,
+     "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "image_tokens": 0
+     }
+    },
+    "time_info": {
+     "created": 1795295361.5066931,
+     "queue_time": 46.572355644,
+     "prompt_time": 0.442496626,
+     "completion_time": 3.656690019,
+     "total_time": 50.6740939617157
+    },
+    "ms": 50988
+   },
+   "grade": {
+    "parsed": true,
+    "answer": {
+     "verdict": "breaks",
+     "limit": 22.82,
+     "unit": "degrees",
+     "limit_low": null
+    },
+    "verdictRight": false,
+    "limitWithin5pct": false
+   }
+  },
+  {
+   "id": 2,
+   "line": "It doesn't matter how far you pull the pendulum back, the period is the same.",
+   "key": {
+    "verdict": "breaks",
+    "limit": 22.813849261957188,
+    "limitLow": null,
+    "unit": "deg"
+   },
+   "reply": {
+    "content": "{\"verdict\":\"breaks\",\"limit\":0.398,\"unit\":\"rad\",\"limit_low\":null}",
+    "usage": {
+     "total_tokens": 544,
+     "completion_tokens": 256,
+     "completion_tokens_details": {
+      "reasoning_tokens": 224
+     },
+     "prompt_tokens": 288,
+     "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "image_tokens": 0
+     }
+    },
+    "time_info": {
+     "created": 1795295361.524785,
+     "queue_time": 46.578446537,
+     "prompt_time": 0.433623554,
+     "completion_time": 0.703188857,
+     "total_time": 47.71828055381775
+    },
+    "ms": 48067
+   },
+   "grade": {
+    "parsed": true,
+    "answer": {
+     "verdict": "breaks",
+     "limit": 0.398,
+     "unit": "rad",
+     "limit_low": null
+    },
+    "verdictRight": true,
+    "limitWithin5pct": false
+   }
+  },
+  {
+   "id": 3,
+   "line": "A heavy ball and a light ball dropped together land at the same time (bowling 7.0 kg r 0.109 m, basketball 0.62 kg r 0.119 m).",
+   "key": {
+    "verdict": "breaks",
+    "limit": 3.129732335268791,
+    "limitLow": null,
+    "unit": "m"
+   },
+   "reply": {
+    "content": "{\"verdict\":\"breaks\",\"limit\":5.96,\"unit\":\"m\",\"limit_low\":null}",
+    "usage": {
+     "total_tokens": 1904,
+     "completion_tokens": 1592,
+     "completion_tokens_details": {
+      "reasoning_tokens": 1560
+     },
+     "prompt_tokens": 312,
+     "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "image_tokens": 0
+     }
+    },
+    "time_info": {
+     "created": 1795295361.5123441,
+     "queue_time": 65.055938096,
+     "prompt_time": 0.021794119,
+     "completion_time": 6.153505574,
+     "total_time": 71.23498702049255
+    },
+    "ms": 71465
+   },
+   "grade": {
+    "parsed": true,
+    "answer": {
+     "verdict": "breaks",
+     "limit": 5.96,
+     "unit": "m",
+     "limit_low": null
+    },
+    "verdictRight": true,
+    "limitWithin5pct": false
+   }
+  },
+  {
+   "id": 4,
+   "line": "For small angles, sin x is just x.",
+   "key": {
+    "verdict": "breaks",
+    "limit": 13.98571045633712,
+    "limitLow": null,
+    "unit": "deg"
+   },
+   "reply": {
+    "content": "{\"verdict\":\"breaks\",\"limit\":0.244,\"unit\":\"radians\",\"limit_low\":null}",
+    "usage": {
+     "total_tokens": 970,
+     "completion_tokens": 690,
+     "completion_tokens_details": {
+      "reasoning_tokens": 657
+     },
+     "prompt_tokens": 280,
+     "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "image_tokens": 0
+     }
+    },
+    "time_info": {
+     "created": 1795295361.5185535,
+     "queue_time": 65.105519081,
+     "prompt_time": 0.020683504,
+     "completion_time": 2.378778505,
+     "total_time": 67.51048278808594
+    },
+    "ms": 67740
+   },
+   "grade": {
+    "parsed": true,
+    "answer": {
+     "verdict": "breaks",
+     "limit": 0.244,
+     "unit": "radians",
+     "limit_low": null
+    },
+    "verdictRight": true,
+    "limitWithin5pct": false
+   }
+  },
+  {
+   "id": 5,
+   "line": "For small angles, tan x is just x.",
+   "key": {
+    "verdict": "breaks",
+    "limit": 9.86489891815981,
+    "limitLow": null,
+    "unit": "deg"
+   },
+   "reply": {
+    "content": "{\"verdict\":\"breaks\",\"limit\":0.173,\"unit\":\"rad\",\"limit_low\":null}",
+    "usage": {
+     "total_tokens": 695,
+     "completion_tokens": 415,
+     "completion_tokens_details": {
+      "reasoning_tokens": 383
+     },
+     "prompt_tokens": 280,
+     "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "image_tokens": 0
+     }
+    },
+    "time_info": {
+     "created": 1795295361.5265288,
+     "queue_time": 46.57084053,
+     "prompt_time": 0.435530864,
+     "completion_time": 1.340876444,
+     "total_time": 48.349130153656006
+    },
+    "ms": 48583
+   },
+   "grade": {
+    "parsed": true,
+    "answer": {
+     "verdict": "breaks",
+     "limit": 0.173,
+     "unit": "rad",
+     "limit_low": null
+    },
+    "verdictRight": true,
+    "limitWithin5pct": false
+   }
+  },
+  {
+   "id": 6,
+   "line": "For small x, e to the x is about 1 plus x.",
+   "key": {
+    "verdict": "breaks",
+    "limit": 0.1477797883933164,
+    "limitLow": null,
+    "unit": "x"
+   },
+   "reply": {
+    "content": "{\"verdict\":\"breaks\",\"limit\":0.148551,\"unit\":null,\"limit_low\":-0.135158}",
+    "usage": {
+     "total_tokens": 2890,
+     "completion_tokens": 2605,
+     "completion_tokens_details": {
+      "reasoning_tokens": 2568
+     },
+     "prompt_tokens": 285,
+     "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "image_tokens": 0
+     }
+    },
+    "time_info": {
+     "created": 1795295409.544595,
+     "queue_time": 62.933239488,
+     "prompt_time": 0.253210659,
+     "completion_time": 8.543807817,
+     "total_time": 71.73231792449951
+    },
+    "ms": 71921
+   },
+   "grade": {
+    "parsed": true,
+    "answer": {
+     "verdict": "breaks",
+     "limit": 0.148551,
+     "unit": null,
+     "limit_low": -0.135158
+    },
+    "verdictRight": true,
+    "limitWithin5pct": true
+   }
+  },
+  {
+   "id": 7,
+   "line": "Kinetic energy is one half m v squared.",
+   "key": {
+    "verdict": "breaks",
+    "limit": 0.11483350106435589,
+    "limitLow": null,
+    "unit": "fraction of c"
+   },
+   "reply": {
+    "content": "{\"verdict\":\"breaks\",\"limit\":34600000,\"unit\":\"m/s\",\"limit_low\":null}",
+    "usage": {
+     "total_tokens": 963,
+     "completion_tokens": 683,
+     "completion_tokens_details": {
+      "reasoning_tokens": 650
+     },
+     "prompt_tokens": 280,
+     "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "image_tokens": 0
+     }
+    },
+    "time_info": {
+     "created": 1795295410.0982096,
+     "queue_time": 81.062660345,
+     "prompt_time": 0.029718341,
+     "completion_time": 2.180240637,
+     "total_time": 83.27431559562683
+    },
+    "ms": 83555
+   },
+   "grade": {
+    "parsed": true,
+    "answer": {
+     "verdict": "breaks",
+     "limit": 34600000,
+     "unit": "m/s",
+     "limit_low": null
+    },
+    "verdictRight": true,
+    "limitWithin5pct": false
+   }
+  },
+  {
+   "id": 8,
+   "line": "Near Earth's surface, g is constant, 9.81, whatever the height.",
+   "key": {
+    "verdict": "breaks",
+    "limit": 32.09592101643966,
+    "limitLow": null,
+    "unit": "km"
+   },
+   "reply": {
+    "content": "{\"verdict\":\"breaks\",\"limit\":32.1,\"unit\":\"km\",\"limit_low\":null}",
+    "usage": {
+     "total_tokens": 481,
+     "completion_tokens": 194,
+     "completion_tokens_details": {
+      "reasoning_tokens": 162
+     },
+     "prompt_tokens": 287,
+     "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "image_tokens": 0
+     }
+    },
+    "time_info": {
+     "created": 1795295412.3723488,
+     "queue_time": 80.998327289,
+     "prompt_time": 0.018766735,
+     "completion_time": 0.464741694,
+     "total_time": 81.4837372303009
+    },
+    "ms": 81701
+   },
+   "grade": {
+    "parsed": true,
+    "answer": {
+     "verdict": "breaks",
+     "limit": 32.1,
+     "unit": "km",
+     "limit_low": null
+    },
+    "verdictRight": true,
+    "limitWithin5pct": true
+   }
+  },
+  {
+   "id": 9,
+   "line": "A mass on an ideal spring has the same period whatever the amplitude.",
+   "key": {
+    "verdict": "holds",
+    "limit": null,
+    "limitLow": null,
+    "unit": null
+   },
+   "reply": {
+    "content": "{\"verdict\":\"holds\",\"limit\":null,\"unit\":null,\"limit_low\":null}",
+    "usage": {
+     "total_tokens": 373,
+     "completion_tokens": 89,
+     "completion_tokens_details": {
+      "reasoning_tokens": 59
+     },
+     "prompt_tokens": 284,
+     "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "image_tokens": 0
+     }
+    },
+    "time_info": {
+     "created": 1795295429.2436476,
+     "queue_time": 64.76750246499999,
+     "prompt_time": 0.072079768,
+     "completion_time": 0.174137263,
+     "total_time": 65.01561045646667
+    },
+    "ms": 65236
+   },
+   "grade": {
+    "parsed": true,
+    "answer": {
+     "verdict": "holds",
+     "limit": null,
+     "unit": null,
+     "limit_low": null
+    },
+    "verdictRight": true,
+    "limitWithin5pct": true
+   }
+  },
+  {
+   "id": 10,
+   "line": "The rule of 72: money doubles in 72 divided by the interest rate years.",
+   "key": {
+    "verdict": "breaks",
+    "limit": 10.005549899579869,
+    "limitLow": 5.744651245796483,
+    "unit": "% rate"
+   },
+   "reply": {
+    "content": "{\"verdict\":\"breaks\",\"limit\":9.99446,\"unit\":\"% annual interest rate\",\"limit_low\":5.74465}",
+    "usage": {
+     "total_tokens": 1778,
+     "completion_tokens": 1490,
+     "completion_tokens_details": {
+      "reasoning_tokens": 1451
+     },
+     "prompt_tokens": 288,
+     "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "image_tokens": 0
+     }
+    },
+    "time_info": {
+     "created": 1795295432.9406202,
+     "queue_time": 94.237702954,
+     "prompt_time": 0.016945417,
+     "completion_time": 4.886221046,
+     "total_time": 99.1425371170044
+    },
+    "ms": 99370
+   },
+   "grade": {
+    "parsed": true,
+    "answer": {
+     "verdict": "breaks",
+     "limit": 9.99446,
+     "unit": "% annual interest rate",
+     "limit_low": 5.74465
+    },
+    "verdictRight": true,
+    "limitWithin5pct": true
+   }
+  },
+  {
+   "id": 11,
+   "line": "In a vacuum, all objects fall with the same acceleration.",
+   "key": {
+    "verdict": "holds",
+    "limit": null,
+    "limitLow": null,
+    "unit": null
+   },
+   "reply": {
+    "content": "{\"verdict\":\"holds\",\"limit\":null,\"unit\":null}",
+    "usage": {
+     "total_tokens": 433,
+     "completion_tokens": 151,
+     "completion_tokens_details": {
+      "reasoning_tokens": 126
+     },
+     "prompt_tokens": 282,
+     "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "image_tokens": 0
+     }
+    },
+    "time_info": {
+     "created": 1795295481.5255392,
+     "queue_time": 78.074514541,
+     "prompt_time": 0.016041835,
+     "completion_time": 0.641320355,
+     "total_time": 78.73677945137024
+    },
+    "ms": 78978
+   },
+   "grade": {
+    "parsed": true,
+    "answer": {
+     "verdict": "holds",
+     "limit": null,
+     "unit": null
+    },
+    "verdictRight": true,
+    "limitWithin5pct": true
+   }
+  },
+  {
+   "id": 12,
+   "line": "(1 plus x) to the n is about 1 plus n x, here n = 2.",
+   "key": {
+    "verdict": "breaks",
+    "limit": 0.1104987562112073,
+    "limitLow": null,
+    "unit": "x"
+   },
+   "reply": {
+    "content": "{\"verdict\":\"breaks\",\"limit\":0.1111111111,\"unit\":null,\"limit_low\":-0.0909090909}",
+    "usage": {
+     "total_tokens": 573,
+     "completion_tokens": 281,
+     "completion_tokens_details": {
+      "reasoning_tokens": 240
+     },
+     "prompt_tokens": 292,
+     "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "image_tokens": 0
+     }
+    },
+    "time_info": {
+     "created": 1795295493.6236806,
+     "queue_time": 57.153183226,
+     "prompt_time": 0.021322766,
+     "completion_time": 0.770081298,
+     "total_time": 57.94664406776428
+    },
+    "ms": 58134
+   },
+   "grade": {
+    "parsed": true,
+    "answer": {
+     "verdict": "breaks",
+     "limit": 0.1111111111,
+     "unit": null,
+     "limit_low": -0.0909090909
+    },
+    "verdictRight": true,
+    "limitWithin5pct": true
+   }
+  },
+  {
+   "id": 13,
+   "line": "Kepler: the square of the orbit period is proportional to the cube of the orbit size (planet mass ignored).",
+   "key": {
+    "verdict": "holds",
+    "limit": null,
+    "limitLow": null,
+    "unit": null
+   },
+   "reply": {
+    "content": "{\"verdict\":\"breaks\",\"limit\":0.01,\"unit\":\"planet mass / stellar mass\",\"limit_low\":null}",
+    "usage": {
+     "total_tokens": 707,
+     "completion_tokens": 414,
+     "completion_tokens_details": {
+      "reasoning_tokens": 378
+     },
+     "prompt_tokens": 293,
+     "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "image_tokens": 0
+     }
+    },
+    "time_info": {
+     "created": 1795295494.0759661,
+     "queue_time": 57.61026742199999,
+     "prompt_time": 0.106226059,
+     "completion_time": 1.472094918,
+     "total_time": 59.19071388244629
+    },
+    "ms": 59371
+   },
+   "grade": {
+    "parsed": true,
+    "answer": {
+     "verdict": "breaks",
+     "limit": 0.01,
+     "unit": "planet mass / stellar mass",
+     "limit_low": null
+    },
+    "verdictRight": false,
+    "limitWithin5pct": false
+   }
+  },
+  {
+   "id": 14,
+   "line": "Without air, a projectile goes furthest launched at 45 degrees, from ground level.",
+   "key": {
+    "verdict": "holds",
+    "limit": null,
+    "limitLow": null,
+    "unit": null
+   },
+   "reply": {
+    "content": "{\"verdict\":\"holds\",\"limit\":null,\"unit\":null,\"limit_low\":null}",
+    "usage": {
+     "total_tokens": 349,
+     "completion_tokens": 61,
+     "completion_tokens_details": {
+      "reasoning_tokens": 31
+     },
+     "prompt_tokens": 288,
+     "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "image_tokens": 0
+     }
+    },
+    "time_info": {
+     "created": 1795295494.515877,
+     "queue_time": 58.635156964000004,
+     "prompt_time": 0.062868566,
+     "completion_time": 0.202918473,
+     "total_time": 58.902791261672974
+    },
+    "ms": 59229
+   },
+   "grade": {
+    "parsed": true,
+    "answer": {
+     "verdict": "holds",
+     "limit": null,
+     "unit": null,
+     "limit_low": null
+    },
+    "verdictRight": true,
+    "limitWithin5pct": true
+   }
+  },
+  {
+   "id": 15,
+   "line": "cos x is about 1 minus x squared over 2.",
+   "key": {
+    "verdict": "breaks",
+    "limit": 37.93111968230153,
+    "limitLow": null,
+    "unit": "deg"
+   },
+   "reply": {
+    "content": "{\"verdict\":\"breaks\",\"limit\":0.6597,\"unit\":\"radians\",\"limit_low\":null}",
+    "usage": {
+     "total_tokens": 1818,
+     "completion_tokens": 1535,
+     "completion_tokens_details": {
+      "reasoning_tokens": 1501
+     },
+     "prompt_tokens": 283,
+     "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "image_tokens": 0
+     }
+    },
+    "time_info": {
+     "created": 1795295532.2971568,
+     "queue_time": 67.876086311,
+     "prompt_time": 0.072851975,
+     "completion_time": 5.417572122,
+     "total_time": 73.3684298992157
+    },
+    "ms": 73536
+   },
+   "grade": {
+    "parsed": true,
+    "answer": {
+     "verdict": "breaks",
+     "limit": 0.6597,
+     "unit": "radians",
+     "limit_low": null
+    },
+    "verdictRight": true,
+    "limitWithin5pct": false
+   }
+  },
+  {
+   "id": 16,
+   "line": "ln of 1 plus x is about x.",
+   "key": {
+    "verdict": "breaks",
+    "limit": 0.02006644547607179,
+    "limitLow": null,
+    "unit": "x"
+   },
+   "reply": {
+    "content": "{\"verdict\":\"breaks\",\"limit\":0.019814,\"unit\":null,\"limit_low\":-0.019544}",
+    "usage": {
+     "total_tokens": 1868,
+     "completion_tokens": 1588,
+     "completion_tokens_details": {
+      "reasoning_tokens": 1551
+     },
+     "prompt_tokens": 280,
+     "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "image_tokens": 0
+     }
+    },
+    "time_info": {
+     "created": 1795295551.7225273,
+     "queue_time": 64.1857476,
+     "prompt_time": 0.075001458,
+     "completion_time": 5.187613719,
+     "total_time": 69.45562362670898
+    },
+    "ms": 69617
+   },
+   "grade": {
+    "parsed": true,
+    "answer": {
+     "verdict": "breaks",
+     "limit": 0.019814,
+     "unit": null,
+     "limit_low": -0.019544
+    },
+    "verdictRight": true,
+    "limitWithin5pct": true
+   }
+  },
+  {
+   "id": 17,
+   "line": "Momentum is m times v.",
+   "key": {
+    "verdict": "breaks",
+    "limit": 0.14037076117581965,
+    "limitLow": null,
+    "unit": "fraction of c"
+   },
+   "reply": {
+    "content": "{\"verdict\":\"breaks\",\"limit\":42290931,\"unit\":\"m/s\"}",
+    "usage": {
+     "total_tokens": 523,
+     "completion_tokens": 247,
+     "completion_tokens_details": {
+      "reasoning_tokens": 219
+     },
+     "prompt_tokens": 276,
+     "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "image_tokens": 0
+     }
+    },
+    "time_info": {
+     "created": 1795295553.4343202,
+     "queue_time": 83.67566966300001,
+     "prompt_time": 0.63273037,
+     "completion_time": 0.881542672,
+     "total_time": 85.19212245941162
+    },
+    "ms": 85361
+   },
+   "grade": {
+    "parsed": true,
+    "answer": {
+     "verdict": "breaks",
+     "limit": 42290931,
+     "unit": "m/s"
+    },
+    "verdictRight": true,
+    "limitWithin5pct": false
+   }
+  },
+  {
+   "id": 18,
+   "line": "The square root of 1 plus x is about 1 plus x over 2.",
+   "key": {
+    "verdict": "breaks",
+    "limit": 0.32658442695090684,
+    "limitLow": null,
+    "unit": "x"
+   },
+   "reply": {
+    "content": "{\"verdict\":\"breaks\",\"limit\":0.326584427,\"unit\":null,\"limit_low\":-0.246184427}",
+    "usage": {
+     "total_tokens": 1167,
+     "completion_tokens": 879,
+     "completion_tokens_details": {
+      "reasoning_tokens": 840
+     },
+     "prompt_tokens": 288,
+     "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "image_tokens": 0
+     }
+    },
+    "time_info": {
+     "created": 1795295553.6587179,
+     "queue_time": 67.511946945,
+     "prompt_time": 0.022054468,
+     "completion_time": 2.762702922,
+     "total_time": 70.29861664772034
+    },
+    "ms": 70473
+   },
+   "grade": {
+    "parsed": true,
+    "answer": {
+     "verdict": "breaks",
+     "limit": 0.326584427,
+     "unit": null,
+     "limit_low": -0.246184427
+    },
+    "verdictRight": true,
+    "limitWithin5pct": true
+   }
+  },
+  {
+   "id": 19,
+   "line": "Energy is conserved in a frictionless pendulum.",
+   "key": {
+    "verdict": "holds",
+    "limit": null,
+    "limitLow": null,
+    "unit": null
+   },
+   "reply": {
+    "content": "{\"verdict\":\"holds\",\"limit\":null,\"unit\":null}",
+    "usage": {
+     "total_tokens": 369,
+     "completion_tokens": 89,
+     "completion_tokens_details": {
+      "reasoning_tokens": 64
+     },
+     "prompt_tokens": 280,
+     "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "image_tokens": 0
+     }
+    },
+    "time_info": {
+     "created": 1795295560.4362478,
+     "queue_time": 79.057217829,
+     "prompt_time": 0.016957446,
+     "completion_time": 0.164860971,
+     "total_time": 79.24091625213623
+    },
+    "ms": 79419
+   },
+   "grade": {
+    "parsed": true,
+    "answer": {
+     "verdict": "holds",
+     "limit": null,
+     "unit": null
+    },
+    "verdictRight": true,
+    "limitWithin5pct": true
+   }
+  },
+  {
+   "id": 20,
+   "line": "A ball thrown straight up with no air takes the same time to go up as to come down.",
+   "key": {
+    "verdict": "holds",
+    "limit": null,
+    "limitLow": null,
+    "unit": null
+   },
+   "reply": {
+    "content": "{\"verdict\":\"holds\",\"limit\":null,\"unit\":null,\"limit_low\":null}",
+    "usage": {
+     "total_tokens": 381,
+     "completion_tokens": 91,
+     "completion_tokens_details": {
+      "reasoning_tokens": 61
+     },
+     "prompt_tokens": 290,
+     "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "image_tokens": 0
+     }
+    },
+    "time_info": {
+     "created": 1795295605.8349211,
+     "queue_time": 59.249577922,
+     "prompt_time": 0.019334225,
+     "completion_time": 0.280132099,
+     "total_time": 59.55378293991089
+    },
+    "ms": 59728
+   },
+   "grade": {
+    "parsed": true,
+    "answer": {
+     "verdict": "holds",
+     "limit": null,
+     "unit": null,
+     "limit_low": null
+    },
+    "verdictRight": true,
+    "limitWithin5pct": true
+   }
+  }
+ ]
+}

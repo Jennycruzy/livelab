@@ -82,8 +82,9 @@ Reply with one JSON object and nothing else:
 - \`draw(ctx, state)\`: draw one frame on a 2D canvas context. \`state\` is \`{ params, t, w, h, dark }\`: the
   parameters, time in seconds since start, canvas width and height in CSS pixels, and whether the page is dark.
   Show the thing moving (pendulum swinging, ball falling, curve and its approximation) so a student sees the rule
-  hold or stop holding as the slider moves. Use \`#2f6fe4\` for the real motion, \`#9aa4b2\` for the rule's
-  prediction, light lines on dark pages. Keep each frame under 4 ms.
+  hold or stop holding as the slider moves. Leave the background transparent (never fill the whole canvas); the page
+  provides it. Use \`#4f8cff\` for the real motion and \`#9aa4b2\` for the rule's prediction; draw axes, labels and
+  lines in \`state.dark ? '#c9d1db' : '#3a4350'\`. Keep each frame under 4 ms.
 
 Keep \`sim\` under 12,000 characters. Every number the page shows comes from the library, so the sim draws but
 does not print verdicts.

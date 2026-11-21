@@ -3,51 +3,138 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>LIVE LAB</title>
-<meta name="description" content="Drop in a physics lecture. Every rule the teacher states becomes a lab you can play with, each checked by maths. Kimi K3.1 Pro on Cerebras through OpenClaw.">
-<meta property="og:title" content="LIVE LAB: one lecture in, labs out">
+<meta name="theme-color" content="#08090a">
+<title>LIVE LAB — one lecture in, labs out</title>
+<meta name="description" content="Drop in a physics lecture. Every rule the teacher states becomes a lab you can play with, each checked by maths. Kimi K3.1 Pro on Cerebras, through OpenClaw.">
+<meta property="og:title" content="LIVE LAB — one lecture in, labs out">
 <meta property="og:description" content="Every rule the teacher states becomes a lab you can play with, each checked by maths.">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="/static/app.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400..700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="/static/landing.css">
 <link rel="icon" href="/static/icon.svg" type="image/svg+xml">
 <script type="module" src="/static/home.js"></script>
 </head>
 <body>
-<div class="wrap">
-  <div class="bar">
-    <a class="brand" href="/">LIVE <b>LAB</b></a>
-    <nav><a href="/new">Drop a lecture</a><a href="/how">How the check works</a><a href="/evidence">Evidence</a></nav>
+<header class="nav">
+  <div class="nav-in">
+    <a class="logo" href="/" aria-label="LIVE LAB home"><img src="/static/icon.svg" alt="" width="22" height="22"><span>LIVE LAB</span></a>
+    <nav aria-label="Main">
+      <a href="#check">The check</a>
+      <a href="#how">How it works</a>
+      <a href="#library">Library</a>
+      <a href="/evidence">Evidence</a>
+    </nav>
+    <a class="btn btn-sm" href="/new">Drop a lecture</a>
   </div>
+</header>
 
+<main>
   <section class="hero">
-    <h1 id="headline">One lecture in. Labs out.</h1>
-    <p class="lede">Drop in a physics lecture. Kimi K3.1 Pro on Cerebras finds every rule the teacher states and turns each one into a lab you can play with. Plain-code physics checks every lab and shows exactly where each rule stops holding.</p>
-    <div class="row">
-      <a class="button primary" id="open-hero" href="/new">Try it on a real lecture</a>
-      <a class="button" href="/new">Drop your own</a>
+    <div class="glow" aria-hidden="true"></div>
+    <div class="container hero-copy">
+      <h1 class="rise" id="headline">One lecture in.<br><span class="dim">Labs out.</span></h1>
+      <p class="lede rise">Kimi K3.1 Pro on Cerebras reads a physics lecture, finds every rule the teacher states, and builds a lab for each one. Plain-code physics checks every lab and shows exactly where each rule stops holding.</p>
+      <div class="ctas rise">
+        <a class="btn btn-primary" id="open-hero" href="/new">Open the labs <span aria-hidden="true">→</span></a>
+        <a class="btn" href="/new">Drop your own lecture</a>
+      </div>
     </div>
-    <div class="stats" id="hero-stats"></div>
-  </section>
 
-  <section class="wall" id="preview" aria-label="Labs from the lecture"></section>
-
-  <section class="panel">
-    <h2>Lecture library</h2>
-    <p class="muted">Real open lectures. Each wall is a saved run of this pipeline with its full call log; open one and play.</p>
-    <div class="cards" id="library"></div>
-  </section>
-
-  <section class="panel">
-    <h2>Why a lab and not a summary</h2>
-    <div class="prose">
-      <p>Most students never get a lab for most of the rules they are taught. “For small angles, sin x is x.” Small compared to what? Here the student predicts first, then drags the slider and watches the rule hold, and then stop holding at a number the physics decides.</p>
-      <p>The model never says whether a rule is right. It finds the rule and writes the lab. A plain-code physics library decides the verdict and checks that every lab computes the real physics before anyone sees it. <a href="/how">How the check works</a>.</p>
+    <div class="container rise">
+      <div class="window" id="window">
+        <div class="window-bar">
+          <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span class="window-title" id="win-title">Loading a real lecture…</span>
+          <span class="window-meta mono" id="win-meta"></span>
+        </div>
+        <div class="window-body">
+          <div class="track" aria-hidden="true">
+            <div class="track-line"></div>
+            <div class="track-head" id="playhead"></div>
+            <div id="marks"></div>
+          </div>
+          <div class="track-ticks mono" id="ticks"></div>
+          <div class="labs" id="labs"></div>
+        </div>
+      </div>
+      <p class="caption mono" id="win-caption"></p>
     </div>
   </section>
 
-  <footer>
-    <span>Built with Kimi K3.1 Pro on Cerebras through OpenClaw. Code MIT. Lectures keep their own licences, shown on each wall.</span>
-  </footer>
-</div>
+  <section class="section" id="check">
+    <div class="container split">
+      <div class="split-copy reveal">
+        <h2>The model never says a rule is right.</h2>
+        <p>“It doesn’t matter how far you pull the pendulum back, the period is the same.” Every physics student hears it. Drag the swing out and watch exact physics pull away from the rule. The edge is found by bisection on the exact large-swing period, not by the model.</p>
+        <dl class="facts">
+          <div><dt>Rule</dt><dd>T = 2π√(L/g)</dd></div>
+          <div><dt>Exact</dt><dd>T = 2π√(L/g) ⁄ AGM(1, cos θ₀/2)</dd></div>
+          <div><dt>Tolerance</dt><dd>1% relative error</dd></div>
+        </dl>
+      </div>
+      <div class="instrument reveal" id="instrument">
+        <div class="inst-screen" id="inst-screen" aria-label="Pendulum lab"></div>
+        <div class="inst-controls">
+          <label class="inst-label" for="amp"><span>Swing size</span><output class="mono" id="amp-out">10°</output></label>
+          <input id="amp" type="range" min="1" max="90" step="0.1" value="10">
+          <div class="gauge" aria-hidden="true"><div class="gauge-ok" id="gauge-ok"></div><div class="gauge-edge" id="gauge-edge"></div><div class="gauge-thumb" id="gauge-thumb"></div></div>
+          <div class="gauge-scale mono" aria-hidden="true"><span>1°</span><span id="edge-label"></span><span>90°</span></div>
+          <div class="readings mono">
+            <div><span>the rule says</span><b id="r-rule">—</b></div>
+            <div><span>exact physics</span><b id="r-exact">—</b></div>
+            <div><span>gap</span><b id="r-gap">—</b></div>
+          </div>
+          <div class="state" id="state"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="how">
+    <div class="container">
+      <h2 class="reveal">The model finds the rules.<br><span class="dim">Plain code decides.</span></h2>
+      <ol class="steps">
+        <li class="reveal"><span class="step-n mono">01</span><h3>Find</h3><p>An OpenClaw agent on Kimi K3.1 Pro reads the transcript and lists every rule the teacher states, quoting the exact words.</p><span class="who model">Kimi K3.1 Pro on Cerebras</span></li>
+        <li class="reveal"><span class="step-n mono">02</span><h3>Verify</h3><p>Every quote must appear in the transcript word for word. The minute comes from the transcript, never from the model.</p><span class="who code">Plain code</span></li>
+        <li class="reveal"><span class="step-n mono">03</span><h3>Decide</h3><p>A physics library sweeps the rule against first-principles physics: holds, breaks at a value, or holds only in a band.</p><span class="who code">Plain code</span></li>
+        <li class="reveal"><span class="step-n mono">04</span><h3>Build</h3><p>One builder agent per rule, all at once, writes a lab. Its own physics must match the exact answer at five points, or it is not shown.</p><span class="who model">Kimi K3.1 Pro on Cerebras</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section proof" id="proof">
+    <div class="container">
+      <h2 class="reveal">Measured, not claimed.</h2>
+      <p class="sub reveal">Computed in your browser from the saved runs, their call logs, and labels written by hand before any model saw the lecture.</p>
+      <div class="stats" id="stats"></div>
+      <a class="link reveal" href="/evidence">See every number and the files behind it <span aria-hidden="true">→</span></a>
+    </div>
+  </section>
+
+  <section class="section" id="library">
+    <div class="container">
+      <h2 class="reveal">Start with a real lecture.</h2>
+      <p class="sub reveal">Open Yale’s Fundamentals of Physics, taught by Prof. Ramamurti Shankar. Open a saved wall, or build one live and watch it fill.</p>
+      <div class="lectures" id="lectures"></div>
+    </div>
+  </section>
+
+  <section class="section final">
+    <div class="glow glow-low" aria-hidden="true"></div>
+    <div class="container final-in reveal">
+      <h2>Bring this week’s lecture.</h2>
+      <p class="sub">Paste a transcript or upload captions. Every rule becomes a lab, and every lab is checked.</p>
+      <a class="btn btn-primary" href="/new">Drop a lecture <span aria-hidden="true">→</span></a>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="container foot-in">
+    <span>LIVE LAB · Kimi K3.1 Pro on Cerebras, through OpenClaw</span>
+    <span>Code MIT · lectures keep their own licences, shown on each wall</span>
+    <nav aria-label="Footer"><a href="/how">How the check works</a><a href="/evidence">Evidence</a><a href="/new">Drop a lecture</a></nav>
+  </div>
+</footer>
 </body>
 </html>

@@ -23,8 +23,7 @@ const fmt = (x) => {
   return Number(x.toPrecision(4)).toString();
 };
 const minute = (t) => (t === null || t === undefined ? '' : `~${Math.floor(t / 60)} min`);
-const dark = () => document.documentElement.dataset.theme === 'dark' ||
-  (document.documentElement.dataset.theme !== 'light' && matchMedia('(prefers-color-scheme: dark)').matches);
+const dark = () => true; // the site has one dark look
 
 function verdictPill(c) {
   if (c.verdict === 'holds') return { cls: 'ok', text: 'holds' };

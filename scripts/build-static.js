@@ -11,7 +11,7 @@ mkdirSync(out, { recursive: true });
 for (const f of readdirSync(`${root}web`).filter((f) => f.endsWith('.html'))) cpSync(`${root}web/${f}`, `${out}/${f}`);
 cpSync(`${root}web/static`, `${out}/static`, { recursive: true });
 mkdirSync(`${out}/lib/models`, { recursive: true });
-for (const f of ['check.js', 'num.js', 'evaluate.js']) cpSync(`${root}lib/${f}`, `${out}/lib/${f}`);
+for (const f of ['check.js', 'num.js', 'evaluate.js', 'transcript.js']) cpSync(`${root}lib/${f}`, `${out}/lib/${f}`);
 cpSync(`${root}lib/models`, `${out}/lib/models`, { recursive: true });
 for (const [from, to] of [['data/walls', 'walls'], ['data/runs', 'runs'], ['data/lectures', 'lectures'], ['data/labels', 'labels']]) {
   cpSync(`${root}${from}`, `${out}/${to}`, { recursive: true });

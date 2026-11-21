@@ -1,14 +1,15 @@
 <!doctype html>
 <meta charset="utf-8">
 <title>lab</title>
-<style>html,body{margin:0;height:100%;background:transparent;overflow:hidden}canvas{width:100%;height:100%;display:block}</style>
+<meta name="color-scheme" content="dark">
+<style>:root{color-scheme:dark}html,body{margin:0;height:100%;background:transparent;overflow:hidden}canvas{width:100%;height:100%;display:block}</style>
 <canvas id="c"></canvas>
 <script>
 // Runs one model-written lab. Loaded only inside <iframe sandbox="allow-scripts">: an opaque origin with no access
 // to the page, its storage or the network (this page's own policy blocks every connection). The page sends
 // {type:"load", sim, params, dark}, then {type:"params"} as sliders move. The frame reports ready or error.
 (function () {
-  var draw = null, params = {}, dark = false, t0 = performance.now(), running = true, slow = 0;
+  var draw = null, params = {}, dark = false, t0 = performance.now(), running = true, slow = 0, frames = 0;
   var c = document.getElementById('c'), ctx = c.getContext('2d');
   function tell(m) { parent.postMessage(m, '*'); }
   addEventListener('message', function (e) {
@@ -35,6 +36,15 @@
       var s = performance.now();
       try { draw(ctx, { params: params, t: (s - t0) / 1000, w: w, h: h, dark: dark }); }
       catch (err) { draw = null; tell({ type: 'error', error: String(err).slice(0, 200) }); }
+      // A lab that paints its own light background on a dark page is shown with its lightness flipped
+      // (hues kept), so it sits in the page instead of glaring white.
+      if (++frames % 20 === 1) {
+        try {
+          var px = ctx.getImageData(2, 2, 1, 1).data;
+          var light = px[3] > 200 && (0.2126 * px[0] + 0.7152 * px[1] + 0.0722 * px[2]) > 200;
+          c.style.filter = dark && light ? 'invert(1) hue-rotate(180deg)' : '';
+        } catch (e) {}
+      }
       slow = performance.now() - s > 40 ? slow + 1 : 0;
       if (slow > 30) { draw = null; tell({ type: 'error', error: 'drawing too slowly' }); }
     }
