@@ -1,0 +1,37 @@
+{
+  "buildCommand": "node scripts/build-static.js",
+  "outputDirectory": "public",
+  "installCommand": "true",
+  "framework": null,
+  "cleanUrls": true,
+  "rewrites": [
+    { "source": "/w/:id", "destination": "/wall.html" },
+    { "source": "/api/walls/:id", "destination": "/walls/:id.json" },
+    { "source": "/api/library", "destination": "/library.json" }
+  ],
+  "headers": [
+    {
+      "source": "/((?!frame).*)",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+        { "key": "X-Frame-Options", "value": "DENY" },
+        { "key": "Content-Security-Policy", "value": "default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; frame-src 'self'; connect-src 'self' https://livelab.38-49-216-59.sslip.io; object-src 'none'; base-uri 'none'" }
+      ]
+    },
+    {
+      "source": "/frame.html",
+      "headers": [
+        { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
+        { "key": "Content-Security-Policy", "value": "default-src 'none'; script-src 'unsafe-inline' 'unsafe-eval'; style-src 'unsafe-inline'" }
+      ]
+    },
+    {
+      "source": "/frame",
+      "headers": [
+        { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
+        { "key": "Content-Security-Policy", "value": "default-src 'none'; script-src 'unsafe-inline' 'unsafe-eval'; style-src 'unsafe-inline'" }
+      ]
+    }
+  ]
+}

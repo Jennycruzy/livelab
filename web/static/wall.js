@@ -2,6 +2,7 @@
 // Every number on the bench is computed here by the same physics library that decided the verdict on the server.
 import { MODELS } from '/lib/check.js';
 import { relErr } from '/lib/num.js';
+import { LIVE } from '/static/config.js';
 
 const $ = (sel, el = document) => el.querySelector(sel);
 const h = (tag, attrs = {}, ...kids) => {
@@ -71,6 +72,7 @@ const seen = new IntersectionObserver((entries) => {
 const id = location.pathname.split('/').pop();
 let wall = null; // saved or live wall
 let duration = null;
+let base = ''; // where this wall's files live: this site, or the build server for walls built live
 const storeKey = `livelab:review:${id}`;
 const loadReview = () => { try { return JSON.parse(localStorage.getItem(storeKey) || '[]'); } catch { return []; } };
 const saveReview = (v) => { try { localStorage.setItem(storeKey, JSON.stringify(v)); } catch {} };
@@ -98,7 +100,7 @@ function renderStats(live = false) {
   else if (live) el.append(h('span', { class: 'muted', text: 'building now…' }));
   if (wall.timings?.firstTile !== undefined) el.append(h('span', {}, 'first lab at ', h('b', { text: `${fmt(wall.timings.firstTile)} s` })));
   if (wall.startedAt) el.append(h('span', { class: 'muted', text: `run ${wall.startedAt.slice(0, 16).replace('T', ' ')} UTC` }));
-  if (wall.runLog?.file) el.append(h('a', { href: `/runs/${wall.runLog.file.split('/').pop()}`, text: 'run log' }));
+  if (wall.runLog?.file) el.append(h('a', { href: `${base}/runs/${wall.runLog.file.split('/').pop()}`, text: 'run log' }));
 }
 
 function renderTimeline() {
@@ -285,7 +287,7 @@ async function replay() {
 
 function followLive() {
   wall = { id, title: '', source: null, cards: [], tiles: [], skipped: [], timings: {} };
-  const es = new EventSource(`/api/walls/${id}/events`);
+  const es = new EventSource(`${LIVE}/api/walls/${id}/events`);
   const t0 = performance.now();
   const clock = $('#clock');
   clock.hidden = false;
@@ -296,7 +298,7 @@ function followLive() {
   es.addEventListener('skip', (e) => { wall.skipped.push(JSON.parse(e.data)); renderSkipped(); });
   es.addEventListener('tile', (e) => { const t = JSON.parse(e.data); wall.tiles.push(t); if (wall.timings.firstTile === undefined) wall.timings.firstTile = t.at; renderTimeline(); renderTiles(); renderStats(true); });
   es.addEventListener('done', (e) => { wall.timings.wallSeconds = JSON.parse(e.data).wallSeconds; clearInterval(timer); renderStats(); $('#phase').textContent = ''; });
-  es.addEventListener('saved', async () => { es.close(); const r = await fetch(`/api/walls/${id}`); if (r.ok) { wall = await r.json(); renderAll(); $('#replay').hidden = false; } });
+  es.addEventListener('saved', async () => { es.close(); const r = await fetch(`${LIVE}/api/walls/${id}`); if (r.ok) { base = LIVE; wall = await r.json(); renderAll(); $('#replay').hidden = false; } });
   es.addEventListener('failed', (e) => { es.close(); clearInterval(timer); $('#phase').textContent = `The build stopped: ${JSON.parse(e.data).error}`; });
   es.onerror = () => { if (wall.timings.wallSeconds === undefined) $('#phase').textContent = 'Lost the connection to this build. Reload to see it once it is saved.'; };
   $('#phase').textContent = 'Reading the lecture for rules…';
@@ -311,7 +313,9 @@ $('#share').addEventListener('click', async () => {
 });
 $('#replay').addEventListener('click', replay);
 
-const res = await fetch(`/api/walls/${id}`);
+// Saved walls ship with the site; walls built live are saved on the build server.
+let res = await fetch(`/api/walls/${id}`);
+if (!res.ok && LIVE) { res = await fetch(`${LIVE}/api/walls/${id}`).catch(() => ({ ok: false })); if (res.ok) base = LIVE; }
 if (res.ok) {
   wall = await res.json();
   duration = wall.duration ?? null;

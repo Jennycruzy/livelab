@@ -7,6 +7,7 @@ import { createHash, randomBytes } from 'node:crypto';
 import { extname, join, normalize } from 'node:path';
 import { buildWall } from '../lib/pipeline.js';
 import { parseCaptions } from '../lib/transcript.js';
+import { library } from '../lib/library.js';
 
 const ROOT = new URL('..', import.meta.url).pathname;
 const PORT = Number(process.env.PORT || 8080);
@@ -42,20 +43,6 @@ function serveFile(res, path, cache = 'no-cache') {
   res.end(readFileSync(p));
 }
 
-const wallIds = () => existsSync(join(ROOT, 'data/walls')) ? readdirSync(join(ROOT, 'data/walls')).filter((f) => f.endsWith('.json')).map((f) => f.slice(0, -5)) : [];
-
-/** Library: the newest saved wall for each saved lecture, with what the home page needs. */
-function library() {
-  const lectures = readdirSync(join(ROOT, 'data/lectures')).filter((f) => f.endsWith('.json')).map((f) => f.slice(0, -5));
-  return lectures.map((id) => {
-    const lec = JSON.parse(readFileSync(join(ROOT, 'data/lectures', `${id}.json`), 'utf8'));
-    const walls = wallIds().filter((w) => w.startsWith(`${id}-`)).sort();
-    const wid = walls.at(-1);
-    const w = wid ? JSON.parse(readFileSync(join(ROOT, 'data/walls', `${wid}.json`), 'utf8')) : null;
-    return { lecture: id, title: lec.title, credit: lec.source.credit, url: lec.source.url, minutes: Math.round((lec.duration || 0) / 60),
-      wall: wid ?? null, tiles: w?.tiles.length ?? 0, wallSeconds: w?.timings.wallSeconds ?? null, startedAt: w?.startedAt ?? null };
-  });
-}
 
 async function readBody(req, limit = 2_000_000) {
   let size = 0; const chunks = [];
@@ -118,16 +105,29 @@ function streamEvents(req, res, id) {
   req.on('close', () => job.clients.delete(res));
 }
 
+// Origins allowed to call the API from a browser: the site's own static host(s). The API is public either way;
+// this only lets those pages read the answers.
+const ORIGINS = new RegExp(process.env.LIVELAB_ORIGINS || '^https://[a-z0-9-]+\\.vercel\\.app$');
+
 const server = createServer(async (req, res) => {
   try {
     const url = new URL(req.url, 'http://x');
     const path = url.pathname;
+    const origin = req.headers.origin;
+    if (origin && ORIGINS.test(origin) && (path.startsWith('/api/') || path.startsWith('/runs/'))) {
+      res.setHeader('access-control-allow-origin', origin);
+      res.setHeader('vary', 'origin');
+      if (req.method === 'OPTIONS') {
+        res.writeHead(204, { 'access-control-allow-methods': 'GET, POST', 'access-control-allow-headers': 'content-type', 'access-control-max-age': '600' });
+        return res.end();
+      }
+    }
     if (req.method === 'GET' && PAGES[path]) return serveFile(res, join(ROOT, 'web', PAGES[path]));
     if (req.method === 'GET' && /^\/w\/[A-Za-z0-9-]+$/.test(path)) return serveFile(res, join(ROOT, 'web', 'wall.html'));
     if (req.method === 'GET' && path === '/frame.html') return serveFile(res, join(ROOT, 'web', 'frame.html'));
     if (req.method === 'GET' && path.startsWith('/static/')) return serveFile(res, join(ROOT, 'web', path), 'public, max-age=300');
     if (req.method === 'GET' && path.startsWith('/lib/') && path.endsWith('.js')) return serveFile(res, join(ROOT, path), 'public, max-age=300');
-    if (req.method === 'GET' && path === '/api/library') return json(res, 200, library());
+    if (req.method === 'GET' && path === '/api/library') return json(res, 200, library(ROOT));
     let m;
     if (req.method === 'GET' && (m = path.match(/^\/api\/walls\/([A-Za-z0-9-]+)$/))) {
       const f = join(ROOT, 'data/walls', `${m[1]}.json`);

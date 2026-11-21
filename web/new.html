@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Drop a lecture · LIVE LAB</title>
+<meta name="description" content="Paste or upload a lecture transcript and watch its rules become checked labs.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="/static/app.css">
+<link rel="icon" href="/static/icon.svg" type="image/svg+xml">
+<script type="module" src="/static/new.js"></script>
+</head>
+<body>
+<div class="wrap">
+  <div class="bar">
+    <a class="brand" href="/">LIVE <b>LAB</b></a>
+    <nav><a href="/new" aria-current="page">Drop a lecture</a><a href="/how">How the check works</a><a href="/evidence">Evidence</a></nav>
+  </div>
+
+  <section class="hero">
+    <h1>Drop a lecture</h1>
+    <p class="lede">Paste a transcript or captions, or upload a caption file. Kimi K3.1 Pro on Cerebras reads it for rules, builds a lab for each one, and the physics library checks every lab before it appears.</p>
+  </section>
+
+  <form class="panel" id="drop">
+    <label class="label" for="title">Title (optional)</label>
+    <input type="text" id="title" maxlength="120" placeholder="Week 6: oscillations">
+    <label class="label" for="text">Transcript or captions</label>
+    <textarea id="text" placeholder="Paste the lecture here. Plain text works; .vtt or .srt captions keep their timestamps."></textarea>
+    <div class="row">
+      <label class="button" for="file">Upload .vtt, .srt or .txt</label>
+      <input type="file" id="file" accept=".vtt,.srt,.txt,text/plain,text/vtt" hidden>
+      <span class="muted" id="count"></span>
+    </div>
+    <div class="row">
+      <button class="primary" id="go" type="submit">Build my labs</button>
+      <span class="muted" id="msg" role="status"></span>
+    </div>
+    <p class="muted">Up to 20,000 words (about 90 minutes). Works on spoken physics and maths rules that have a formula; other statements are listed as skipped with the reason. One new wall per visitor every 10 minutes.</p>
+  </form>
+
+  <section class="panel">
+    <h2>Or build one from the library</h2>
+    <div class="row" id="lib"></div>
+  </section>
+
+  <footer><span>Transcripts are read as data: instructions written inside a transcript change nothing. Nothing is stored about you.</span></footer>
+</div>
+</body>
+</html>

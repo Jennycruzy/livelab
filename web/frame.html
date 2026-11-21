@@ -27,7 +27,9 @@
   function frame() {
     if (draw && running) {
       var r = c.getBoundingClientRect(), dpr = Math.min(2, window.devicePixelRatio || 1);
-      var w = Math.max(1, r.width), h = Math.max(1, r.height);
+      var w = r.width, h = r.height;
+      // Labs may size their drawing on the first frame, so wait until the frame has its real size.
+      if (w < 40 || h < 40) { requestAnimationFrame(frame); return; }
       if (c.width !== Math.round(w * dpr) || c.height !== Math.round(h * dpr)) { c.width = Math.round(w * dpr); c.height = Math.round(h * dpr); }
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0); ctx.clearRect(0, 0, w, h);
       var s = performance.now();

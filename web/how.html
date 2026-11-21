@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>How the check works · LIVE LAB</title>
+<meta name="description" content="What the model does, what plain code decides, and what LIVE LAB can and cannot check.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="/static/app.css">
+<link rel="icon" href="/static/icon.svg" type="image/svg+xml">
+<script type="module" src="/static/how.js"></script>
+</head>
+<body>
+<div class="wrap">
+  <div class="bar">
+    <a class="brand" href="/">LIVE <b>LAB</b></a>
+    <nav><a href="/new">Drop a lecture</a><a href="/how" aria-current="page">How the check works</a><a href="/evidence">Evidence</a></nav>
+  </div>
+
+  <section class="hero">
+    <h1>The model finds the rules. Plain code decides.</h1>
+    <p class="lede">Kimi K3.1 Pro on Cerebras does the reading and the writing, through two OpenClaw agents. Everything that could mislead a student is decided by ordinary, tested code.</p>
+  </section>
+
+  <section class="flow" aria-label="Pipeline">
+    <div class="model"><b>Rule finder</b>An OpenClaw agent reads the transcript and lists each rule the teacher states, with the quote and the library rule that tests it.</div>
+    <div class="code"><b>Quote check</b>Each quote must appear in the transcript word for word. The minute comes from the transcript, never from the model.</div>
+    <div class="code"><b>Physics library</b>Sweeps the rule's range against first-principles physics and decides: holds, breaks at a value, holds only in a band, or does not hold.</div>
+    <div class="model"><b>Lab builders</b>One OpenClaw agent per rule, all at once, writes an animation and a probe that measures the same quantity.</div>
+    <div class="code"><b>Probe check</b>The lab's own physics must match the exact answer within 0.5% at five points, or it gets one repair round, or it is not shown.</div>
+  </section>
+
+  <section class="panel prose">
+    <h2>What the verdicts mean</h2>
+    <p>Every rule is compared with the exact answer across the range the teacher means. The gap is the relative error, |rule − exact| ÷ |exact|, and the line is 1%.</p>
+    <ul>
+      <li><b>holds</b>: within 1% everywhere in the range.</li>
+      <li><b>breaks at X</b>: within 1% up to X, then past it. X is found by bisection on the exact model.</li>
+      <li><b>holds between A and B</b>: within 1% only inside a band (the rule of 72 is the classic case).</li>
+      <li><b>does not hold</b>: past 1% everywhere in the range.</li>
+    </ul>
+    <p>The exact side is computed two independent ways where it matters: the pendulum's large-swing period by the arithmetic-geometric mean and by RK4 integration of the swing, falling with drag by the closed form and by RK4. The test suite checks both against each other and against textbook values, and checks that rules which hold stop holding when the physics changes (a stiffer spring, air drag, a heavy planet).</p>
+  </section>
+
+  <section class="panel prose">
+    <h2>Where model-written code runs</h2>
+    <p>On the server, a lab's probe runs in a worker thread with a memory cap, inside an empty JavaScript context with string code generation turned off and a time limit per call. The test suite tries to reach the process, files and the network from inside it, and tries endless loops and memory bombs. In your browser, each lab runs in a sandboxed frame with its own origin and no network; the page sends it numbers and shows model-written text as plain text.</p>
+  </section>
+
+  <section class="panel prose">
+    <h2>What it works on</h2>
+    <p>LIVE LAB works on spoken physics and maths rules that have a formula the library covers. Other statements in a lecture are listed under each wall as skipped, with the reason. Live building runs on Kimi K3.1 Pro on Cerebras during its access period; every saved wall stays open and playable after that. A lecture’s minute marks are estimated from word position when its transcript is timed only by chapter.</p>
+  </section>
+
+  <section class="panel">
+    <h2>Rules the library can check</h2>
+    <div class="scroll"><table id="catalogue"><thead><tr><th>Rule</th><th>The slider moves</th><th>Checked by</th></tr></thead><tbody></tbody></table></div>
+  </section>
+
+  <footer><span>Source: the physics library is in <span class="mono">lib/</span> and runs unchanged in your browser on every wall’s bench.</span></footer>
+</div>
+</body>
+</html>

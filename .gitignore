@@ -6,3 +6,4 @@ santa/**/*.jsonl
 *.santa.jsonl
 *.log
 .private/
+public/

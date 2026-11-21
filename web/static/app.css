@@ -113,3 +113,5 @@ td.num,th.num{text-align:right}
 .flow .model b{color:var(--accent)} .flow .code b{color:var(--ok)}
 footer{font-size:.8rem;color:var(--muted);border-top:1px solid var(--line);padding-top:14px;display:grid;gap:4px}
 .row.spread{justify-content:space-between}
+a.tile{text-decoration:none}
+.prose p,.prose ul{margin:0}
