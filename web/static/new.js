@@ -44,7 +44,13 @@ $('#drop').addEventListener('submit', (e) => {
 const lib = await fetch('/api/library').then((r) => r.json()).catch(() => []);
 for (const l of lib) {
   const b = document.createElement('button');
+  b.className = 'chip';
+  b.type = 'button';
   b.textContent = l.title.replace(/^PHYS 200 - /, '');
   b.addEventListener('click', () => start({ lecture: l.lecture }, b));
   $('#lib').append(b);
 }
+
+// Scroll reveals (the landing page's motion); everything shows at once under reduced motion.
+const io = new IntersectionObserver((es) => { for (const e of es) if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }, { rootMargin: '0px 0px -8% 0px' });
+document.querySelectorAll('.reveal').forEach((el) => io.observe(el));

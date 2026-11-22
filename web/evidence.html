@@ -6,9 +6,10 @@
 <meta name="theme-color" content="#08090a">
 <title>Evidence · LIVE LAB</title>
 <meta name="description" content="Measured results for every saved wall, computed from its run log and the hand labels made before any model run.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400..700&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <link rel="stylesheet" href="/static/landing.css">
-<link rel="stylesheet" href="/static/app.css">
+<link rel="stylesheet" href="/static/pages.css">
 <link rel="icon" href="/static/icon.svg" type="image/svg+xml">
 <script type="module" src="/static/evidence.js"></script>
 </head>
@@ -24,38 +25,42 @@
     <a class="btn btn-sm" href="/new">Drop a lecture</a>
   </div>
 </header>
-<div class="wrap">
-
-  <section class="hero">
-    <h1>Evidence</h1>
-    <p class="lede">Every number here is computed in your browser from files in the repository: the saved walls, their run logs, and the hand labels written for each lecture before any model saw it.</p>
+<main class="container page">
+  <section class="page-head">
+    <h1 class="rise">Measured, not claimed.</h1>
+    <p class="lede rise">Every number here is computed in your browser from files in the repository: the saved walls, their call logs, and the hand labels written for each lecture before any model saw it.</p>
   </section>
 
-  <section class="panel">
-    <h2>Finding the rules</h2>
-    <p class="muted">Labels: every rule the teacher states that the library can check, marked by hand from a full reading of the transcript and committed before the first run. A card counts as matching when it names the same library rule within three sentences of a labelled statement.</p>
-    <div class="scroll"><table id="finding"><thead><tr><th>Wall</th><th class="num">Labelled rules</th><th class="num">Found</th><th class="num">Cards</th><th class="num">Matching a label</th><th class="num">Labs shown</th></tr></thead><tbody></tbody></table></div>
+  <section class="block">
+    <h2>Finding the rules.</h2>
+    <p>The labels list every rule the teacher states that the library can check, marked by hand from a full reading of the transcript and committed before the first run. A rule counts as found when a card names the same library rule within three sentences of the labelled statement.</p>
+    <div class="table-window scroll"><table id="finding"><thead><tr><th>Lecture</th><th class="num">Labelled rules</th><th class="num">Found</th><th class="num">Cards</th><th class="num">Matching a label</th><th class="num">Labs shown</th></tr></thead><tbody></tbody></table></div>
     <div id="unlabelled"></div>
   </section>
 
-  <section class="panel">
-    <h2>The check at work</h2>
-    <p class="muted">Each generated lab measures its own quantity with a probe. If the probe disagrees with the exact physics by more than 0.5% at any of five points, the lab is sent back once with the numbers; if it still disagrees, it is not shown.</p>
-    <div class="scroll"><table id="probe"><thead><tr><th>Wall</th><th class="num">Labs written</th><th class="num">Wrong physics on first try</th><th class="num">Fixed in one repair</th><th class="num">Never shown</th></tr></thead><tbody></tbody></table></div>
+  <section class="block">
+    <h2>The check at work.</h2>
+    <p>Each generated lab measures its own quantity with a probe. If the probe disagrees with the exact physics by more than 0.5% at any of five points, the lab goes back once with the numbers; if it still disagrees, it is not shown.</p>
+    <div class="table-window scroll"><table id="probe"><thead><tr><th>Lecture</th><th class="num">Labs written</th><th class="num">Wrong physics on first try</th><th class="num">Fixed in one repair</th><th class="num">Never shown</th></tr></thead><tbody></tbody></table></div>
   </section>
 
-  <section class="panel">
-    <h2>Runs</h2>
-    <p class="muted">Times are measured from transcript ready to last lab checked, through OpenClaw and Kimi K3.1 Pro on Cerebras, and include any time a request waited in the provider's queue.</p>
-    <div class="scroll"><table id="runs"><thead><tr><th>Wall</th><th>Run (UTC)</th><th class="num">First lab</th><th class="num">All labs</th><th class="num">Model calls</th><th class="num">Tokens in</th><th class="num">Tokens out</th><th>Files</th></tr></thead><tbody></tbody></table></div>
+  <section class="block">
+    <h2>Runs.</h2>
+    <p>Times run from transcript ready to the last lab checked, through OpenClaw and Kimi K3.1 Pro on Cerebras, and include any time a request waited in the provider’s queue.</p>
+    <div class="table-window scroll"><table id="runs"><thead><tr><th>Lecture</th><th>Run (UTC)</th><th class="num">First lab</th><th class="num">All labs</th><th class="num">Model calls</th><th class="num">Tokens in</th><th class="num">Tokens out</th><th>Files</th></tr></thead><tbody></tbody></table></div>
   </section>
 
-  <section class="panel prose">
-    <h2>The library against known answers</h2>
-    <p>The test suite runs on every push. It checks each physics model against textbook values and against a second, independent method; checks that rules which hold stop holding when the physics changes; and runs 20 frozen lecture moments (their answer key is hashed in the test) where every verdict must match and every limit must match the key.</p>
+  <section class="block">
+    <h2>The library against known answers.</h2>
+    <p>The test suite runs on every push. It checks each physics model against textbook values and against a second, independent method; checks that rules which hold stop holding when the physics changes; and runs 20 frozen lecture moments whose answer key is fingerprinted in the test, where every verdict must match. <span class="mono">npm run verify</span> re-checks every saved wall offline, with no keys.</p>
   </section>
-
-  <footer><span>Labels: <span class="mono">data/labels/</span> · walls: <span class="mono">data/walls/</span> · run logs: <span class="mono">data/runs/</span> · scoring: <span class="mono">lib/evaluate.js</span></span></footer>
-</div>
+</main>
+<footer class="foot">
+  <div class="container foot-in">
+    <span>LIVE LAB · Kimi K3.1 Pro on Cerebras, through OpenClaw</span>
+    <span>Code MIT · lectures keep their own licences, shown on each wall</span>
+    <nav aria-label="Footer"><a href="/how">How the check works</a><a href="/evidence">Evidence</a><a href="/new">Drop a lecture</a></nav>
+  </div>
+</footer>
 </body>
 </html>

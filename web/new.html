@@ -6,9 +6,10 @@
 <meta name="theme-color" content="#08090a">
 <title>Drop a lecture · LIVE LAB</title>
 <meta name="description" content="Paste or upload a lecture transcript and watch its rules become checked labs.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400..700&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <link rel="stylesheet" href="/static/landing.css">
-<link rel="stylesheet" href="/static/app.css">
+<link rel="stylesheet" href="/static/pages.css">
 <link rel="icon" href="/static/icon.svg" type="image/svg+xml">
 <script type="module" src="/static/new.js"></script>
 </head>
@@ -24,36 +25,48 @@
     <a class="btn btn-sm" href="/new">Drop a lecture</a>
   </div>
 </header>
-<div class="wrap">
-
-  <section class="hero">
-    <h1>Drop a lecture</h1>
-    <p class="lede">Paste a transcript or captions, or upload a caption file. Kimi K3.1 Pro on Cerebras reads it for rules, builds a lab for each one, and the physics library checks every lab before it appears.</p>
+<main class="container page">
+  <section class="page-head">
+    <h1 class="rise">Drop a lecture.</h1>
+    <p class="lede rise">Paste a transcript or upload captions. Kimi K3.1 Pro on Cerebras reads every part of it at once, finds each rule the teacher states and builds a lab for it. The physics library checks every lab before it appears.</p>
   </section>
 
-  <form class="panel" id="drop">
-    <label class="label" for="title">Title (optional)</label>
-    <input type="text" id="title" maxlength="120" placeholder="Week 6: oscillations">
-    <label class="label" for="text">Transcript or captions</label>
-    <textarea id="text" placeholder="Paste the lecture here. Plain text works; .vtt or .srt captions keep their timestamps."></textarea>
-    <div class="row">
-      <label class="button" for="file">Upload .vtt, .srt or .txt</label>
+  <form class="composer rise" id="drop">
+    <div class="composer-top">
+      <input type="text" id="title" maxlength="120" placeholder="Name this lecture (optional)" aria-label="Lecture title">
+    </div>
+    <textarea id="text" aria-label="Transcript or captions" placeholder="Paste the lecture here. Plain text works; .vtt or .srt captions keep their timestamps, so every lab is pinned to the minute it was said."></textarea>
+    <div class="composer-bar">
+      <label class="btn btn-sm" for="file">Upload .vtt, .srt or .txt</label>
       <input type="file" id="file" accept=".vtt,.srt,.txt,text/plain,text/vtt" hidden>
-      <span class="muted" id="count"></span>
+      <span class="count" id="count"></span>
+      <span class="grow"></span>
+      <button class="btn btn-primary" id="go" type="submit">Build my labs <span aria-hidden="true">→</span></button>
     </div>
-    <div class="row">
-      <button class="primary" id="go" type="submit">Build my labs</button>
-      <span class="muted" id="msg" role="status"></span>
-    </div>
-    <p class="muted">Up to 20,000 words (about 90 minutes). Works on spoken physics and maths rules that have a formula; other statements are listed as skipped with the reason. One new wall per visitor every 10 minutes.</p>
   </form>
+  <p class="msg" id="msg" role="status"></p>
 
-  <section class="panel">
-    <h2>Or build one from the library</h2>
-    <div class="row" id="lib"></div>
+  <section class="block reveal">
+    <h2>Or build one from the library.</h2>
+    <p>Open Yale’s Fundamentals of Physics with Prof. Ramamurti Shankar. Each one builds live; you watch the labs arrive.</p>
+    <div class="chips" id="lib"></div>
   </section>
 
-  <footer><span>Transcripts are read as data: instructions written inside a transcript change nothing. Nothing is stored about you.</span></footer>
-</div>
+  <section class="block reveal">
+    <ul class="facts-list">
+      <li><b>What it works on</b><span>Spoken physics and maths rules that have a formula the library covers. Every other statement is listed under the wall as skipped, with the reason.</span></li>
+      <li><b>Length</b><span>Up to 20,000 words, about 90 minutes of lecture.</span></li>
+      <li><b>Your transcript</b><span>Read as data: instructions written inside a transcript change nothing. Nothing is stored about you.</span></li>
+      <li><b>Fair use</b><span>One new wall per visitor every 10 minutes. Saved walls are always open.</span></li>
+    </ul>
+  </section>
+</main>
+<footer class="foot">
+  <div class="container foot-in">
+    <span>LIVE LAB · Kimi K3.1 Pro on Cerebras, through OpenClaw</span>
+    <span>Code MIT · lectures keep their own licences, shown on each wall</span>
+    <nav aria-label="Footer"><a href="/how">How the check works</a><a href="/evidence">Evidence</a><a href="/new">Drop a lecture</a></nav>
+  </div>
+</footer>
 </body>
 </html>

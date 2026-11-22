@@ -1,0 +1,53 @@
+/* Inner pages (drop, how it works, evidence), on top of landing.css. */
+.page{padding-top:clamp(48px,8vh,96px);padding-bottom:clamp(72px,10vw,128px);display:grid;gap:clamp(48px,7vw,88px)}
+.page-head{display:grid;gap:18px;justify-items:start}
+.page-head h1{font-size:clamp(2.4rem,5.6vw,4.2rem)}
+.page-head .lede{max-width:640px}
+.block{display:grid;gap:20px}
+.block>h2{font-size:clamp(1.5rem,3vw,2.1rem)}
+.block>p{color:var(--fg3);max-width:68ch}
+
+/* Composer (drop a lecture) */
+.composer{border-radius:18px;border:1px solid var(--line-2);background:linear-gradient(180deg,var(--l2),var(--l1));
+  box-shadow:0 1px 0 rgba(255,255,255,.06) inset,0 40px 120px -40px rgba(79,140,255,.4);overflow:hidden}
+.composer-top{display:flex;align-items:center;gap:12px;padding:14px 18px;border-bottom:1px solid var(--line)}
+.composer-top input{flex:1;min-width:0;background:transparent;border:0;color:var(--fg);font:inherit;font-size:1.05rem;font-weight:510;outline:none}
+.composer-top input::placeholder{color:var(--fg4)}
+.composer textarea{display:block;width:100%;min-height:280px;resize:vertical;border:0;outline:none;background:transparent;color:var(--fg2);
+  font-family:var(--mono);font-size:.86rem;line-height:1.7;padding:18px}
+.composer textarea::placeholder{color:var(--fg4)}
+.composer-bar{display:flex;flex-wrap:wrap;align-items:center;gap:12px;padding:14px 18px;border-top:1px solid var(--line);background:rgba(255,255,255,.015)}
+.composer-bar .grow{flex:1}
+.composer-bar .count{font-family:var(--mono);font-size:.78rem;color:var(--fg4)}
+.msg{font-size:.9rem;color:var(--warn);min-height:1.2em}
+.fine{font-size:.84rem;color:var(--fg4);max-width:70ch}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{height:40px;padding:0 16px;border-radius:999px;border:1px solid var(--line-2);background:rgba(255,255,255,.03);color:var(--fg2);font:inherit;font-size:.9rem;cursor:pointer;transition:background .2s,border-color .2s}
+.chip:hover{background:rgba(255,255,255,.07);border-color:var(--line-3);color:var(--fg)}
+.chip:disabled{opacity:.5;cursor:default}
+label.btn{cursor:pointer}
+
+/* Lists and facts */
+.facts-list{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.facts-list li{display:grid;grid-template-columns:minmax(0,220px) minmax(0,1fr);gap:20px;padding:16px 0;border-bottom:1px solid var(--line)}
+@media (max-width:640px){.facts-list li{grid-template-columns:minmax(0,1fr);gap:6px}}
+.facts-list b{color:var(--fg);font-weight:560}
+.facts-list span{color:var(--fg3)}
+.pill-row{display:flex;flex-wrap:wrap;gap:8px}
+
+/* Tables in a window */
+.table-window{border-radius:16px;border:1px solid var(--line-2);background:linear-gradient(180deg,var(--l1),var(--bg));overflow:hidden}
+.scroll{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:.9rem}
+th,td{text-align:left;padding:12px 16px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-family:var(--mono);font-weight:500;font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;color:var(--fg4);background:rgba(255,255,255,.015)}
+td{color:var(--fg2)}
+td.num,th.num{text-align:right;font-family:var(--mono);font-variant-numeric:tabular-nums}
+tbody tr:last-child td{border-bottom:0}
+td a{color:var(--blue-2)}
+td a:hover{color:var(--fg)}
+.skips{font-size:.88rem;color:var(--fg3)}
+.skips summary{cursor:pointer}
+.skips summary:hover{color:var(--fg)}
+.skips ul{margin:10px 0 0;padding-left:18px;display:grid;gap:6px}
+.mono-note{font-family:var(--mono);font-size:.78rem;color:var(--fg4)}

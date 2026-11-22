@@ -13,3 +13,7 @@ for (const m of Object.values(MODELS)) {
     body.append(tr);
   }
 }
+
+// Scroll reveals (the landing page's motion); everything shows at once under reduced motion.
+const io = new IntersectionObserver((es) => { for (const e of es) if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }, { rootMargin: '0px 0px -8% 0px' });
+document.querySelectorAll('.reveal').forEach((el) => io.observe(el));

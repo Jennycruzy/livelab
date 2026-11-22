@@ -6,9 +6,10 @@
 <meta name="theme-color" content="#08090a">
 <title>How the check works · LIVE LAB</title>
 <meta name="description" content="What the model does, what plain code decides, and what LIVE LAB can and cannot check.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400..700&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <link rel="stylesheet" href="/static/landing.css">
-<link rel="stylesheet" href="/static/app.css">
+<link rel="stylesheet" href="/static/pages.css">
 <link rel="icon" href="/static/icon.svg" type="image/svg+xml">
 <script type="module" src="/static/how.js"></script>
 </head>
@@ -24,49 +25,55 @@
     <a class="btn btn-sm" href="/new">Drop a lecture</a>
   </div>
 </header>
-<div class="wrap">
-
-  <section class="hero">
-    <h1>The model finds the rules. Plain code decides.</h1>
-    <p class="lede">Kimi K3.1 Pro on Cerebras does the reading and the writing, through two OpenClaw agents. Everything that could mislead a student is decided by ordinary, tested code.</p>
+<main class="container page">
+  <section class="page-head">
+    <h1 class="rise">The model finds the rules.<br><span class="dim">Plain code decides.</span></h1>
+    <p class="lede rise">Kimi K3.1 Pro on Cerebras does the reading and the writing, through two OpenClaw agents. Everything that could mislead a student is decided by ordinary, tested code.</p>
   </section>
 
-  <section class="flow" aria-label="Pipeline">
-    <div class="model"><b>Rule finder</b>An OpenClaw agent reads the transcript and lists each rule the teacher states, with the quote and the library rule that tests it.</div>
-    <div class="code"><b>Quote check</b>Each quote must appear in the transcript word for word. The minute comes from the transcript, never from the model.</div>
-    <div class="code"><b>Physics library</b>Sweeps the rule's range against first-principles physics and decides: holds, breaks at a value, holds only in a band, or does not hold.</div>
-    <div class="model"><b>Lab builders</b>One OpenClaw agent per rule, all at once, writes an animation and a probe that measures the same quantity.</div>
-    <div class="code"><b>Probe check</b>The lab's own physics must match the exact answer within 0.5% at five points, or it gets one repair round, or it is not shown.</div>
+  <section class="block">
+    <ol class="steps">
+      <li class="reveal"><span class="step-n mono">01</span><h3>Find</h3><p>Rule finders read every part of the transcript at once and list each rule the teacher states, quoting the exact words and naming the library rule that tests it.</p><span class="who model">Kimi K3.1 Pro on Cerebras</span></li>
+      <li class="reveal"><span class="step-n mono">02</span><h3>Verify</h3><p>Each quote must appear in the transcript word for word. The minute comes from the transcript, never from the model. Repeats of one statement merge.</p><span class="who code">Plain code</span></li>
+      <li class="reveal"><span class="step-n mono">03</span><h3>Decide</h3><p>The physics library sweeps the rule against first-principles physics and decides: holds, breaks at a value, holds only in a band, or does not hold.</p><span class="who code">Plain code</span></li>
+      <li class="reveal"><span class="step-n mono">04</span><h3>Build</h3><p>One builder per rule, all at once, writes a lab. Its own physics must match the exact answer within 0.5% at five points, with one repair round, or it is not shown.</p><span class="who model">Kimi K3.1 Pro on Cerebras</span></li>
+    </ol>
   </section>
 
-  <section class="panel prose">
-    <h2>What the verdicts mean</h2>
+  <section class="block reveal">
+    <h2>What the verdicts mean.</h2>
     <p>Every rule is compared with the exact answer across the range the teacher means. The gap is the relative error, |rule − exact| ÷ |exact|, and the line is 1%.</p>
-    <ul>
-      <li><b>holds</b>: within 1% everywhere in the range.</li>
-      <li><b>breaks at X</b>: within 1% up to X, then past it. X is found by bisection on the exact model.</li>
-      <li><b>holds between A and B</b>: within 1% only inside a band (the rule of 72 is the classic case).</li>
-      <li><b>does not hold</b>: past 1% everywhere in the range.</li>
+    <ul class="facts-list">
+      <li><b><span class="pill ok">holds</span></b><span>Within 1% everywhere in the range.</span></li>
+      <li><b><span class="pill warn">breaks at X</span></b><span>Within 1% up to X, then past it. X is found by bisection on the exact model.</span></li>
+      <li><b><span class="pill warn">holds A–B</span></b><span>Within 1% only inside a band. The rule of 72 is the classic case.</span></li>
+      <li><b><span class="pill warn">does not hold</span></b><span>Past 1% everywhere in the range.</span></li>
     </ul>
-    <p>The exact side is computed two independent ways where it matters: the pendulum's large-swing period by the arithmetic-geometric mean and by RK4 integration of the swing, falling with drag by the closed form and by RK4. The test suite checks both against each other and against textbook values, and checks that rules which hold stop holding when the physics changes (a stiffer spring, air drag, a heavy planet).</p>
+    <p>The exact side is computed two independent ways where it matters: the pendulum’s large-swing period by the arithmetic-geometric mean and by RK4 integration of the swing; falling with drag by the closed form and by RK4. The tests check both against each other and against textbook values, and check that rules which hold stop holding when the physics changes.</p>
   </section>
 
-  <section class="panel prose">
-    <h2>Where model-written code runs</h2>
-    <p>On the server, a lab's probe runs in a worker thread with a memory cap, inside an empty JavaScript context with string code generation turned off and a time limit per call. The test suite tries to reach the process, files and the network from inside it, and tries endless loops and memory bombs. In your browser, each lab runs in a sandboxed frame with its own origin and no network; the page sends it numbers and shows model-written text as plain text.</p>
+  <section class="block reveal">
+    <h2>Where model-written code runs.</h2>
+    <p>On the server, a lab’s probe runs in a worker thread with a memory cap, inside an empty JavaScript context with string code generation off and a time limit per call. The test suite tries to reach the process, files and network from inside it, and tries endless loops and memory bombs. In your browser, each lab runs in a sandboxed frame with its own origin and no network; the page sends it numbers and shows model-written text as plain text.</p>
   </section>
 
-  <section class="panel prose">
-    <h2>What it works on</h2>
-    <p>LIVE LAB works on spoken physics and maths rules that have a formula the library covers. Other statements in a lecture are listed under each wall as skipped, with the reason. Live building runs on Kimi K3.1 Pro on Cerebras during its access period; every saved wall stays open and playable after that. A lecture’s minute marks are estimated from word position when its transcript is timed only by chapter.</p>
+  <section class="block reveal">
+    <h2>What it works on.</h2>
+    <p>Spoken physics and maths rules that have a formula the library covers. Other statements are listed under each wall as skipped, with the reason. Live building runs on Kimi K3.1 Pro on Cerebras during its access period; every saved wall stays open and playable after it. A lecture’s minute marks are estimated from word position when its transcript is timed only by chapter.</p>
   </section>
 
-  <section class="panel">
-    <h2>Rules the library can check</h2>
-    <div class="scroll"><table id="catalogue"><thead><tr><th>Rule</th><th>The slider moves</th><th>Checked by</th></tr></thead><tbody></tbody></table></div>
+  <section class="block reveal">
+    <h2>Rules the library can check.</h2>
+    <div class="table-window scroll"><table id="catalogue"><thead><tr><th>Rule</th><th>The slider moves</th><th>Checked by</th></tr></thead><tbody></tbody></table></div>
+    <p class="mono-note">The physics library is lib/ in the repository and runs unchanged in your browser on every lab.</p>
   </section>
-
-  <footer><span>Source: the physics library is in <span class="mono">lib/</span> and runs unchanged in your browser on every wall’s bench.</span></footer>
-</div>
+</main>
+<footer class="foot">
+  <div class="container foot-in">
+    <span>LIVE LAB · Kimi K3.1 Pro on Cerebras, through OpenClaw</span>
+    <span>Code MIT · lectures keep their own licences, shown on each wall</span>
+    <nav aria-label="Footer"><a href="/how">How the check works</a><a href="/evidence">Evidence</a><a href="/new">Drop a lecture</a></nav>
+  </div>
+</footer>
 </body>
 </html>
