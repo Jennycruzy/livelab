@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#08090a">
+<title>Live class · LIVE LAB</title>
+<meta name="description" content="Talk through a lecture, or replay a real one at its speaking pace: each rule becomes a checked lab while the teacher is still on the point.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400..700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="/static/landing.css">
+<link rel="stylesheet" href="/static/pages.css">
+<link rel="stylesheet" href="/static/wall.css">
+<link rel="stylesheet" href="/static/live.css">
+<link rel="icon" href="/static/icon.svg" type="image/svg+xml">
+<script type="module" src="/static/live.js"></script>
+</head>
+<body>
+<header class="nav">
+  <div class="nav-in">
+    <a class="logo" href="/" aria-label="LIVE LAB home"><img src="/static/icon.svg" alt="" width="22" height="22"><span>LIVE LAB</span></a>
+    <nav aria-label="Main">
+      <a href="/#library">Library</a>
+      <a href="/live" aria-current="page">Live class</a>
+      <a href="/how">How the check works</a>
+      <a href="/evidence">Evidence</a>
+    </nav>
+    <a class="btn btn-sm" href="/new">Drop a lecture</a>
+  </div>
+</header>
+
+<main class="container page live-page">
+  <section class="page-head">
+    <h1 class="rise">Live class.<br><span class="dim">Labs while you talk.</span></h1>
+    <p class="lede rise">Talk through a lesson, or replay a real lecture at its own speaking pace. Each rule the teacher states becomes a checked lab while they are still on the point, and every lab shows how many seconds after the words it landed.</p>
+  </section>
+
+  <section class="sources rise" aria-label="Choose what to listen to">
+    <div class="source">
+      <h3>Replay a real lecture</h3>
+      <p>A passage of Prof. Shankar’s Open Yale lecture, sent sentence by sentence at the pace it was spoken.</p>
+      <div class="row-controls">
+        <select id="passage" aria-label="Passage"></select>
+        <button class="btn btn-primary" id="replay" type="button">Play it live <span aria-hidden="true">→</span></button>
+      </div>
+    </div>
+    <div class="source">
+      <h3>Use your microphone</h3>
+      <p id="mic-note">Say a rule out loud, the way a teacher would. Your browser turns speech into text; only the text is sent.</p>
+      <div class="row-controls">
+        <button class="btn" id="mic" type="button">Start listening</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="live-figs figures" id="figs" aria-label="Live figures"></section>
+  <p class="phase" id="phase" role="status"></p>
+
+  <section class="live-stage">
+    <div class="window ticker-window">
+      <div class="window-bar">
+        <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span class="window-title" id="ticker-title">Transcript</span>
+        <span class="window-meta mono" id="clock">0:00</span>
+      </div>
+      <ol class="ticker" id="ticker" aria-live="polite"></ol>
+    </div>
+    <div class="live-labs" id="labs" aria-label="Labs as they land"></div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="container foot-in">
+    <span>Lecture: Prof. Ramamurti Shankar, Fundamentals of Physics I (PHYS 200), Open Yale Courses, CC BY-NC-SA 3.0</span>
+    <nav aria-label="Footer"><a href="/how">How the check works</a><a href="/evidence">Evidence</a><a href="/new">Drop a lecture</a></nav>
+  </div>
+</footer>
+</body>
+</html>

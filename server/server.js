@@ -8,6 +8,7 @@ import { extname, join, normalize } from 'node:path';
 import { buildWall } from '../lib/pipeline.js';
 import { parseCaptions } from '../lib/transcript.js';
 import { library } from '../lib/library.js';
+import { LiveSession, LIVE_LIMITS } from '../lib/live.js';
 
 const ROOT = new URL('..', import.meta.url).pathname;
 const PORT = Number(process.env.PORT || 8080);
@@ -17,7 +18,7 @@ const RATE_MS = 10 * 60 * 1000;
 
 const TYPES = { '.html': 'text/html; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.css': 'text/css; charset=utf-8',
   '.json': 'application/json; charset=utf-8', '.jsonl': 'application/x-ndjson; charset=utf-8', '.svg': 'image/svg+xml', '.txt': 'text/plain; charset=utf-8' };
-const PAGES = { '/': 'index.html', '/new': 'new.html', '/how': 'how.html', '/evidence': 'evidence.html' };
+const PAGES = { '/': 'index.html', '/new': 'new.html', '/how': 'how.html', '/evidence': 'evidence.html', '/live': 'live.html' };
 const SECURITY = {
   'x-content-type-options': 'nosniff', 'referrer-policy': 'strict-origin-when-cross-origin', 'x-frame-options': 'DENY',
   'content-security-policy': "default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; " +
@@ -25,6 +26,8 @@ const SECURITY = {
 };
 
 const live = new Map(); // id -> { events: [], clients: Set, done }
+const classes = new Map(); // live class id -> { session, events, clients, done, ip }
+const lastClass = new Map(); // ip -> time
 const lastBuild = new Map(); // ip -> time
 
 function send(res, code, body, type = 'text/plain; charset=utf-8', extra = {}) {
@@ -105,6 +108,48 @@ function streamEvents(req, res, id) {
   req.on('close', () => job.clients.delete(res));
 }
 
+
+// ---------- live class ----------
+function startClass(req, res) {
+  const ip = (req.headers['x-forwarded-for'] || req.socket.remoteAddress || '').split(',')[0].trim();
+  if (!GATEWAY.token) return json(res, 503, { error: 'Live building is switched off on this server.' });
+  const last = lastClass.get(ip);
+  if (last && Date.now() - last < 5 * 60 * 1000) return json(res, 429, { error: 'One live class per visitor every 5 minutes.' });
+  if ([...classes.values()].filter((c) => !c.done).length >= 5) return json(res, 503, { error: 'Five live classes are running right now. Try again in a few minutes.' });
+  lastClass.set(ip, Date.now());
+  const id = `live-${new Date().toISOString().replace(/[:.]/g, '-')}-${randomBytes(3).toString('hex')}`;
+  const job = { events: [], clients: new Set(), done: false };
+  const emit = (type, data) => {
+    const line = `event: ${type}\ndata: ${JSON.stringify(data)}\n\n`;
+    job.events.push(line);
+    for (const c of job.clients) c.write(line);
+  };
+  job.session = new LiveSession({ gateway: GATEWAY, onEvent: emit });
+  classes.set(id, job);
+  setTimeout(() => { job.session.close(); job.done = true; emit('ended', { reason: 'time limit' }); for (const c of job.clients) c.end(); setTimeout(() => classes.delete(id), 600000); },
+    LIVE_LIMITS.minutes * 60 * 1000);
+  json(res, 201, { id, limits: LIVE_LIMITS });
+}
+
+async function classSay(req, res, id) {
+  const job = classes.get(id);
+  if (!job || job.done) return json(res, 404, { error: 'No live class with that id is running.' });
+  let body;
+  try { body = JSON.parse(await readBody(req, 4000)); } catch { return json(res, 400, { error: 'Send JSON: {"text": "..."}' }); }
+  try { return json(res, 200, { i: job.session.say(String(body.text || '')) }); }
+  catch (e) { return json(res, 409, { error: e.message }); }
+}
+
+function classEvents(req, res, id) {
+  const job = classes.get(id);
+  if (!job) return json(res, 404, { error: 'No live class with that id.' });
+  res.writeHead(200, { 'content-type': 'text/event-stream', 'cache-control': 'no-cache', connection: 'keep-alive', ...SECURITY });
+  for (const e of job.events) res.write(e);
+  if (job.done) return res.end();
+  job.clients.add(res);
+  req.on('close', () => job.clients.delete(res));
+}
+
 // Origins allowed to call the API from a browser: the site's own static host(s). The API is public either way;
 // this only lets those pages read the answers.
 const ORIGINS = new RegExp(process.env.LIVELAB_ORIGINS || '^https://[a-z0-9-]+\\.vercel\\.app$');
@@ -138,6 +183,9 @@ const server = createServer(async (req, res) => {
     if (req.method === 'GET' && (m = path.match(/^\/lectures\/([a-z0-9-]+\.json)$/))) return serveFile(res, join(ROOT, 'data/lectures', m[1]), 'public, max-age=3600');
     if (req.method === 'GET' && (m = path.match(/^\/labels\/([a-z0-9-]+\.json)$/))) return serveFile(res, join(ROOT, 'data/labels', m[1]), 'public, max-age=3600');
     if (req.method === 'POST' && path === '/api/walls') return await startBuild(req, res);
+    if (req.method === 'POST' && path === '/api/live') return startClass(req, res);
+    if (req.method === 'POST' && (m = path.match(/^\/api\/live\/(live-[A-Za-z0-9-]+)\/say$/))) return await classSay(req, res, m[1]);
+    if (req.method === 'GET' && (m = path.match(/^\/api\/live\/(live-[A-Za-z0-9-]+)\/events$/))) return classEvents(req, res, m[1]);
     return send(res, 404, 'Not found');
   } catch (e) {
     return send(res, 500, 'Server error');
