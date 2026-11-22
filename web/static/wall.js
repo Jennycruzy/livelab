@@ -325,7 +325,16 @@ function followLive() {
   const t0 = performance.now();
   const timer = setInterval(() => { $('#clock').textContent = `${fmt((performance.now() - t0) / 1000, 3)} s`; }, 100);
   es.addEventListener('start', (e) => { const d = JSON.parse(e.data); wall.title = d.title; wall.source = { credit: d.credit }; duration = d.duration; renderAll(true); });
-  es.addEventListener('cards', (e) => { $('#phase').textContent = `The rule finder found ${JSON.parse(e.data).count} rules. Building and checking their labs…`; });
+  es.addEventListener('cards', (e) => {
+    const d = JSON.parse(e.data);
+    $('#phase').textContent = d.partsDone < d.parts
+      ? `Read ${d.partsDone} of ${d.parts} parts of the lecture at once · ${d.count} rules so far · labs building as they arrive…`
+      : `Read the whole lecture · ${d.count} rules found · building and checking their labs…`;
+  });
+  es.addEventListener('wait', (e) => {
+    const d = JSON.parse(e.data);
+    $('#phase').textContent = `Cerebras is busy right now: retrying in ${d.seconds} s. Saved walls stay open meanwhile.`;
+  });
   es.addEventListener('card', (e) => { wall.cards.push(JSON.parse(e.data)); });
   es.addEventListener('skip', (e) => { wall.skipped.push(JSON.parse(e.data)); renderSkipped(); renderFigures(true); });
   es.addEventListener('tile', (e) => { const t = JSON.parse(e.data); wall.tiles.push(t); if (wall.timings.firstTile === undefined) wall.timings.firstTile = t.at; renderTimeline(); renderCards(); renderFigures(true); });
@@ -333,7 +342,7 @@ function followLive() {
   es.addEventListener('saved', async () => { es.close(); const r = await fetch(`${LIVE}/api/walls/${id}`); if (r.ok) { base = LIVE; wall = await r.json(); renderAll(); $('#replay').hidden = false; } });
   es.addEventListener('failed', (e) => { es.close(); clearInterval(timer); $('#phase').textContent = `The build stopped: ${JSON.parse(e.data).error}`; });
   es.onerror = () => { if (wall.timings.wallSeconds === undefined) $('#phase').textContent = 'Lost the connection to this build. Reload to see it once it is saved.'; };
-  $('#phase').textContent = 'Reading the lecture for rules…';
+  $('#phase').textContent = 'Reading every part of the lecture for rules at once…';
 }
 
 // ---------- start ----------

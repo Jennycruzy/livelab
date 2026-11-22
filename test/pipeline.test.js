@@ -111,3 +111,66 @@ test('cards for one statement spread over nearby sentences merge into one tile; 
   const m = mergeCards([c('a', 4200), c('b', 4215), c('c', 4230), c('d', 4300, 'period_formula'), c('e', 9000)]);
   assert.deepEqual(m.map((j) => [j.card.id, j.card.also.map((x) => x.id)]), [['a', ['b', 'c']], ['d', []], ['e', []]]);
 });
+
+test('long lectures: parts are read at once, overlaps do not double a rule, labs start before the last part is read', async () => {
+  // 300 one-sentence cues; two real rules, one of them inside the overlap between parts 1 and 2.
+  const cues = Array.from({ length: 300 }, (_, i) => {
+    const text = i === 20 ? 'For small angles, sin x is just x.' : i === 98 ? 'For small angles, tan x is just x.' : `Filler sentence number ${i} about nothing in particular.`;
+    const t = 10 * i;
+    const hh = (s) => `${String(Math.floor(s / 3600)).padStart(2, '0')}:${String(Math.floor(s / 60) % 60).padStart(2, '0')}:${String(s % 60).padStart(2, '0')}.000`;
+    return `${hh(t)} --> ${hh(t + 9)}\n${text}\n`;
+  });
+  const doc = parseCaptions('WEBVTT\n\n' + cues.join('\n'));
+  const { chunks } = await import('../lib/pipeline.js');
+  const parts = chunks(doc, { size: 110 });
+  assert.ok(parts.length >= 3, 'split into parts');
+  assert.ok(parts.filter((p) => p.text.includes('tan x is just x')).length === 2, 'the tan rule sits in an overlap');
+  let lastFinderAt = 0;
+  const gw = await gateway((model, text) => {
+    if (model === 'openclaw/livelab-finder') {
+      const cards = [];
+      if (text.includes('sin x is just x')) cards.push({ quote: 'For small angles, sin x is just x.', model: 'series', rule: 'sin_x' });
+      if (text.includes('tan x is just x')) cards.push({ quote: 'For small angles, tan x is just x.', model: 'series', rule: 'tan_x' });
+      return { cards, skipped: [] };
+    }
+    const card = JSON.parse(text.split('\n\n')[0]);
+    return { title: card.rule, slider: 'Angle', question: 'q', sim: card.rule === 'sin_x'
+      ? 'function probe(p){ return Math.sin(p.x * Math.PI / 180); } function draw(){}'
+      : 'function probe(p){ return Math.tan(p.x * Math.PI / 180); } function draw(){}' };
+  });
+  // The last part's finder answers late.
+  const slow = createServer(async (req, res) => {
+    let body = ''; for await (const c of req) body += c;
+    const { messages } = JSON.parse(body);
+    if (messages[0].content.startsWith(`Part ${parts.length} of`)) await new Promise((ok) => setTimeout(ok, 600));
+    const r = await fetch(gw.url + '/v1/chat/completions', { method: 'POST', body });
+    res.writeHead(r.status, { 'content-type': 'application/json' }); res.end(await r.text());
+  });
+  await new Promise((ok) => slow.listen(0, '127.0.0.1', ok));
+  const { wall, log } = await buildWall(doc, { gateway: { url: `http://127.0.0.1:${slow.address().port}`, token: 't' } });
+  slow.close(); gw.server.close();
+  assert.equal(wall.tiles.length, 2);
+  assert.equal(wall.cards.length, 2, 'the overlap did not add a second card for the same sentence');
+  lastFinderAt = Math.max(...log.filter((x) => x.agent === 'livelab-finder').map((x) => x.at));
+  const firstBuild = Math.min(...log.filter((x) => x.agent === 'livelab-builder').map((x) => x.at));
+  assert.ok(firstBuild < lastFinderAt, 'a lab was built before the last part was read');
+});
+
+test('a busy provider is waited out and reported, not failed', async () => {
+  const { callAgent } = await import('../lib/pipeline.js');
+  let n = 0;
+  const server = createServer(async (req, res) => {
+    for await (const _ of req);
+    n++;
+    if (n <= 2) { res.writeHead(500, { 'content-type': 'application/json' }); return res.end(JSON.stringify({ error: { message: "We're experiencing high traffic right now! queue_exceeded" } })); }
+    res.writeHead(200, { 'content-type': 'application/json' });
+    res.end(JSON.stringify({ choices: [{ message: { content: '{"ok":true}' } }], usage: {} }));
+  });
+  await new Promise((ok) => server.listen(0, '127.0.0.1', ok));
+  const waits = [];
+  const r = await callAgent({ url: `http://127.0.0.1:${server.address().port}`, token: 't' }, 'x', 'hi', { onBusy: (s) => waits.push(s), backoff: [0.01] });
+  server.close();
+  assert.equal(r.retries, 2);
+  assert.equal(waits.length, 2);
+  await assert.rejects(() => callAgent({ url: 'http://127.0.0.1:1', token: 't' }, 'x', 'hi'), 'a refused connection is not treated as busy');
+});
