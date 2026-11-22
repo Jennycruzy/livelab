@@ -174,3 +174,22 @@ test('a busy provider is waited out and reported, not failed', async () => {
   assert.equal(waits.length, 2);
   await assert.rejects(() => callAgent({ url: 'http://127.0.0.1:1', token: 't' }, 'x', 'hi'), 'a refused connection is not treated as busy');
 });
+
+test('a passing provider internal error is retried; a plain bad request is not', async () => {
+  const { callAgent } = await import('../lib/pipeline.js');
+  let n = 0;
+  const server = createServer(async (req, res) => {
+    for await (const _ of req);
+    n++;
+    if (req.url.includes('bad') || n > 100) { res.writeHead(400); return res.end('{"error":{"message":"bad request"}}'); }
+    if (n === 1) { res.writeHead(500, { 'content-type': 'application/json' }); return res.end('{"error":{"message":"internal error","type":"api_error"}}'); }
+    res.writeHead(200, { 'content-type': 'application/json' });
+    res.end(JSON.stringify({ choices: [{ message: { content: 'ok' } }], usage: {} }));
+  });
+  await new Promise((ok) => server.listen(0, '127.0.0.1', ok));
+  const url = `http://127.0.0.1:${server.address().port}`;
+  const r = await callAgent({ url, token: 't' }, 'x', 'hi', { backoff: [0.01] });
+  assert.equal(r.retries, 1);
+  await assert.rejects(() => callAgent({ url: url + '/bad', token: 't' }, 'x', 'hi', { backoff: [0.01] }), /HTTP 400/);
+  server.close();
+});
