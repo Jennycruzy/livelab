@@ -46,3 +46,18 @@ for (const l of lib.filter((x) => x.wall)) {
   row($('#runs tbody'), [name, wall.startedAt.slice(0, 16).replace('T', ' '), { node: document.createTextNode(`${fmt(wall.timings.firstTile)} s`), num: true },
     { node: document.createTextNode(`${fmt(wall.timings.wallSeconds)} s`), num: true }, c.calls, c.inTokens.toLocaleString(), c.outTokens.toLocaleString(), { node: files }]);
 }
+
+// The model on its own, from the saved, graded replies.
+const base = await fetch('/baseline/model-alone-low.json').then((r) => (r.ok ? r.json() : null)).catch(() => null);
+if (base) {
+  const S = base.summary;
+  const fig = (big, small, label) => { const d = document.createElement('div'); d.className = 'fig'; const b = document.createElement('b'); b.textContent = big; if (small) { const s2 = document.createElement('small'); s2.textContent = small; b.append(s2); } const sp = document.createElement('span'); sp.textContent = label; d.append(b, sp); return d; };
+  $('#baseline-figs').append(fig(String(S.bothRight), `of ${S.moments}`, 'moments fully right on its own'), fig(String(S.verdictRight), `of ${S.moments}`, 'verdicts right'), fig(String(S.moments - S.bothRight), null, 'confident answers that were wrong'), fig(String(S.moments), `of ${S.moments}`, 'right with the physics library'));
+  const unit = (u) => (u === 'fraction of c' ? 'c' : u === 'deg' ? '°' : u ? ` ${u}` : '');
+  for (const r of base.rows.filter((x) => !(x.grade.verdictRight && x.grade.limitWithin5pct))) {
+    const a = r.grade.answer || {};
+    const said = a.verdict === 'holds' ? 'holds' : `breaks at ${a.limit}${a.unit ? ' ' + a.unit : ''}`;
+    const truth = r.key.verdict === 'holds' ? 'holds' : `breaks at ${Number(r.key.limit.toPrecision(3))}${unit(r.key.unit)}`;
+    row($('#baseline tbody'), [`“${r.line}”`, said, truth, r.grade.verdictRight ? 'limit wrong' : 'verdict wrong']);
+  }
+}

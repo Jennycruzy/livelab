@@ -1,7 +1,7 @@
 // Model alone: ask Kimi K3.1 Pro (no physics library, no tools) whether each of the 20 frozen lecture moments holds
 // and where it stops holding within 1%, then grade against the frozen key. Saves every reply in data/baseline/.
-// Usage: CEREBRAS_API_KEY=... node scripts/baseline.js [reasoning_effort=low]
-import { writeFileSync, mkdirSync } from 'node:fs';
+// Usage: CEREBRAS_API_KEY=... node scripts/baseline.js [reasoning_effort=low] [--regrade]  (--regrade re-scores saved replies)
+import { writeFileSync, mkdirSync, readFileSync } from 'node:fs';
 import { createRequire } from 'node:module';
 
 const KEY = createRequire(import.meta.url)('../test/fixtures/key.cjs');
@@ -31,7 +31,19 @@ async function ask(line) {
 function grade(k, reply) {
   let o;
   try { const t = reply.content; o = JSON.parse(t.slice(t.indexOf('{'), t.lastIndexOf('}') + 1)); } catch { return { parsed: false }; }
-  const close = (a, b, tol) => Number.isFinite(+a) && b !== null && Math.abs(+a / b - 1) <= tol;
+  // Put the model's number into the key's unit when it answered in another one (radians, m/s, metres, a fraction).
+  const conv = (v, unit) => {
+    const u = String(unit ?? '').toLowerCase(), want = k.unit;
+    if (!Number.isFinite(+v)) return NaN;
+    if (want === 'deg' && /rad/.test(u)) return (+v * 180) / Math.PI;
+    if (want === 'fraction of c' && /m\s*\/\s*s|metres? per second|meters? per second/.test(u)) return +v / 299792458;
+    if (want === 'fraction of c' && /km\s*\/\s*s/.test(u)) return (+v * 1000) / 299792458;
+    if (want === 'km' && /^(m|metres?|meters?)$/.test(u.trim())) return +v / 1000;
+    if (want === 'm' && /^km|kilomet/.test(u.trim())) return +v * 1000;
+    if (want === '% rate' && /fraction|decimal/.test(u)) return +v * 100;
+    return +v;
+  };
+  const close = (a, b, tol) => Number.isFinite(conv(a, o.unit)) && b !== null && Math.abs(conv(a, o.unit) / b - 1) <= tol;
   const band = k.limitLow !== undefined;
   const verdict = band ? o.verdict === 'breaks' || o.verdict === 'band' : o.verdict === k.verdict;
   let limit;
@@ -41,6 +53,19 @@ function grade(k, reply) {
   return { parsed: true, answer: o, verdictRight: verdict, limitWithin5pct: limit };
 }
 
+if (process.argv.includes('--regrade')) {
+  const file = new URL(`../data/baseline/model-alone-${effort}.json`, import.meta.url);
+  const saved = JSON.parse(readFileSync(file, 'utf8'));
+  for (const r of saved.rows) { const k = KEY.find((x) => x.id === r.id); r.grade = r.reply.error ? { parsed: false } : grade(k, r.reply); }
+  const rows = saved.rows;
+  saved.summary = { ...saved.summary, regradedAt: new Date().toISOString(), unitsConverted: true,
+    verdictRight: rows.filter((r) => r.grade.verdictRight).length, limitWithin5pct: rows.filter((r) => r.grade.limitWithin5pct).length,
+    bothRight: rows.filter((r) => r.grade.verdictRight && r.grade.limitWithin5pct).length };
+  writeFileSync(file, JSON.stringify(saved, null, 1) + '\n');
+  for (const r of rows) console.log(String(r.id).padStart(2), r.grade.verdictRight ? 'verdict ok' : 'VERDICT WRONG', r.grade.limitWithin5pct ? 'limit ok' : 'LIMIT OFF', '|', r.grade.answer?.limit, r.grade.answer?.unit ?? '', '| key', r.key.limit, r.key.unit ?? '');
+  console.log(saved.summary);
+  process.exit(0);
+}
 const rows = [];
 const queue = [...KEY];
 await Promise.all(Array.from({ length: 5 }, async () => {

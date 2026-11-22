@@ -182,6 +182,7 @@ const server = createServer(async (req, res) => {
     if (req.method === 'GET' && (m = path.match(/^\/runs\/([A-Za-z0-9-]+\.jsonl)$/))) return serveFile(res, join(ROOT, 'data/runs', m[1]), 'public, max-age=3600');
     if (req.method === 'GET' && (m = path.match(/^\/lectures\/([a-z0-9-]+\.json)$/))) return serveFile(res, join(ROOT, 'data/lectures', m[1]), 'public, max-age=3600');
     if (req.method === 'GET' && (m = path.match(/^\/labels\/([a-z0-9-]+\.json)$/))) return serveFile(res, join(ROOT, 'data/labels', m[1]), 'public, max-age=3600');
+    if (req.method === 'GET' && (m = path.match(/^\/baseline\/([a-z0-9-]+\.json)$/))) return serveFile(res, join(ROOT, 'data/baseline', m[1]), 'public, max-age=600');
     if (req.method === 'POST' && path === '/api/walls') return await startBuild(req, res);
     if (req.method === 'POST' && path === '/api/live') return startClass(req, res);
     if (req.method === 'POST' && (m = path.match(/^\/api\/live\/(live-[A-Za-z0-9-]+)\/say$/))) return await classSay(req, res, m[1]);

@@ -13,7 +13,7 @@ cpSync(`${root}web/static`, `${out}/static`, { recursive: true });
 mkdirSync(`${out}/lib/models`, { recursive: true });
 for (const f of ['check.js', 'num.js', 'evaluate.js', 'transcript.js']) cpSync(`${root}lib/${f}`, `${out}/lib/${f}`);
 cpSync(`${root}lib/models`, `${out}/lib/models`, { recursive: true });
-for (const [from, to] of [['data/walls', 'walls'], ['data/runs', 'runs'], ['data/lectures', 'lectures'], ['data/labels', 'labels']]) {
+for (const [from, to] of [['data/walls', 'walls'], ['data/runs', 'runs'], ['data/lectures', 'lectures'], ['data/labels', 'labels'], ['data/baseline', 'baseline']]) {
   cpSync(`${root}${from}`, `${out}/${to}`, { recursive: true });
 }
 writeFileSync(`${out}/library.json`, JSON.stringify(library(root)));

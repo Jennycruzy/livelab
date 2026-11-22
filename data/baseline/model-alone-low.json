@@ -5,8 +5,10 @@
   "at": "2026-11-21T21:14:25.462Z",
   "moments": 20,
   "verdictRight": 18,
-  "limitWithin5pct": 11,
-  "bothRight": 11
+  "limitWithin5pct": 17,
+  "bothRight": 17,
+  "regradedAt": "2026-11-22T01:32:44.040Z",
+  "unitsConverted": true
  },
  "rows": [
   {
@@ -94,7 +96,7 @@
      "limit_low": null
     },
     "verdictRight": true,
-    "limitWithin5pct": false
+    "limitWithin5pct": true
    }
   },
   {
@@ -182,7 +184,7 @@
      "limit_low": null
     },
     "verdictRight": true,
-    "limitWithin5pct": false
+    "limitWithin5pct": true
    }
   },
   {
@@ -226,7 +228,7 @@
      "limit_low": null
     },
     "verdictRight": true,
-    "limitWithin5pct": false
+    "limitWithin5pct": true
    }
   },
   {
@@ -314,7 +316,7 @@
      "limit_low": null
     },
     "verdictRight": true,
-    "limitWithin5pct": false
+    "limitWithin5pct": true
    }
   },
   {
@@ -665,7 +667,7 @@
      "limit_low": null
     },
     "verdictRight": true,
-    "limitWithin5pct": false
+    "limitWithin5pct": true
    }
   },
   {
@@ -752,7 +754,7 @@
      "unit": "m/s"
     },
     "verdictRight": true,
-    "limitWithin5pct": false
+    "limitWithin5pct": true
    }
   },
   {

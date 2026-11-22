@@ -52,6 +52,14 @@
   </section>
 
   <section class="block">
+    <h2>The model on its own.</h2>
+    <p>The same Kimi K3.1 Pro on Cerebras, asked directly about each of the 20 frozen lecture moments, with no physics library: does the rule hold, and where does it stop holding within 1%? Its answers are graded against the frozen key, with units converted (degrees from radians, fractions of light speed from metres per second).</p>
+    <div class="figures" id="baseline-figs"></div>
+    <div class="table-window scroll"><table id="baseline"><thead><tr><th>Moment</th><th>Model alone</th><th>Exact physics</th><th></th></tr></thead><tbody></tbody></table></div>
+    <p class="mono-note">With the library, every one of the 20 verdicts and limits matches the key (test/key.test.js).</p>
+  </section>
+
+  <section class="block">
     <h2>The library against known answers.</h2>
     <p>The test suite runs on every push. It checks each physics model against textbook values and against a second, independent method; checks that rules which hold stop holding when the physics changes; and runs 20 frozen lecture moments whose answer key is fingerprinted in the test, where every verdict must match. <span class="mono">npm run verify</span> re-checks every saved wall offline, with no keys.</p>
   </section>
