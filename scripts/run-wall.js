@@ -13,7 +13,7 @@ const side = gpu
   ? { agents: { finder: 'livelab-finder-gpu', builder: 'livelab-builder-gpu' }, provider: 'openrouter/moonshotai/kimi-k3.1-pro pinned to Moonshot AI (moonshotai/mxfp4) via OpenClaw' }
   : {};
 const token = process.env.OPENCLAW_GATEWAY_TOKEN;
-if (!id || !token) { console.error('usage: OPENCLAW_GATEWAY_TOKEN=... node scripts/run-wall.js <lecture id> [gateway url]'); process.exit(2); }
+if (!id || !token) { console.error('usage: OPENCLAW_GATEWAY_TOKEN=... node scripts/run-wall.js <lecture id> [--gpu] [gateway url]'); process.exit(2); }
 
 const doc = JSON.parse(readFileSync(new URL(`../data/lectures/${id}.json`, import.meta.url), 'utf8'));
 const t = (s) => `${String(s.toFixed(1)).padStart(6)}s`;
