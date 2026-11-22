@@ -35,7 +35,8 @@ The same record is in [`results/best-run.json`](results/best-run.json); `npm tes
 
 | File | What it is |
 |---|---|
-| `workspace/` | the agent's instructions |
+| `workspace/` | the agent's instructions: open the 5 product pages together |
+| `workspace-d/` | the same agent, checking one product page per turn before opening the next, with a shorter table |
 | `openclaw.json` | the OpenClaw config: Kimi K3.1 Pro on Cerebras; its only tool is fetching a web page |
 | `shops.txt` | the shops it searches |
 | `run.py` | runs the request once in a fresh session and prints every call's tokens and decode time, and the links |
