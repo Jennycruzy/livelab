@@ -28,10 +28,10 @@ const pillOf = (c) => c.verdict === 'holds' ? ['ok', 'holds'] : c.verdict === 'b
 const frames = new Set();
 addEventListener('message', (e) => {
   if (e.data?.type !== 'hello') return;
-  for (const f of frames) if (f.el.contentWindow === e.source) e.source.postMessage({ type: 'load', sim: f.sim, params: f.params, dark: true }, '*');
+  for (const f of frames) if (f.el.contentWindow === e.source) e.source.postMessage({ type: 'load', sim: f.sim, params: f.params, dark: window.liveLabDark() }, '*');
 });
 function frame(sim, params) {
-  const el = h('iframe', { src: '/frame', sandbox: 'allow-scripts', title: 'lab animation', tabindex: '-1', loading: 'eager' });
+  const el = h('iframe', { src: window.liveLabFrame(), sandbox: 'allow-scripts', title: 'lab animation', tabindex: '-1', loading: 'eager' });
   const f = { el, sim, params };
   frames.add(f);
   return f;

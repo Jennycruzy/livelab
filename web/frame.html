@@ -2,9 +2,12 @@
 <meta charset="utf-8">
 <title>lab</title>
 <meta name="color-scheme" content="dark">
-<style>:root{color-scheme:dark}html,body{margin:0;height:100%;background:transparent;overflow:hidden}canvas{width:100%;height:100%;display:block}</style>
+<style>:root{color-scheme:dark}:root.light{color-scheme:light}html,body{margin:0;height:100%;background:transparent;overflow:hidden}canvas{width:100%;height:100%;display:block}</style>
 <canvas id="c"></canvas>
 <script>
+// The page asks for /frame?light when it is light: the frame must use the same colour scheme as the page, or the
+// browser paints an opaque backing behind it.
+if (location.search === '?light') { document.documentElement.className = 'light'; document.querySelector('meta[name=color-scheme]').content = 'light'; }
 // Runs one model-written lab. Loaded only inside <iframe sandbox="allow-scripts">: an opaque origin with no access
 // to the page, its storage or the network (this page's own policy blocks every connection). The page sends
 // {type:"load", sim, params, dark}, then {type:"params"} as sliders move. The frame reports ready or error.

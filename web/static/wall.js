@@ -46,10 +46,10 @@ const frameFor = (win) => { for (const f of frames) { if (!f.el.isConnected) { f
 addEventListener('message', (e) => {
   const f = frameFor(e.source);
   if (!f || !e.data || typeof e.data.type !== 'string') return;
-  if (e.data.type === 'hello') e.source.postMessage({ type: 'load', sim: f.sim, params: f.params, dark: true }, '*');
+  if (e.data.type === 'hello') e.source.postMessage({ type: 'load', sim: f.sim, params: f.params, dark: window.liveLabDark() }, '*');
 });
 function labFrame(sim, params) {
-  const el = h('iframe', { src: '/frame', sandbox: 'allow-scripts', title: 'lab animation', tabindex: '-1' });
+  const el = h('iframe', { src: window.liveLabFrame(), sandbox: 'allow-scripts', title: 'lab animation', tabindex: '-1' });
   frames.add({ el, sim, params });
   return el;
 }
@@ -289,11 +289,13 @@ function renderReview() {
 // ---------- live build and replay ----------
 function renderAll(live = false) { renderHead(); renderFigures(live); renderTimeline(); renderCards(); renderSkipped(); renderReview(); }
 
+// ?replay starts the replay on load and shows only the elapsed time (used to record a side-by-side).
+const AUTO_REPLAY = new URLSearchParams(location.search).has('replay');
 async function replay() {
   const full = wall;
   const order = [...full.tiles].sort((a, b) => a.at - b.at);
   const total = full.timings.wallSeconds;
-  wall = { ...full, tiles: [], timings: {} };
+  wall = { ...full, tiles: [], skipped: [], timings: {} };
   renderAll(true);
   const btn = $('#replay');
   btn.disabled = true;
@@ -303,7 +305,7 @@ async function replay() {
   await new Promise((done) => {
     const tick = () => {
       const s = (performance.now() - t0) / 1000;
-      $('#clock').textContent = `${fmt(Math.min(s, total), 3)} s of ${fmt(total, 3)} s`;
+      $('#clock').textContent = AUTO_REPLAY ? `${fmt(Math.min(s, total), 3)} s` : `${fmt(Math.min(s, total), 3)} s of ${fmt(total, 3)} s`;
       scan.style.left = `${Math.min(100, (100 * s) / total)}%`;
       let changed = false;
       while (order.length && order[0].at <= s) { wall.tiles.push(order.shift()); changed = true; }
@@ -368,6 +370,7 @@ if (res.ok) {
   renderAll();
   $('#replay').hidden = false;
   if (location.hash === '#review') $('#review').scrollIntoView();
+  if (AUTO_REPLAY) setTimeout(replay, 1500);   // let the page settle first
 } else {
   followLive();
 }

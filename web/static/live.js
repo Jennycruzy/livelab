@@ -30,7 +30,7 @@ for (const [i, p] of PASSAGES.entries()) $('#passage').append(h('option', { valu
 const frames = new Set();
 addEventListener('message', (e) => {
   if (e.data?.type !== 'hello') return;
-  for (const f of frames) if (f.el.contentWindow === e.source) e.source.postMessage({ type: 'load', sim: f.sim, params: f.params, dark: true }, '*');
+  for (const f of frames) if (f.el.contentWindow === e.source) e.source.postMessage({ type: 'load', sim: f.sim, params: f.params, dark: window.liveLabDark() }, '*');
 });
 
 // ---------- state ----------
@@ -93,7 +93,7 @@ async function startClass() {
     const c = t.cardInfo;
     const el = cards.get(t.card);
     if (!el) return;
-    const frame = h('iframe', { src: '/frame', sandbox: 'allow-scripts', title: 'lab animation', tabindex: '-1' });
+    const frame = h('iframe', { src: window.liveLabFrame(), sandbox: 'allow-scripts', title: 'lab animation', tabindex: '-1' });
     frames.add({ el: frame, sim: t.lab.sim, params: { ...c.fixed, [t.check.param]: t.predict.p0 } });
     const [cls, text] = pillOf(t.check);
     el.classList.remove('building');
