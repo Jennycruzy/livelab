@@ -110,6 +110,19 @@ OpenRouter pinned to Moonshot AI's own endpoint), used for side-by-side comparis
 product search, opens every product page to confirm it before answering, and answers with a table of real links;
 `santa/checklinks.mjs` re-checks that each link is a live single-product page with a price.
 
+Its best run: **809 tokens per second** (mean of its model calls; 1,187 for the fastest call), Kimi K3.1 Pro on
+Cerebras. Each call is listed with its Cerebras response ID, so the numbers can be checked against Cerebras's own
+records (`santa/results/best-run.json`):
+
+| Call | Cerebras response ID | Tokens | Decode time | Tokens/s |
+|---|---|---|---|---|
+| Search the shops | `chatcmpl-26142479-541f-4b48-8f31-d1bad824a79e` | 878 | 1.406 s | 624 |
+| Open the 5 product pages | `chatcmpl-b081e176-3c5b-4400-9d85-ecea85d9ca7a` | 425 | 0.358 s | 1,187 |
+| Answer with the table | `chatcmpl-0e63c26b-a371-4826-8263-9515dc25cd8e` | 288 | 0.468 s | 615 |
+
+Decode time is Cerebras's own completion time for the call, so queueing, network and tool time are not counted.
+More in [`santa/README.md`](santa/README.md).
+
 ## What it works on
 
 Spoken physics and maths rules that have a formula the library covers. Other statements are listed under each wall as
