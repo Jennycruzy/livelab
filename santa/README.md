@@ -10,14 +10,14 @@ it is a live product page with a price.
 
 ## Best run
 
-**1,066 tokens per second**, the mean of the run's two model calls (1,336 for the faster), run on 22 November 2026
-at 13:40 UTC. The official speed patch readout for the session: `1,066 tok/s mean · 1,336 p90 (server)`. Every call, as
+**1,073 tokens per second**, the mean of the run's two model calls (1,163 for the faster), run on 22 November 2026
+at 15:40 UTC. The official speed patch readout for the session: `1,073 tok/s mean · 1,163 p90 (server)`. Every call, as
 Cerebras returned it:
 
 | Call | Cerebras response ID | Tokens | Decode time | Tokens/s |
 |---|---|---|---|---|
-| Search five shops at once | `chatcmpl-4592d32c-8287-4a65-9456-704ddd4dea22` | 320 | 0.402 s | 795 |
-| Answer with the five gifts | `chatcmpl-9c409f5e-d5fb-4202-bc7f-251372e3e3d5` | 170 | 0.127 s | 1,336 |
+| Search five shops at once | `chatcmpl-d1f6ae4e-a10c-4b8b-a9e7-49c37af03aa0` | 403 | 0.346 s | 1,163 |
+| Answer with the five gifts | `chatcmpl-92eca7da-2244-4a26-84fc-5f11e1fad6b1` | 170 | 0.173 s | 983 |
 
 - **Tokens/s** for a call is its completion tokens divided by Cerebras's completion time for that call. Queueing,
   network and tool time are not counted. The run's number is the plain mean of its calls, each call counted once.

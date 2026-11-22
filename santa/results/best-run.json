@@ -2,26 +2,26 @@
  "entry": "Santa's Speedy Shopper",
  "model": "moonshotai-kimi-k3.1-pro-trial on Cerebras, through OpenClaw",
  "agent": "santa/workspace-g (five shop searches in one turn, then the answer)",
- "session_id": "68b7af46-0b4a-4cc7-b8f3-e81cbadbb5cd",
+ "session_id": "a138f5a2-b348-4358-b41d-9171399df84f",
  "prompt": "Find 5 Christmas gifts for my family from real shops, with product links.",
  "measure": "per call: completion_tokens / Cerebras completion_time, both as Cerebras returned them; the run's score is the mean of the per-call rates",
  "calls": [
   {
-   "cerebras_response_id": "chatcmpl-4592d32c-8287-4a65-9456-704ddd4dea22",
-   "completion_tokens": 320,
-   "completion_seconds": 0.402295391,
-   "tok_per_s": 795.4
+   "cerebras_response_id": "chatcmpl-d1f6ae4e-a10c-4b8b-a9e7-49c37af03aa0",
+   "completion_tokens": 403,
+   "completion_seconds": 0.346456197,
+   "tok_per_s": 1163.2
   },
   {
-   "cerebras_response_id": "chatcmpl-9c409f5e-d5fb-4202-bc7f-251372e3e3d5",
+   "cerebras_response_id": "chatcmpl-92eca7da-2244-4a26-84fc-5f11e1fad6b1",
    "completion_tokens": 170,
-   "completion_seconds": 0.127228008,
-   "tok_per_s": 1336.2
+   "completion_seconds": 0.172868908,
+   "tok_per_s": 983.4
   }
  ],
- "mean_tok_per_s": 1065.8,
- "p90_tok_per_s": 1336.2,
- "speed_patch_readout": "1,066 tok/s mean · 1,336 p90 (server)",
+ "mean_tok_per_s": 1073.3,
+ "p90_tok_per_s": 1163.2,
+ "speed_patch_readout": "1,073 tok/s mean · 1,163 p90 (server)",
  "links": [
   "https://www.deathwishcoffee.com/products/medium-roast",
   "https://www.fellowproducts.com/products/carter-wide-mug",
@@ -29,6 +29,6 @@
   "https://www.parachutehome.com/products/fireside-wool-throw-garnet",
   "https://www.stanley1913.com/products/the-everyday-tumbler-20-oz"
  ],
- "links_checked": "all 5 open in a real browser as live single-product pages with a price (22 Nov 14:00 UTC)",
- "run_at": "2026-11-22T13:40:45Z"
+ "links_checked": "all 5 open in a real browser as live single-product pages with a price (22 Nov 15:58 UTC)",
+ "run_at": "2026-11-22T15:40:55Z"
 }
