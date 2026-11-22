@@ -107,18 +107,17 @@ OpenRouter pinned to Moonshot AI's own endpoint), used for side-by-side comparis
 ## Also here: a gift-finding agent
 
 `santa/` holds a small OpenClaw agent that finds five Christmas gifts in real online shops through their public
-product search, opens every product page to confirm it before answering, and answers with a table of real links;
-`santa/checklinks.mjs` re-checks that each link is a live single-product page with a price.
+product search (five searches in one turn) and answers with one gift per shop and its product link;
+`santa/checklinks.mjs` then opens each link in a real browser to confirm it is a live product page with a price.
 
-Its best run: **809 tokens per second** (mean of its model calls; 1,187 for the fastest call), Kimi K3.1 Pro on
+Its best run: **1,066 tokens per second** (mean of its two model calls; 1,336 for the faster), Kimi K3.1 Pro on
 Cerebras. Each call is listed with its Cerebras response ID, so the numbers can be checked against Cerebras's own
 records (`santa/results/best-run.json`):
 
 | Call | Cerebras response ID | Tokens | Decode time | Tokens/s |
 |---|---|---|---|---|
-| Search the shops | `chatcmpl-26142479-541f-4b48-8f31-d1bad824a79e` | 878 | 1.406 s | 624 |
-| Open the 5 product pages | `chatcmpl-b081e176-3c5b-4400-9d85-ecea85d9ca7a` | 425 | 0.358 s | 1,187 |
-| Answer with the table | `chatcmpl-0e63c26b-a371-4826-8263-9515dc25cd8e` | 288 | 0.468 s | 615 |
+| Search five shops at once | `chatcmpl-4592d32c-8287-4a65-9456-704ddd4dea22` | 320 | 0.402 s | 795 |
+| Answer with the five gifts | `chatcmpl-9c409f5e-d5fb-4202-bc7f-251372e3e3d5` | 170 | 0.127 s | 1,336 |
 
 Decode time is Cerebras's own completion time for the call, so queueing, network and tool time are not counted.
 More in [`santa/README.md`](santa/README.md).

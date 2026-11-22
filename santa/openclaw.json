@@ -5,7 +5,7 @@
         "primary": "cerebras/moonshotai-kimi-k3.1-pro-trial"
       },
       "thinkingDefault": "low",
-      "workspace": "~/santa/workspace"
+      "workspace": "~/santa/workspace-g"
     }
   },
   "tools": {

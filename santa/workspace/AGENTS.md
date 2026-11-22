@@ -8,7 +8,7 @@ this session. Never invent a product, price or link, and never reuse one from me
 Use these stores. Their public product search answers plain requests:
 
 thesill.com, taylorstitch.com, stanley1913.com, parachutehome.com, muji.us, mejuri.com, kyliecosmetics.com,
-ghbass.com, brooklinen.com, bokksu.com, allbirds.com, ugmonk.com, fellowproducts.com, colourpop.com,
+ghbass.com, brooklinen.com, allbirds.com, ugmonk.com, fellowproducts.com, colourpop.com,
 nomadgoods.com, deathwishcoffee.com
 
 Search one shop with:

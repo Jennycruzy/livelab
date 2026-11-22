@@ -7,12 +7,12 @@ const run = JSON.parse(readFileSync(new URL('../santa/results/best-run.json', im
 
 test('santa best run: the mean and fastest call follow from the recorded calls', () => {
   const rates = run.calls.map((c) => c.completion_tokens / c.completion_seconds);
-  assert.equal(run.calls.length, 3);
+  assert.equal(run.calls.length, 2);
   assert.equal(new Set(run.calls.map((c) => c.cerebras_response_id)).size, run.calls.length, 'every call is a different request');
   for (const c of run.calls) assert.match(c.cerebras_response_id, /^chatcmpl-[0-9a-f-]{36}$/);
-  assert.equal(Math.round(rates.reduce((a, b) => a + b, 0) / rates.length), 809);
-  assert.equal(Math.round(Math.max(...rates)), 1187);
-  assert.equal(Math.round(run.mean_tok_per_s), 809);
+  assert.equal(Math.round(rates.reduce((a, b) => a + b, 0) / rates.length), 1066);
+  assert.equal(Math.round(Math.max(...rates)), 1336);
+  assert.equal(Math.round(run.mean_tok_per_s), 1066);
 });
 
 test('santa best run: five different product links in five different shops', () => {

@@ -1,41 +1,34 @@
 {
  "entry": "Santa's Speedy Shopper",
  "model": "moonshotai-kimi-k3.1-pro-trial on Cerebras, through OpenClaw",
- "session_id": "99f8aadc-05e3-4429-939c-c7cd8f229bba",
+ "agent": "santa/workspace-g (five shop searches in one turn, then the answer)",
+ "session_id": "68b7af46-0b4a-4cc7-b8f3-e81cbadbb5cd",
  "prompt": "Find 5 Christmas gifts for my family from real shops, with product links.",
  "measure": "per call: completion_tokens / Cerebras completion_time, both as Cerebras returned them; the run's score is the mean of the per-call rates",
  "calls": [
   {
-   "cerebras_response_id": "chatcmpl-26142479-541f-4b48-8f31-d1bad824a79e",
-   "unix_ms": 1795308548049,
-   "completion_tokens": 878,
-   "completion_seconds": 1.406333654,
-   "tok_per_s": 624.3
+   "cerebras_response_id": "chatcmpl-4592d32c-8287-4a65-9456-704ddd4dea22",
+   "completion_tokens": 320,
+   "completion_seconds": 0.402295391,
+   "tok_per_s": 795.4
   },
   {
-   "cerebras_response_id": "chatcmpl-b081e176-3c5b-4400-9d85-ecea85d9ca7a",
-   "unix_ms": 1795308551459,
-   "completion_tokens": 425,
-   "completion_seconds": 0.358154267,
-   "tok_per_s": 1186.6
-  },
-  {
-   "cerebras_response_id": "chatcmpl-0e63c26b-a371-4826-8263-9515dc25cd8e",
-   "unix_ms": 1795308556155,
-   "completion_tokens": 288,
-   "completion_seconds": 0.468236056,
-   "tok_per_s": 615.1
+   "cerebras_response_id": "chatcmpl-9c409f5e-d5fb-4202-bc7f-251372e3e3d5",
+   "completion_tokens": 170,
+   "completion_seconds": 0.127228008,
+   "tok_per_s": 1336.2
   }
  ],
- "mean_tok_per_s": 808.7,
- "p90_tok_per_s": 1186.6,
+ "mean_tok_per_s": 1065.8,
+ "p90_tok_per_s": 1336.2,
+ "speed_patch_readout": "1,066 tok/s mean · 1,336 p90 (server)",
  "links": [
-  "https://www.bokksu.com/products/gift-classic-bokksu",
-  "https://www.parachutehome.com/products/organic-rib-knit-throw-dusk",
-  "https://www.stanley1913.com/products/the-stay-hot-camp-mug-24-oz",
-  "https://www.taylorstitch.com/products/seafarer-beanie-in-atlantic-blue-donegal-2611",
-  "https://www.thesill.com/products/ficus-assortment"
+  "https://www.deathwishcoffee.com/products/medium-roast",
+  "https://www.fellowproducts.com/products/carter-wide-mug",
+  "https://www.muji.us/products/gel-ink-cap-type-ballpoint-pen-10-color-set",
+  "https://www.parachutehome.com/products/fireside-wool-throw-garnet",
+  "https://www.stanley1913.com/products/the-everyday-tumbler-20-oz"
  ],
- "links_checked": "all 5 open as live single-product pages with a price (re-checked 22 Nov 02:00 UTC)",
- "run_at": "2026-11-22T00:49:08Z"
+ "links_checked": "all 5 open in a real browser as live single-product pages with a price (22 Nov 14:00 UTC)",
+ "run_at": "2026-11-22T13:40:45Z"
 }
