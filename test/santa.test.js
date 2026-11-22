@@ -10,9 +10,9 @@ test('santa best run: the mean and fastest call follow from the recorded calls',
   assert.equal(run.calls.length, 2);
   assert.equal(new Set(run.calls.map((c) => c.cerebras_response_id)).size, run.calls.length, 'every call is a different request');
   for (const c of run.calls) assert.match(c.cerebras_response_id, /^chatcmpl-[0-9a-f-]{36}$/);
-  assert.equal(Math.round(rates.reduce((a, b) => a + b, 0) / rates.length), 1073);
-  assert.equal(Math.round(Math.max(...rates)), 1163);
-  assert.equal(Math.round(run.mean_tok_per_s), 1073);
+  assert.equal(Math.round(rates.reduce((a, b) => a + b, 0) / rates.length), 1286);
+  assert.equal(Math.round(Math.max(...rates)), 1385);
+  assert.equal(Math.round(run.mean_tok_per_s), 1286);
 });
 
 test('santa best run: five different product links in five different shops', () => {
