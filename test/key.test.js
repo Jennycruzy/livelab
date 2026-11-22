@@ -1,5 +1,5 @@
 // The 20 frozen lecture moments (test/fixtures/key.cjs, sha256 06a0c726...) checked by the library.
-// Each moment is mapped by hand to the library rule a correct rule finder would pick, with the same range the
+// Each moment is mapped in advance to the library rule a correct rule finder would pick, with the same range the
 // key used. The library must give the key's verdict for every moment. Limits must match the key exactly where
 // the key measured error the same way the library does (|rule - exact| / |exact|), and within 1.5% where the
 // key measured it the other way round (|exact - rule| / |rule|), which moves a 1% boundary slightly.

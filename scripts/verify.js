@@ -1,5 +1,5 @@
 // Re-check every saved wall offline, with no keys: run log fingerprint, every quote word for word in its
-// transcript, every verdict and limit recomputed by the physics library, and the score against the hand labels.
+// transcript, every verdict and limit recomputed by the physics library, and the score against the labels written in advance.
 // Usage: npm run verify
 import { readFileSync, readdirSync, existsSync } from 'node:fs';
 import { createHash } from 'node:crypto';
@@ -55,7 +55,7 @@ for (const f of walls) {
   console.log(`  labs: ${p.labs} written, ${p.wrongFirst} wrong on first try, ${p.fixed} fixed, ${p.neverRight} never shown`);
   if (wall.lecture && existsSync(`${root}data/labels/${wall.lecture}.json`)) {
     const e = evaluateWall(wall, JSON.parse(readFileSync(`${root}data/labels/${wall.lecture}.json`, 'utf8')));
-    console.log(`  hand labels: ${e.found} of ${e.labels} found; ${e.matched} of ${e.cards} cards match a label`);
+    console.log(`  labels: ${e.found} of ${e.labels} found; ${e.matched} of ${e.cards} cards match a label`);
   }
   console.log(`  timing from the log: first lab ${wall.timings.firstTile?.toFixed(1)} s, all labs ${wall.timings.wallSeconds.toFixed(1)} s`);
 }

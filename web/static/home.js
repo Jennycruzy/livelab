@@ -140,7 +140,7 @@ if (wall) {
     update();
   } else $('#check').hidden = true;
 
-  // Proof: computed from the saved run, its call log, the hand labels and the transcript.
+  // Proof: computed from the saved run, its call log, the labels and the transcript.
   const log = logText.trim().split('\n').filter(Boolean).map((x) => JSON.parse(x));
   const e = evaluateWall(wall, labels);
   const p = probeStats(log);
@@ -148,7 +148,7 @@ if (wall) {
   for (const c of wall.cards) for (const q of [c, ...(c.also || [])]) { quotes++; if (findQuote(lecture, q.quote)?.sentence === q.sentence) matched++; }
   const stat = (big, small, text) => h('div', { class: 'stat reveal' }, h('div', { class: 'big' }, big, small ? h('small', { text: small }) : null), h('p', { text }));
   const stats = [
-    stat(String(e.found), `of ${e.labels}`, 'rules the teacher stated were found. The labels were written by hand before any model read the lecture.'),
+    stat(String(e.found), `of ${e.labels}`, 'rules the teacher stated were found. The labels were written before Kimi read the lecture.'),
     stat(String(p.wrongFirst), `of ${p.labs}`, 'labs the model wrote had the wrong physics on the first try. The check caught every one before anyone saw it.'),
     stat(String(matched), `of ${quotes}`, 'quotes matched the transcript word for word. A quote that does not match is thrown away.'),
   ];

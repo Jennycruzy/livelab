@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#08090a">
 <title>Evidence · LIVE LAB</title>
-<meta name="description" content="Measured results for every saved wall, computed from its run log and the hand labels made before any model run.">
+<meta name="description" content="Measured results for every saved wall, computed from its run log and the labels written before any model run.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400..700&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <link rel="stylesheet" href="/static/landing.css">
@@ -29,12 +29,12 @@
 <main class="container page">
   <section class="page-head">
     <h1 class="rise">Measured, not claimed.</h1>
-    <p class="lede rise">Every number here is computed in your browser from files in the repository: the saved walls, their call logs, and the hand labels written for each lecture before any model saw it.</p>
+    <p class="lede rise">Every number here is computed in your browser from files in the repository: the saved walls, their call logs, and the labels written for each lecture before any model saw it.</p>
   </section>
 
   <section class="block">
     <h2>Finding the rules.</h2>
-    <p>The labels list every rule the teacher states that the library can check, marked by hand from a full reading of the transcript and committed before the first run. A rule counts as found when a card names the same library rule within three sentences of the labelled statement.</p>
+    <p>The labels list every rule the teacher states that the library can check, marked from a full reading of the transcript and committed before the first run. A rule counts as found when a card names the same library rule within three sentences of the labelled statement.</p>
     <div class="table-window scroll"><table id="finding"><thead><tr><th>Lecture</th><th class="num">Labelled rules</th><th class="num">Found</th><th class="num">Cards</th><th class="num">Matching a label</th><th class="num">Labs shown</th></tr></thead><tbody></tbody></table></div>
     <div id="unlabelled"></div>
   </section>

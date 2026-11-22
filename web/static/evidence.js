@@ -1,4 +1,4 @@
-// Evidence tables, computed here from the saved walls, their run logs and the hand labels.
+// Evidence tables, computed here from the saved walls, their run logs and the labels written in advance.
 import { evaluateWall, probeStats, callStats } from '/lib/evaluate.js';
 
 const $ = (s) => document.querySelector(s);
