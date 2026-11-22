@@ -104,6 +104,17 @@ async function startClass() {
     $('#phase').textContent = `Lab landed ${fmt(t.lag)} s after the words were said.`;
     figures();
   });
+  let findingSince = null, findTimer = null;
+  es.addEventListener('finding', () => {
+    findingSince = performance.now();
+    clearInterval(findTimer);
+    findTimer = setInterval(() => {
+      const s = (performance.now() - findingSince) / 1000;
+      if (s > 10) $('#phase').textContent = `Waiting on Cerebras, which is very busy right now: ${Math.round(s)} s. The sentences keep arriving and will be read together.`;
+    }, 1000);
+    $('#phase').textContent = 'Reading what was just said for rules…';
+  });
+  es.addEventListener('found', () => { clearInterval(findTimer); $('#phase').textContent = 'Listening…'; });
   es.addEventListener('wait', (e) => { $('#phase').textContent = `Cerebras is busy right now: retrying in ${JSON.parse(e.data).seconds} s.`; });
   es.addEventListener('ended', () => { stop(); $('#phase').textContent = 'This live class reached its time limit.'; });
   figures();
