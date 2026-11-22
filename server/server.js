@@ -3,7 +3,7 @@
 // Usage: OPENCLAW_GATEWAY_TOKEN=... PORT=8080 node server/server.js
 import { createServer } from 'node:http';
 import { readFileSync, existsSync, readdirSync, writeFileSync, mkdirSync, statSync } from 'node:fs';
-import { createHash, randomBytes } from 'node:crypto';
+import { createHash, randomBytes, timingSafeEqual } from 'node:crypto';
 import { extname, join, normalize } from 'node:path';
 import { buildWall } from '../lib/pipeline.js';
 import { parseCaptions } from '../lib/transcript.js';
@@ -15,6 +15,18 @@ const PORT = Number(process.env.PORT || 8080);
 const GATEWAY = { url: process.env.LIVELAB_GATEWAY || 'http://127.0.0.1:18790', token: process.env.OPENCLAW_GATEWAY_TOKEN || '' };
 const MAX_WORDS = 20000;
 const RATE_MS = 10 * 60 * 1000;
+// The operator's key (LIVELAB_ADMIN, at least 24 characters) lifts the visitor rate limit and can build on the GPU
+// provider's copies of the agents, for side-by-side recordings. Visitors always build on Cerebras.
+const ADMIN = process.env.LIVELAB_ADMIN || '';
+const isAdmin = (req) => {
+  const got = String(req.headers['x-livelab-admin'] || '');
+  return ADMIN.length >= 24 && got.length === ADMIN.length && timingSafeEqual(Buffer.from(got), Buffer.from(ADMIN));
+};
+const SIDES = {
+  cerebras: { name: 'Cerebras', provider: 'Kimi K3.1 Pro on Cerebras', build: {} },
+  gpu: { name: "Moonshot AI's API", provider: "Kimi K3.1 Pro on Moonshot AI's API (via OpenRouter)",
+    build: { agents: { finder: 'livelab-finder-gpu', builder: 'livelab-builder-gpu' }, provider: 'openrouter/moonshotai/kimi-k3.1-pro pinned to Moonshot AI (moonshotai/mxfp4) via OpenClaw' } },
+};
 
 const TYPES = { '.html': 'text/html; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.css': 'text/css; charset=utf-8',
   '.json': 'application/json; charset=utf-8', '.jsonl': 'application/x-ndjson; charset=utf-8', '.svg': 'image/svg+xml', '.txt': 'text/plain; charset=utf-8' };
@@ -56,8 +68,9 @@ async function readBody(req, limit = 2_000_000) {
 /** Start a build from pasted text, a caption file, or a library lecture. */
 async function startBuild(req, res) {
   const ip = (req.headers['x-forwarded-for'] || req.socket.remoteAddress || '').split(',')[0].trim();
+  const admin = isAdmin(req);
   const last = lastBuild.get(ip);
-  if (last && Date.now() - last < RATE_MS) return json(res, 429, { error: 'One new wall per visitor every 10 minutes. Saved walls are always open.' });
+  if (!admin && last && Date.now() - last < RATE_MS) return json(res, 429, { error: 'One new wall per visitor every 10 minutes. Saved walls are always open.' });
   if (!GATEWAY.token) return json(res, 503, { error: 'Live building is switched off on this server; saved walls are open.' });
   let body;
   try { body = JSON.parse(await readBody(req)); } catch { return json(res, 400, { error: 'Send JSON: {"text": "..."} or {"lecture": "<id>"}' }); }
@@ -74,7 +87,8 @@ async function startBuild(req, res) {
   } else return json(res, 400, { error: 'Paste a transcript or pick a library lecture.' });
   if (doc.sentences.length < 2) return json(res, 400, { error: 'That transcript is too short to find rules in.' });
 
-  lastBuild.set(ip, Date.now());
+  if (!admin) lastBuild.set(ip, Date.now());
+  const side = SIDES[admin && body.side === 'gpu' ? 'gpu' : 'cerebras'];
   const id = `${body.lecture || 'drop'}-${new Date().toISOString().replace(/[:.]/g, '-')}-${randomBytes(3).toString('hex')}`;
   const job = { events: [], clients: new Set(), done: false };
   live.set(id, job);
@@ -84,9 +98,9 @@ async function startBuild(req, res) {
     for (const c of job.clients) c.write(line);
   };
   emit('start', { id, title: doc.title, credit: doc.source?.credit ?? null, duration: doc.duration ?? null,
-    lecture: body.lecture ?? null, sentences: doc.sentences.length });
+    lecture: body.lecture ?? null, sentences: doc.sentences.length, provider: side.provider, providerName: side.name });
   json(res, 202, { id });
-  buildWall(doc, { gateway: GATEWAY, onEvent: emit }).then(({ wall, log }) => {
+  buildWall(doc, { gateway: GATEWAY, onEvent: emit, ...side.build }).then(({ wall, log }) => {
     wall.id = id; wall.lecture = body.lecture ?? null; wall.duration = doc.duration ?? null;
     const logText = log.map((x) => JSON.stringify(x)).join('\n') + '\n';
     wall.runLog = { file: `data/runs/${id}.jsonl`, sha256: createHash('sha256').update(logText).digest('hex') };

@@ -324,7 +324,8 @@ function followLive() {
   const es = new EventSource(`${LIVE}/api/walls/${id}/events`);
   const t0 = performance.now();
   const timer = setInterval(() => { $('#clock').textContent = `${fmt((performance.now() - t0) / 1000, 3)} s`; }, 100);
-  es.addEventListener('start', (e) => { const d = JSON.parse(e.data); wall.title = d.title; wall.source = { credit: d.credit }; duration = d.duration; renderAll(true); });
+  let providerName = 'The provider';
+  es.addEventListener('start', (e) => { const d = JSON.parse(e.data); providerName = d.providerName || providerName; wall.title = d.title; wall.source = { credit: d.credit }; duration = d.duration; renderAll(true); });
   es.addEventListener('cards', (e) => {
     const d = JSON.parse(e.data);
     $('#phase').textContent = d.partsDone < d.parts
@@ -333,7 +334,7 @@ function followLive() {
   });
   es.addEventListener('wait', (e) => {
     const d = JSON.parse(e.data);
-    $('#phase').textContent = `Cerebras is busy right now: retrying in ${d.seconds} s. Saved walls stay open meanwhile.`;
+    $('#phase').textContent = `${providerName} is busy right now: retrying in ${d.seconds} s. Saved walls stay open meanwhile.`;
   });
   es.addEventListener('card', (e) => { wall.cards.push(JSON.parse(e.data)); });
   es.addEventListener('skip', (e) => { wall.skipped.push(JSON.parse(e.data)); renderSkipped(); renderFigures(true); });
