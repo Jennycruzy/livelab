@@ -16,7 +16,7 @@
               ],
               "allow_fallbacks": false
             },
-            "maxTokens": 16000
+            "maxTokens": 8000
           }
         },
         "cerebras/moonshotai-kimi-k3.1-pro-trial": {
