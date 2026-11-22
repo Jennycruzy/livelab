@@ -115,3 +115,8 @@ footer{font-size:.8rem;color:var(--muted);border-top:1px solid var(--line);paddi
 .row.spread{justify-content:space-between}
 a.tile{text-decoration:none}
 .prose p,.prose ul{margin:0}
+/* Inner pages share the landing page's header; keep their content clear of it. */
+.nav nav a[aria-current]{color:var(--ink)}
+.wrap{padding-top:clamp(28px,5vh,56px)}
+.hero h1{font-size:clamp(2.1rem,4.8vw,3.4rem);letter-spacing:-.035em;line-height:1.05}
+.panel{border-radius:14px;background:linear-gradient(180deg,#0e0f10,#08090a)}

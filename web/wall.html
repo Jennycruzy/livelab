@@ -4,50 +4,76 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#08090a">
-<title>Wall · LIVE LAB</title>
+<title>Labs · LIVE LAB</title>
 <meta name="description" content="A lecture's rules as working labs, each checked by maths.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400..700&family=IBM+Plex+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="/static/app.css">
+<link rel="stylesheet" href="/static/landing.css">
+<link rel="stylesheet" href="/static/wall.css">
 <link rel="icon" href="/static/icon.svg" type="image/svg+xml">
 <script type="module" src="/static/wall.js"></script>
 </head>
 <body>
-<div class="wrap">
-  <div class="bar">
-    <a class="brand" href="/">LIVE <b>LAB</b></a>
-    <nav><a href="/new">Drop a lecture</a><a href="/how">How the check works</a><a href="/evidence">Evidence</a></nav>
+<header class="nav">
+  <div class="nav-in">
+    <a class="logo" href="/" aria-label="LIVE LAB home"><img src="/static/icon.svg" alt="" width="22" height="22"><span>LIVE LAB</span></a>
+    <nav aria-label="Main">
+      <a href="/#library">Library</a>
+      <a href="/how">How the check works</a>
+      <a href="/evidence">Evidence</a>
+    </nav>
+    <a class="btn btn-sm" href="/new">Drop a lecture</a>
   </div>
+</header>
 
-  <section class="lecture">
-    <h1 id="title">Loading…</h1>
-    <div class="credit" id="credit"></div>
-  </section>
-
-  <section class="panel">
-    <div class="row spread">
-      <div class="stats" id="stats"></div>
-      <div class="row">
-        <span class="mono" id="clock" hidden></span>
-        <button id="replay" hidden>Watch it build again</button>
-        <button id="share">Share</button>
-        <input id="sharelink" type="text" readonly hidden aria-label="Link to this wall">
-      </div>
+<main class="container wall-main">
+  <section class="wall-head">
+    <div class="crumbs mono" id="crumbs">Loading…</div>
+    <h1 id="title">&nbsp;</h1>
+    <p class="credit" id="credit"></p>
+    <div class="head-actions">
+      <button class="btn" id="replay" type="button" hidden>Watch it build again</button>
+      <button class="btn" id="share" type="button">Share</button>
+      <input id="sharelink" class="sharelink" type="text" readonly hidden aria-label="Link to this wall">
     </div>
-    <div class="timeline" id="timeline"><div class="scan" id="scan"></div></div>
-    <div class="ticks" id="ticks"></div>
-    <div class="muted" id="phase"></div>
   </section>
 
-  <section class="panel" id="review" hidden></section>
-  <section class="panel" id="bench" hidden></section>
+  <section class="figures" id="figures" aria-label="Run figures"></section>
 
-  <section class="wall" id="wall" aria-label="Labs"></section>
+  <section class="window track-window">
+    <div class="window-bar">
+      <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span class="window-title">Where each rule was said</span>
+      <span class="window-meta mono" id="clock"></span>
+    </div>
+    <div class="window-body">
+      <div class="track">
+        <div class="track-line"></div>
+        <div class="track-head" id="scan"></div>
+        <div id="marks"></div>
+      </div>
+      <div class="track-ticks mono" id="ticks"></div>
+      <div class="phase" id="phase" role="status"></div>
+    </div>
+  </section>
+
+  <section class="review" id="review" hidden></section>
+
+  <section class="wall-grid" id="wall" aria-label="Labs"></section>
+
   <section id="skipped"></section>
+</main>
 
-  <footer>
-    <span>Every “holds” and “breaks at” comes from a plain-code physics library, never from the model. Every quote is matched word for word against the transcript.</span>
-    <span>Built with Kimi K3.1 Pro on Cerebras through OpenClaw. Lecture content keeps its own licence, shown above.</span>
-  </footer>
+<div class="sheet" id="sheet" hidden>
+  <div class="sheet-back" id="sheet-back"></div>
+  <div class="sheet-panel" role="dialog" aria-modal="true" aria-labelledby="sheet-title" id="bench"></div>
 </div>
+
+<footer class="foot">
+  <div class="container foot-in">
+    <span>Every “holds” and “breaks at” comes from a plain-code physics library, never from the model. Every quote is matched word for word against the transcript.</span>
+    <nav aria-label="Footer"><a href="/how">How the check works</a><a href="/evidence">Evidence</a><a href="/new">Drop a lecture</a></nav>
+  </div>
+</footer>
 </body>
 </html>

@@ -7,16 +7,24 @@
 <title>Evidence · LIVE LAB</title>
 <meta name="description" content="Measured results for every saved wall, computed from its run log and the hand labels made before any model run.">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400..700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="/static/landing.css">
 <link rel="stylesheet" href="/static/app.css">
 <link rel="icon" href="/static/icon.svg" type="image/svg+xml">
 <script type="module" src="/static/evidence.js"></script>
 </head>
 <body>
-<div class="wrap">
-  <div class="bar">
-    <a class="brand" href="/">LIVE <b>LAB</b></a>
-    <nav><a href="/new">Drop a lecture</a><a href="/how">How the check works</a><a href="/evidence" aria-current="page">Evidence</a></nav>
+<header class="nav">
+  <div class="nav-in">
+    <a class="logo" href="/" aria-label="LIVE LAB home"><img src="/static/icon.svg" alt="" width="22" height="22"><span>LIVE LAB</span></a>
+    <nav aria-label="Main">
+      <a href="/#library">Library</a>
+      <a href="/how">How the check works</a>
+      <a href="/evidence" aria-current="page">Evidence</a>
+    </nav>
+    <a class="btn btn-sm" href="/new">Drop a lecture</a>
   </div>
+</header>
+<div class="wrap">
 
   <section class="hero">
     <h1>Evidence</h1>

@@ -7,16 +7,24 @@
 <title>How the check works · LIVE LAB</title>
 <meta name="description" content="What the model does, what plain code decides, and what LIVE LAB can and cannot check.">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400..700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="/static/landing.css">
 <link rel="stylesheet" href="/static/app.css">
 <link rel="icon" href="/static/icon.svg" type="image/svg+xml">
 <script type="module" src="/static/how.js"></script>
 </head>
 <body>
-<div class="wrap">
-  <div class="bar">
-    <a class="brand" href="/">LIVE <b>LAB</b></a>
-    <nav><a href="/new">Drop a lecture</a><a href="/how" aria-current="page">How the check works</a><a href="/evidence">Evidence</a></nav>
+<header class="nav">
+  <div class="nav-in">
+    <a class="logo" href="/" aria-label="LIVE LAB home"><img src="/static/icon.svg" alt="" width="22" height="22"><span>LIVE LAB</span></a>
+    <nav aria-label="Main">
+      <a href="/#library">Library</a>
+      <a href="/how" aria-current="page">How the check works</a>
+      <a href="/evidence">Evidence</a>
+    </nav>
+    <a class="btn btn-sm" href="/new">Drop a lecture</a>
   </div>
+</header>
+<div class="wrap">
 
   <section class="hero">
     <h1>The model finds the rules. Plain code decides.</h1>

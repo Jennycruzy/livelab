@@ -25,7 +25,7 @@ for (const l of lib.filter((x) => x.wall)) {
   const log = logText.trim().split('\n').filter(Boolean).map((x) => JSON.parse(x));
   const name = l.title.replace(/^PHYS 200 - /, '');
   const e = evaluateWall(wall, labels);
-  row($('#finding tbody'), [{ node: link(`/w/${l.wall}`, name) }, e.labels, e.found, e.cards, e.matched, e.tiles]);
+  row($('#finding tbody'), [{ node: link(`/w/${l.wall}`, name) }, e.labels, e.found, e.cards, e.matched, e.shown]);
   if (e.missed.length || e.unlabelled.length) {
     const box = document.createElement('details');
     box.className = 'skips';

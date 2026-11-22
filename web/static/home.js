@@ -54,7 +54,7 @@ const [wall, labels, logText, lecture] = hero ? await Promise.all([
 
 if (wall) {
   const card = (t) => wall.cards.find((c) => c.id === t.card);
-  const n = wall.tiles.length;
+  const n = hero.tiles; // labs as the wall shows them: one per statement
   $('#headline').replaceChildren('One lecture in.', h('br'), h('span', { class: 'dim', text: `${WORDS[n] ?? n} labs out.` }));
   $('#open-hero').href = `/w/${hero.wall}`;
 
@@ -130,7 +130,7 @@ if (wall) {
         const r = rule.rule(v, c.fixed), e = rule.exact(v, c.fixed), g = relErr(r, e);
         $('#r-rule').textContent = `${fmt(r)} s`;
         $('#r-exact').textContent = `${fmt(e)} s`;
-        $('#r-gap').textContent = `${fmt(g * 100, 3)}%`;
+        $('#r-gap').textContent = g * 100 < 0.001 ? '< 0.001%' : `${fmt(g * 100, 3)}%`;
         const st = $('#state');
         st.className = `state ${g <= 0.01 ? 'ok' : 'warn'}`;
         st.textContent = g <= 0.01 ? 'Inside the 1% line: the rule holds here.' : `Past the 1% line: the rule stops holding at ${fmt(edge, 4)}°.`;
