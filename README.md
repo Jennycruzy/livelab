@@ -110,14 +110,14 @@ OpenRouter pinned to Moonshot AI's own endpoint), used for side-by-side comparis
 product search (five searches in one turn) and answers with one gift per shop and its product link;
 `santa/checklinks.mjs` then opens each link in a real browser to confirm it is a live product page with a price.
 
-Its best run: **1,286 tokens per second** (mean of its two model calls; 1,385 for the faster), Kimi K3.1 Pro on
+Its best run: **1,317 tokens per second** (mean of its two model calls; 1,429 for the faster), Kimi K3.1 Pro on
 Cerebras. Each call is listed with its Cerebras response ID, so the numbers can be checked against Cerebras's own
 records (`santa/results/best-run.json`):
 
 | Call | Cerebras response ID | Tokens | Decode time | Tokens/s |
 |---|---|---|---|---|
-| Search five shops at once | `chatcmpl-25c7306a-c0a5-41e9-be2b-c409b84467a8` | 320 | 0.270 s | 1,187 |
-| Answer with the five gifts | `chatcmpl-f334d2e1-f2b5-436f-b0f2-3669dd9e14bb` | 170 | 0.123 s | 1,385 |
+| Search five shops at once | `chatcmpl-0aede3d7-e20d-4126-9a2a-52d825b0c6ec` | 316 | 0.221 s | 1,429 |
+| Answer with the five gifts | `chatcmpl-8c2f58be-b11c-4db0-a0fb-3442b8349052` | 170 | 0.141 s | 1,206 |
 
 Decode time is Cerebras's own completion time for the call, so queueing, network and tool time are not counted.
 More in [`santa/README.md`](santa/README.md).
